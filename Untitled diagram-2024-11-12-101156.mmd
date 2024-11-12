@@ -1,7 +1,7 @@
 classDiagram
 
 %% Managers
-class GameManager아야오요 {
+class GameManager {
     - static Instance
     - PlayerStatus playerStatus
     - Room currentRoom
@@ -11,13 +11,24 @@ class GameManager아야오요 {
     - EventManager eventManager
     - InteractionManager interactionManager
     - SaveLoadManager saveLoadManager
+    - CombatManager combatManager
     + InitializeGame()
     + StartGame()
     + GameLoop()
     + DisplayMessage(string message)
     + DisplayOptions(List~string~ options)
     + GetUserInput() string
-    + nGetUserInput() string
+    + StartCombat(BaseMonster enemy)
+}
+
+class CombatManager {
+    - GameManager gameManager
+    - PlayerStatus playerStatus
+    - BaseMonster enemy
+    + StartCombat(BaseMonster enemy)
+    + PlayerTurn()
+    + EnemyTurn()
+    + CheckCombatEnd() bool
 }
 
 class InputManager {
@@ -32,6 +43,9 @@ class EventManager {
 
 class InteractionManager {
     + HandleInteraction(IInteractable interactable)
+    + HandleMonsterInteraction(BaseMonster monster)
+    + HandleNPCInteraction(BaseNPC npc)
+    + HandleTrapInteraction(BaseTrap trap)
 }
 
 class SaveLoadManager {
@@ -59,8 +73,6 @@ class PlayerStatus {
     - ItemInventory items
     + ModifyHealth(int amount)
     + UseItem(string itemId)
-    + LoadFromXML(string xmlContent)
-    + SaveToXML() string
 }
 
 class AbilityInventory {
@@ -135,7 +147,6 @@ BaseInteractable ..|> IInteractable
 class BaseMonster {
     - int health
     - int attackPower
-    - List~Ability~ abilities
     + void Attack(PlayerStatus playerStatus)
     + void TakeDamage(int amount)
     + bool IsDefeated()
@@ -144,15 +155,16 @@ class BaseMonster {
 BaseMonster --|> BaseInteractable
 
 class Goblin {
-    - int stealthLevel
-    + void Steal(PlayerStatus playerStatus)
+    - int health
+    - int attackPower
 }
 Goblin --|> BaseMonster
 
 class Dragon {
-    - int fireBreathPower
-    + void BreatheFire(PlayerStatus playerStatus)
+    - int health
+    - int attackPower
 }
+
 Dragon --|> BaseMonster
 
 %% NPC classes
@@ -211,6 +223,7 @@ class ActionResult {
     - string resultText
     - string nextRoomId
     - string nextEventId
+    - BaseMonster enemyToCombat
     + void Apply(GameManager gameManager)
 }
 
@@ -241,10 +254,14 @@ class Event {
 }
 
 class Choice {
+    - string choiceId
     - string description
+    - List~Requirement~ requirements
+    - List~Condition~ conditions
     - ActionResult actionResult
     + void Execute(GameManager gameManager)
 }
+Choice ..|> Option
 
 Event o--> "*" Choice
 
@@ -256,6 +273,7 @@ class InteractableFactory {
 
 %% Relationships
 
+GameManager "1" --> "1" CombatManager
 GameManager "1" --> "1" PlayerStatus
 GameManager "1" --> "1" WorldMap
 GameManager "1" --> "1" Room : currentRoom
@@ -296,6 +314,7 @@ ActionResult "1" --> "*" Ability
 ActionResult "1" --> "*" Item
 ActionResult "1" --> "0..1" Event : triggers
 ActionResult "1" ..> Room : leadsTo
+ActionResult "1" ..> BaseMonster : enemyToCombat
 
 PlayerStatus "1" --> "1" AbilityInventory
 PlayerStatus "1" --> "1" ItemInventory
@@ -310,4 +329,7 @@ GameManager "1" ..> Command : uses
 GameManager "1" --> "1" InputManager
 
 StatusEffect ..> PlayerStatus : modifies
+
+CombatManager ..> PlayerStatus
+CombatManager ..> BaseMonster
 
