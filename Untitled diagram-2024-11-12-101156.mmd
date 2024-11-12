@@ -1,0 +1,312 @@
+classDiagram
+
+%% Managers
+class GameManager {
+    - static Instance
+    - PlayerStatus playerStatus
+    - Room currentRoom
+    - WorldMap worldMap
+    - InteractableFactory interactableFactory
+    - InputManager inputManager
+    - EventManager eventManager
+    - InteractionManager interactionManager
+    - SaveLoadManager saveLoadManager
+    + InitializeGame()
+    + StartGame()
+    + GameLoop()
+    + DisplayMessage(string message)
+    + DisplayOptions(List~string~ options)
+    + GetUserInput() string
+}
+
+class InputManager {
+    + string GetUserInput()
+    + Command ParseCommand(string input)
+}
+
+class EventManager {
+    + StartEvent(string eventId)
+    + DisplayEvent(Event event)
+}
+
+class InteractionManager {
+    + HandleInteraction(IInteractable interactable)
+}
+
+class SaveLoadManager {
+    + SaveGame(string saveFileName)
+    + LoadGame(string saveFileName)
+}
+
+%% Command and related classes
+class Command {
+    - string action
+    - string target
+    - string additionalInfo
+    + Execute(GameManager gameManager)
+}
+
+class CommandParser {
+    + Command Parse(string input)
+}
+
+%% PlayerStatus and inventories
+class PlayerStatus {
+    - int maxHealth
+    - int currentHealth
+    - AbilityInventory abilities
+    - ItemInventory items
+    + ModifyHealth(int amount)
+    + UseItem(string itemId)
+    + LoadFromXML(string xmlContent)
+    + SaveToXML() string
+}
+
+class AbilityInventory {
+    - List~Ability~ abilities
+    + AddAbility(Ability ability)
+    + RemoveAbility(Ability ability)
+    + HasAbility(string abilityId)
+}
+
+class ItemInventory {
+    - List~Item~ items
+    + AddItem(Item item)
+    + RemoveItem(Item item)
+    + HasItem(string itemId)
+}
+
+class Ability {
+    - string abilityId
+    - string name
+    - string description
+    - AbilityType type
+}
+
+class Item {
+    - string itemId
+    - string name
+    - string description
+    - ItemType type
+    - bool isConsumable
+    - Dictionary~string, int~ effects
+    + Use(PlayerStatus playerStatus)
+}
+
+%% WorldMap and Room
+class WorldMap {
+    - Dictionary~string, Room~ rooms
+    + AddRoom(Room room)
+    + Room GetRoom(string roomId)
+    + List~Room~ GetAdjacentRooms(string roomId)
+}
+
+class Room {
+    - string roomId
+    - string roomName
+    - string roomDescription
+    - List~IInteractable~ interactables
+    - Map~string, string~ exits
+    + Enter()
+    + DisplayDescription()
+    + IInteractable GetInteractable(string interactableId)
+}
+
+%% Interactable and related classes
+class IInteractable {
+    <<interface>>
+    + string InteractableId
+    + string Name
+    + void Interact(GameManager gameManager)
+}
+
+class BaseInteractable {
+    - string interactableId
+    - string name
+    - string description
+    - List~Option~ options
+    + void Interact(GameManager gameManager)
+    + Option GetOption(string optionId)
+}
+BaseInteractable ..|> IInteractable
+
+%% Monster classes
+class BaseMonster {
+    - int health
+    - int attackPower
+    - List~Ability~ abilities
+    + void Attack(PlayerStatus playerStatus)
+    + void TakeDamage(int amount)
+    + bool IsDefeated()
+    + void Interact(GameManager gameManager)
+}
+BaseMonster --|> BaseInteractable
+
+class Goblin {
+    - int stealthLevel
+    + void Steal(PlayerStatus playerStatus)
+}
+Goblin --|> BaseMonster
+
+class Dragon {
+    - int fireBreathPower
+    + void BreatheFire(PlayerStatus playerStatus)
+}
+Dragon --|> BaseMonster
+
+%% NPC classes
+class BaseNPC {
+    - NPCType type
+    + void Talk()
+    + void Interact(GameManager gameManager)
+}
+BaseNPC --|> BaseInteractable
+
+class Shopkeeper {
+    - ItemInventory shopInventory
+    + void Trade(PlayerStatus playerStatus)
+}
+Shopkeeper --|> BaseNPC
+
+class QuestGiver {
+    - List~Quest~ quests
+    + void GiveQuest(PlayerStatus playerStatus)
+}
+QuestGiver --|> BaseNPC
+
+%% Trap classes
+class BaseTrap {
+    - int damage
+    + void Activate(PlayerStatus playerStatus)
+    + void Interact(GameManager gameManager)
+}
+BaseTrap --|> BaseInteractable
+
+class Pitfall {
+    - int depth
+}
+Pitfall --|> BaseTrap
+
+class PoisonGas {
+    - int poisonDamage
+    + void ApplyPoison(PlayerStatus playerStatus)
+}
+PoisonGas --|> BaseTrap
+
+%% Option and related classes
+class Option {
+    - string optionId
+    - string description
+    - List~Requirement~ requirements
+    - List~Condition~ conditions
+    - ActionResult actionResult
+    + void Execute(GameManager gameManager)
+}
+
+class ActionResult {
+    - List~StatusEffect~ statusEffects
+    - List~Ability~ abilitiesToAdd
+    - List~Item~ itemsToAdd
+    - string resultText
+    - string nextRoomId
+    - string nextEventId
+    + void Apply(GameManager gameManager)
+}
+
+class Condition {
+    - string expression
+    + bool Evaluate(PlayerStatus playerStatus)
+}
+
+class Requirement {
+    - RequirementType type
+    - string requiredId
+    + bool Check(PlayerStatus playerStatus)
+}
+
+class StatusEffect {
+    - EffectType type
+    - int amount
+    - string targetId
+    + void Apply(PlayerStatus playerStatus)
+}
+
+%% Event and Choice
+class Event {
+    - string eventId
+    - string eventText
+    - List~Choice~ choices
+    + void Execute(GameManager gameManager)
+}
+
+class Choice {
+    - string description
+    - ActionResult actionResult
+    + void Execute(GameManager gameManager)
+}
+
+Event o--> "*" Choice
+
+%% InteractableFactory
+class InteractableFactory {
+    + IInteractable CreateInteractable(string interactableId)
+    + void LoadTemplates()
+}
+
+%% Relationships
+
+GameManager "1" --> "1" PlayerStatus
+GameManager "1" --> "1" WorldMap
+GameManager "1" --> "1" Room : currentRoom
+GameManager "1" --> "1" InteractableFactory
+GameManager "1" --> "1" InputManager
+GameManager "1" --> "1" EventManager
+GameManager "1" --> "1" InteractionManager
+GameManager "1" --> "1" SaveLoadManager
+
+WorldMap "1" --> "*" Room
+
+Room "1" o--> "*" IInteractable : contains
+
+InteractableFactory "1" ..> IInteractable : creates
+
+IInteractable <|.. BaseInteractable
+
+BaseInteractable <|-- BaseMonster
+BaseMonster <|-- Goblin
+BaseMonster <|-- Dragon
+
+BaseInteractable <|-- BaseNPC
+BaseNPC <|-- Shopkeeper
+BaseNPC <|-- QuestGiver
+
+BaseInteractable <|-- BaseTrap
+BaseTrap <|-- Pitfall
+BaseTrap <|-- PoisonGas
+
+IInteractable "1" o--> "*" Option
+
+Option "1" --> "1" ActionResult
+Option "1" --> "*" Requirement
+Option "1" --> "*" Condition
+
+ActionResult "1" --> "*" StatusEffect
+ActionResult "1" --> "*" Ability
+ActionResult "1" --> "*" Item
+ActionResult "1" --> "0..1" Event : triggers
+ActionResult "1" ..> Room : leadsTo
+
+PlayerStatus "1" --> "1" AbilityInventory
+PlayerStatus "1" --> "1" ItemInventory
+
+Condition ..> PlayerStatus : depends on
+Requirement ..> PlayerStatus : checks
+
+InputManager "1" --> "1" CommandParser
+CommandParser "1" --> "1" Command
+
+GameManager "1" ..> Command : uses
+GameManager "1" --> "1" InputManager
+
+StatusEffect ..> PlayerStatus : modifies
+
