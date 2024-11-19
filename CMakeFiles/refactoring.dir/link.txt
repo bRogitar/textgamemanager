@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/refactoring.dir/src/agent.cpp.o CMakeFiles/refactoring.dir/src/app.cpp.o CMakeFiles/refactoring.dir/src/mmanager.cpp.o CMakeFiles/refactoring.dir/src/tinyxml2.cpp.o -o refactoring 
