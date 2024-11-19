@@ -164,7 +164,6 @@ class Dragon {
     - int health
     - int attackPower
 }
-
 Dragon --|> BaseMonster
 
 %% NPC classes
@@ -332,4 +331,6 @@ StatusEffect ..> PlayerStatus : modifies
 
 CombatManager ..> PlayerStatus
 CombatManager ..> BaseMonster
+ItemInventory "1" --> "*" Item
+AbilityInventory "1" --> "*" Ability
 
