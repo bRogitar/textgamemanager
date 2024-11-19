@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\work_space\software_design\COME2201-dovi0129
+CMAKE_SOURCE_DIR = D:\TextAdventures\textgamemanager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\work_space\software_design\COME2201-dovi0129\build
+CMAKE_BINARY_DIR = D:\TextAdventures\textgamemanager\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\work_space\software_design\COME2201-dovi0129\build\CMakeFiles C:\work_space\software_design\COME2201-dovi0129\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\TextAdventures\textgamemanager\build\CMakeFiles D:\TextAdventures\textgamemanager\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\work_space\software_design\COME2201-dovi0129\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\TextAdventures\textgamemanager\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -115,163 +115,6 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named refactoring
-
-# Build rule for target.
-refactoring: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 refactoring
-.PHONY : refactoring
-
-# fast build rule for target.
-refactoring/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/build
-.PHONY : refactoring/fast
-
-src/agent.obj: src/agent.cpp.obj
-.PHONY : src/agent.obj
-
-# target to build an object file
-src/agent.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/agent.cpp.obj
-.PHONY : src/agent.cpp.obj
-
-src/agent.i: src/agent.cpp.i
-.PHONY : src/agent.i
-
-# target to preprocess a source file
-src/agent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/agent.cpp.i
-.PHONY : src/agent.cpp.i
-
-src/agent.s: src/agent.cpp.s
-.PHONY : src/agent.s
-
-# target to generate assembly for a file
-src/agent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/agent.cpp.s
-.PHONY : src/agent.cpp.s
-
-src/app.obj: src/app.cpp.obj
-.PHONY : src/app.obj
-
-# target to build an object file
-src/app.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/app.cpp.obj
-.PHONY : src/app.cpp.obj
-
-src/app.i: src/app.cpp.i
-.PHONY : src/app.i
-
-# target to preprocess a source file
-src/app.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/app.cpp.i
-.PHONY : src/app.cpp.i
-
-src/app.s: src/app.cpp.s
-.PHONY : src/app.s
-
-# target to generate assembly for a file
-src/app.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/app.cpp.s
-.PHONY : src/app.cpp.s
-
-src/mmanager.obj: src/mmanager.cpp.obj
-.PHONY : src/mmanager.obj
-
-# target to build an object file
-src/mmanager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/mmanager.cpp.obj
-.PHONY : src/mmanager.cpp.obj
-
-src/mmanager.i: src/mmanager.cpp.i
-.PHONY : src/mmanager.i
-
-# target to preprocess a source file
-src/mmanager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/mmanager.cpp.i
-.PHONY : src/mmanager.cpp.i
-
-src/mmanager.s: src/mmanager.cpp.s
-.PHONY : src/mmanager.s
-
-# target to generate assembly for a file
-src/mmanager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/mmanager.cpp.s
-.PHONY : src/mmanager.cpp.s
-
-src/normal_agent.obj: src/normal_agent.cpp.obj
-.PHONY : src/normal_agent.obj
-
-# target to build an object file
-src/normal_agent.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/normal_agent.cpp.obj
-.PHONY : src/normal_agent.cpp.obj
-
-src/normal_agent.i: src/normal_agent.cpp.i
-.PHONY : src/normal_agent.i
-
-# target to preprocess a source file
-src/normal_agent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/normal_agent.cpp.i
-.PHONY : src/normal_agent.cpp.i
-
-src/normal_agent.s: src/normal_agent.cpp.s
-.PHONY : src/normal_agent.s
-
-# target to generate assembly for a file
-src/normal_agent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/normal_agent.cpp.s
-.PHONY : src/normal_agent.cpp.s
-
-src/special_agent.obj: src/special_agent.cpp.obj
-.PHONY : src/special_agent.obj
-
-# target to build an object file
-src/special_agent.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/special_agent.cpp.obj
-.PHONY : src/special_agent.cpp.obj
-
-src/special_agent.i: src/special_agent.cpp.i
-.PHONY : src/special_agent.i
-
-# target to preprocess a source file
-src/special_agent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/special_agent.cpp.i
-.PHONY : src/special_agent.cpp.i
-
-src/special_agent.s: src/special_agent.cpp.s
-.PHONY : src/special_agent.s
-
-# target to generate assembly for a file
-src/special_agent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/special_agent.cpp.s
-.PHONY : src/special_agent.cpp.s
-
-src/tinyxml2.obj: src/tinyxml2.cpp.obj
-.PHONY : src/tinyxml2.obj
-
-# target to build an object file
-src/tinyxml2.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/tinyxml2.cpp.obj
-.PHONY : src/tinyxml2.cpp.obj
-
-src/tinyxml2.i: src/tinyxml2.cpp.i
-.PHONY : src/tinyxml2.i
-
-# target to preprocess a source file
-src/tinyxml2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/tinyxml2.cpp.i
-.PHONY : src/tinyxml2.cpp.i
-
-src/tinyxml2.s: src/tinyxml2.cpp.s
-.PHONY : src/tinyxml2.s
-
-# target to generate assembly for a file
-src/tinyxml2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\refactoring.dir\build.make CMakeFiles/refactoring.dir/src/tinyxml2.cpp.s
-.PHONY : src/tinyxml2.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -280,25 +123,6 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... refactoring
-	@echo ... src/agent.obj
-	@echo ... src/agent.i
-	@echo ... src/agent.s
-	@echo ... src/app.obj
-	@echo ... src/app.i
-	@echo ... src/app.s
-	@echo ... src/mmanager.obj
-	@echo ... src/mmanager.i
-	@echo ... src/mmanager.s
-	@echo ... src/normal_agent.obj
-	@echo ... src/normal_agent.i
-	@echo ... src/normal_agent.s
-	@echo ... src/special_agent.obj
-	@echo ... src/special_agent.i
-	@echo ... src/special_agent.s
-	@echo ... src/tinyxml2.obj
-	@echo ... src/tinyxml2.i
-	@echo ... src/tinyxml2.s
 .PHONY : help
 
 

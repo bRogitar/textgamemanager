@@ -1,3 +1,2 @@
-C:/work_space/software_design/COME2201-dovi0129/build/CMakeFiles/refactoring.dir
-C:/work_space/software_design/COME2201-dovi0129/build/CMakeFiles/edit_cache.dir
-C:/work_space/software_design/COME2201-dovi0129/build/CMakeFiles/rebuild_cache.dir
+D:/TextAdventures/textgamemanager/build/CMakeFiles/edit_cache.dir
+D:/TextAdventures/textgamemanager/build/CMakeFiles/rebuild_cache.dir

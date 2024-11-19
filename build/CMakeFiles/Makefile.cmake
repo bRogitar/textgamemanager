@@ -29,7 +29,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake"
-  "C:/work_space/software_design/COME2201-dovi0129/CMakeLists.txt"
+  "D:/TextAdventures/textgamemanager/CMakeLists.txt"
   "CMakeFiles/3.30.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.30.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.30.4/CMakeRCCompiler.cmake"
@@ -49,5 +49,4 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/refactoring.dir/DependInfo.cmake"
   )

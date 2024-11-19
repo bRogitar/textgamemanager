@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/addr2line.exe"
+			"value" : "C:/msys64/mingw64/bin/addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/ar.exe"
+			"value" : "C:/msys64/mingw64/bin/ar.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/work_space/software_design/COME2201-dovi0129/build"
+			"value" : "d:/TextAdventures/textgamemanager/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -159,7 +159,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/g++.exe"
+			"value" : "C:/msys64/mingw64/bin/g++.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -175,7 +175,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/gcc-ar.exe"
+			"value" : "C:/msys64/mingw64/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -191,7 +191,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/gcc-ranlib.exe"
+			"value" : "C:/msys64/mingw64/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -303,7 +303,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/gcc.exe"
+			"value" : "C:/msys64/mingw64/bin/gcc.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -319,7 +319,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/gcc-ar.exe"
+			"value" : "C:/msys64/mingw64/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -335,7 +335,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/gcc-ranlib.exe"
+			"value" : "C:/msys64/mingw64/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -447,7 +447,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/dlltool.exe"
+			"value" : "C:/msys64/mingw64/bin/dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EDIT_COMMAND",
@@ -587,7 +587,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/work_space/software_design/COME2201-dovi0129/build/CMakeFiles/pkgRedirects"
+			"value" : "D:/TextAdventures/textgamemanager/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/work_space/software_design/COME2201-dovi0129"
+			"value" : "D:/TextAdventures/textgamemanager"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -671,7 +671,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/refactoring"
+			"value" : "C:/Program Files (x86)/Project"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -687,7 +687,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/ld.exe"
+			"value" : "C:/msys64/mingw64/bin/ld.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -703,7 +703,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/mingw32-make.exe"
+			"value" : "C:/msys64/mingw64/bin/mingw32-make.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -799,7 +799,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/nm.exe"
+			"value" : "C:/msys64/mingw64/bin/nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -827,7 +827,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/objcopy.exe"
+			"value" : "C:/msys64/mingw64/bin/objcopy.exe"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -843,7 +843,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/objdump.exe"
+			"value" : "C:/msys64/mingw64/bin/objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -891,7 +891,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "refactoring"
+			"value" : "Project"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -907,7 +907,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/ranlib.exe"
+			"value" : "C:/msys64/mingw64/bin/ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -923,7 +923,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/windres.exe"
+			"value" : "C:/msys64/mingw64/bin/windres.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -1031,7 +1031,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/readelf.exe"
+			"value" : "C:/msys64/mingw64/bin/readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1251,7 +1251,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/MinGW/bin/strip.exe"
+			"value" : "C:/msys64/mingw64/bin/strip.exe"
 		},
 		{
 			"name" : "CMAKE_TAPI",
@@ -1286,19 +1286,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
-			"name" : "refactoring_BINARY_DIR",
+			"name" : "Project_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1307,10 +1295,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/work_space/software_design/COME2201-dovi0129/build"
+			"value" : "D:/TextAdventures/textgamemanager/build"
 		},
 		{
-			"name" : "refactoring_IS_TOP_LEVEL",
+			"name" : "Project_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1322,7 +1310,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "refactoring_SOURCE_DIR",
+			"name" : "Project_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1331,7 +1319,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/work_space/software_design/COME2201-dovi0129"
+			"value" : "D:/TextAdventures/textgamemanager"
+		},
+		{
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
 		}
 	],
 	"kind" : "cache",
