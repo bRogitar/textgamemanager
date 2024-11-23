@@ -32,3 +32,5 @@ std::vector<Room*> WorldMap::getAllRooms() {
     }
     return roomsList;
 }
+
+// 새로 커밋을 합니다. 
