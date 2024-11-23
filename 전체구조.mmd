@@ -69,10 +69,15 @@ class CommandParser {
 class PlayerStatus {
     - int maxHealth
     - int currentHealth
-    - AbilityInventory abilities
-    - ItemInventory items
+    - int mentalStrength
+    - int wealth
+    - int attackPower
+    - AbilityInventory abilityInventory
+    - ItemInventory itemInventory
     + ModifyHealth(int amount)
-    + UseItem(string itemId)
+    + ModifyMentalStrength(int amount)
+    + ModifyWealth(int amount)
+    + ModifyAttackPower(int amount)
 }
 
 class AbilityInventory {
