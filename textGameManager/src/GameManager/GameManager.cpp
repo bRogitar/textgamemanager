@@ -1,6 +1,9 @@
 #include "GameManager.h"
 #include <iostream>
 #include <algorithm>
+#include "tinyxml2.h"
+
+using namespace tinyxml2;
 
 GameManager& GameManager::getInstance() {
     static GameManager instance;
@@ -10,8 +13,12 @@ GameManager& GameManager::getInstance() {
 GameManager::GameManager() : worldMap(createWorldMap()) {}
 
 void GameManager::initializeGame() {
-    std::cout << "Initializing game...\n";
+    std::cout << "Initializing game...";
     player = Player();
+    player.setHealth(100);
+    player.setMentalStrength(50);
+    player.setAttackPower(20);
+    player.setMoney(100);
     worldMap = createWorldMap();
 }
 
@@ -58,7 +65,8 @@ void GameManager::gameLoop() {
                 displayMessage("An event is happening in " + room.getRoomName() + "...\n");
                 // Event logic goes here
                 // Placeholder for monster battle or other interactions
-                room.setCleared(true); 
+                bool cleared = true;
+                room.setCleared(cleared); 
             }
         }
     }
@@ -93,9 +101,11 @@ void GameManager::saveGame() {
     doc.InsertFirstChild(pRoot);
 
     XMLElement* pPlayer = doc.NewElement("PlayerStatus");
-    pPlayer->SetAttribute("name", player.name.c_str());
-    pPlayer->SetAttribute("strength", player.strength);
-    pPlayer->SetAttribute("health", player.health);
+    pPlayer->SetAttribute("name", player.getName().c_str());
+    pPlayer->SetAttribute("health", player.getHealth());
+    pPlayer->SetAttribute("mentalStrength", player.getMentalStrength());
+    pPlayer->SetAttribute("attackPower", player.getAttackPower());
+    pPlayer->SetAttribute("money", player.getMoney());
     pRoot->InsertEndChild(pPlayer);
 
     XMLElement* pRooms = doc.NewElement("Rooms");
@@ -131,9 +141,11 @@ void GameManager::loadGame() {
 
     XMLElement* pElement = pRoot->FirstChildElement("PlayerStatus");
     if (pElement != nullptr) {
-        player.name = pElement->Attribute("name") ? pElement->Attribute("name") : "Unknown";
-        pElement->QueryIntAttribute("strength", &player.strength);
-        pElement->QueryIntAttribute("health", &player.health);
+        player.setName(pElement->Attribute("name") ? pElement->Attribute("name") : "Unknown");
+        int health; pElement->QueryIntAttribute("health", &health); player.setHealth(health);
+        int mentalStrength; pElement->QueryIntAttribute("mentalStrength", &mentalStrength); player.setMentalStrength(mentalStrength);
+        int attackPower; pElement->QueryIntAttribute("attackPower", &attackPower); player.setAttackPower(attackPower);
+        int money; pElement->QueryIntAttribute("money", &money); player.setMoney(money);
     }
 
     XMLElement* pRooms = pRoot->FirstChildElement("Rooms");
@@ -144,19 +156,39 @@ void GameManager::loadGame() {
             pRoom->QueryBoolAttribute("cleared", &cleared);
             for (auto& room : worldMap) {
                 if (room.getRoomName() == roomName) {
-                    room.setCleared(true); 
+                    room.setCleared(cleared); 
                 }
             }
         }
     }
 
-    displayMessage("Loaded player: " + player.name + ", Strength: " + std::to_string(player.strength) + ", Health: " + std::to_string(player.health) + "\n");
+    displayMessage("Loaded player: " + player.getName() + ", Health: " + std::to_string(player.getHealth()) + ", Mental Strength: " + std::to_string(player.getMentalStrength()) + ", Attack Power: " + std::to_string(player.getAttackPower()) + ", Money: " + std::to_string(player.getMoney()));
 }
 
 std::vector<Room> GameManager::createWorldMap() {
     std::vector<Room> worldMap;
-    for (int i = 1; i <= 8; ++i) {
-        worldMap.emplace_back("Room " + std::to_string(i), true);
+    XMLDocument doc;
+    XMLError eResult = doc.LoadFile("resource/worldmap.xml");
+    if (eResult != XML_SUCCESS) {
+        displayMessage("Error loading world map from XML file!\n");
+        return worldMap;
     }
+
+    XMLElement* pRooms = doc.FirstChildElement("WorldMap")->FirstChildElement("Rooms");
+    if (pRooms == nullptr) {
+        displayMessage("No rooms found in XML file!\n");
+        return worldMap;
+    }
+
+    for (XMLElement* pRoom = pRooms->FirstChildElement("Room"); pRoom != nullptr; pRoom = pRoom->NextSiblingElement("Room")) {
+        std::string roomId = pRoom->Attribute("id") ? pRoom->Attribute("id") : "Unknown";
+        std::string roomName = pRoom->Attribute("name") ? pRoom->Attribute("name") : "Unknown";
+        std::string description = pRoom->Attribute("description") ? pRoom->Attribute("description") : "";
+        bool hasEvent = false;
+        pRoom->QueryBoolAttribute("event", &hasEvent);
+        
+        worldMap.emplace_back(roomId, roomName, description);
+    }
+
     return worldMap;
 }
