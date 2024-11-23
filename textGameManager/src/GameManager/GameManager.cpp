@@ -1,7 +1,10 @@
 #include "GameManager.h"
+#include "Event.h"
 #include <iostream>
 #include <algorithm>
 #include "tinyxml2.h"
+#include "MonsterFactory.h"
+#include "CombatManager.h"
 
 using namespace tinyxml2;
 
@@ -63,10 +66,9 @@ void GameManager::gameLoop() {
 
             if (room.hasEvent()) {
                 displayMessage("An event is happening in " + room.getRoomName() + "...\n");
-                // Event logic goes here
-                // Placeholder for monster battle or other interactions
-                bool cleared = true;
-                room.setCleared(cleared); 
+                Event event = loadEvent(room.getEventId());
+                event.execute(player);
+                room.setCleared(true);
             }
         }
     }
@@ -125,6 +127,10 @@ void GameManager::saveGame() {
     }
 }
 
+void GameManager::displayMessage(const std::string& message) {
+    std::cout << message << std::endl;
+}
+
 void GameManager::loadGame() {
     XMLDocument doc;
     XMLError eResult = doc.LoadFile("savegame.xml");
@@ -156,7 +162,7 @@ void GameManager::loadGame() {
             pRoom->QueryBoolAttribute("cleared", &cleared);
             for (auto& room : worldMap) {
                 if (room.getRoomName() == roomName) {
-                    room.setCleared(cleared); 
+                    room.setCleared(cleared);
                 }
             }
         }
@@ -184,11 +190,96 @@ std::vector<Room> GameManager::createWorldMap() {
         std::string roomId = pRoom->Attribute("id") ? pRoom->Attribute("id") : "Unknown";
         std::string roomName = pRoom->Attribute("name") ? pRoom->Attribute("name") : "Unknown";
         std::string description = pRoom->Attribute("description") ? pRoom->Attribute("description") : "";
-        bool hasEvent = false;
-        pRoom->QueryBoolAttribute("event", &hasEvent);
+        std::string eventId = pRoom->Attribute("eventId") ? pRoom->Attribute("eventId") : "";
         
-        worldMap.emplace_back(roomId, roomName, description);
+        worldMap.emplace_back(roomId, roomName, description, eventId);
     }
 
     return worldMap;
+}
+
+MonsterFactory monsterFactory;
+
+Event GameManager::loadEvent(const std::string& eventId) {
+    XMLDocument doc;
+    std::string filePath = "resource/events/" + eventId + ".xml";
+    XMLError eResult = doc.LoadFile(filePath.c_str());
+    if (eResult != XML_SUCCESS) {
+        displayMessage("Error loading event file: " + filePath + "\n");
+    }
+
+    XMLElement* pEvent = doc.FirstChildElement("Event");
+    if (pEvent == nullptr) {
+        displayMessage("Invalid event file format: " + filePath + "\n");
+    }
+
+    std::string eventName = pEvent->FirstChildElement("name")->GetText() ? pEvent->FirstChildElement("name")->GetText() : "Unknown";
+    std::string eventDescription = pEvent->FirstChildElement("description")->GetText() ? pEvent->FirstChildElement("description")->GetText() : "";
+    Event event(eventId, eventName, eventDescription);
+
+    // Load Monster from XML
+    XMLElement* pMonster = pEvent->FirstChildElement("Monster");
+    if (pMonster != nullptr) {
+        std::string monsterType = pMonster->Attribute("name") ? pMonster->Attribute("name") : "Unknown";
+        int health = 0;
+        int attackPower = 0;
+        pMonster->QueryIntAttribute("health", &health);
+        pMonster->QueryIntAttribute("attackPower", &attackPower);
+
+        auto monster = MonsterFactory::createMonster(monsterType, health, attackPower);
+        if (monster != nullptr) {
+            event.setMonster(std::move(monster));
+        }
+    }
+
+    // Load Choices from XML
+    XMLElement* pChoices = pEvent->FirstChildElement("Choices");
+    if (pChoices != nullptr) {
+        for (XMLElement* pChoice = pChoices->FirstChildElement("Choice"); pChoice != nullptr; pChoice = pChoice->NextSiblingElement("Choice")) {
+            std::string choiceId = pChoice->Attribute("id") ? pChoice->Attribute("id") : "Unknown";
+            std::string description = pChoice->Attribute("description") ? pChoice->Attribute("description") : "";
+            int healthImpact = 0, mentalStrengthImpact = 0, attackPowerImpact = 0, moneyImpact = 0;
+
+            pChoice->QueryIntAttribute("healthImpact", &healthImpact);
+            pChoice->QueryIntAttribute("mentalStrengthImpact", &mentalStrengthImpact);
+            pChoice->QueryIntAttribute("attackPowerImpact", &attackPowerImpact);
+            pChoice->QueryIntAttribute("moneyImpact", &moneyImpact);
+
+            Choice choice(choiceId, description, healthImpact, mentalStrengthImpact, attackPowerImpact, moneyImpact);
+            event.addChoice(choice);
+        }
+    }
+
+    return event;
+}
+void GameManager::gameLoop() {
+    for (auto& room : worldMap) {
+        if (!room.isCleared()) {
+            displayMessage("You have entered " + room.getRoomName() + ".\n");
+            if (room.hasEvent()) {
+                Event event = loadEvent(room.getEventId());
+
+                if (event.hasMonster()) {
+                    BaseMonster* monster = event.getMonster();
+                    CombatManager combat(player, monster); // 포인터를 그대로 전달합니다.
+                    combat.startCombat();
+
+                    if (player.isDefeated()) {
+                        displayMessage("You have been defeated. Returning to starting point with penalties...\n");
+                        player.applyDefeatPenalty();
+                        return; // 종료 혹은 리셋 처리
+                    } else {
+                        displayMessage("You defeated the monster!\n");
+                    }
+                }
+
+                event.displayChoices();
+                int choice = std::stoi(getUserInput());
+                event.executeChoice(choice - 1, player);
+            }
+            room.setCleared(true);
+        }
+    }
+
+    displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
 }

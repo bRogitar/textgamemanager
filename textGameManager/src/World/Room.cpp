@@ -1,9 +1,8 @@
-// Room.cpp
 #include "Room.h"
 #include <iostream>
 
-Room::Room(const std::string& roomId, const std::string& roomName, const std::string& description)
-    : roomId(roomId), roomName(roomName), roomDescription(description), cleared(false) {}
+Room::Room(const std::string& id, const std::string& name, const std::string& description, const std::string& eventId)
+    : roomId(id), roomName(name), roomDescription(description), eventId(eventId), cleared(false) {}
 
 void Room::enter() {
     std::cout << "You have entered " << roomName << ".\n";
@@ -14,19 +13,6 @@ void Room::displayDescription() const {
     std::cout << roomDescription << "\n";
 }
 
-IInteractable* Room::getInteractable(const std::string& interactableId) {
-    for (auto& interactable : interactables) {
-        if (interactable->getInteractableId() == interactableId) {
-            return interactable;
-        }
-    }
-    return nullptr;
-}
-
-std::string Room::getRoomId() const {
-    return roomId;
-}
-
 bool Room::isCleared() const {
     return cleared;
 }
@@ -35,14 +21,18 @@ void Room::setCleared(bool cleared) {
     this->cleared = cleared;
 }
 
+bool Room::hasEvent() const {
+    return !eventId.empty();
+}
+
+std::string Room::getRoomId() const {
+    return roomId;
+}
+
 std::string Room::getRoomName() const {
     return roomName;
 }
 
-bool Room::hasEvent() const {
-    return event;
-}
-
-void Room::setHasEvent(bool hasEvent) {
-    event = hasEvent;
+std::string Room::getEventId() const {
+    return eventId;
 }

@@ -7,6 +7,7 @@
 #include "tinyxml2.h"
 #include "Room.h"
 #include "Player.h"
+#include "MonsterFactory.h"
 
 using namespace tinyxml2;
 
@@ -16,12 +17,13 @@ public:
     void initializeGame();
     void startGame();
     void gameLoop();
-    void displayMessage(const std::string& message);
     void displayOptions(const std::vector<std::string>& options);
     std::string getUserInput();
     void startCombat(BaseMonster enemy);
     void saveGame();
     void loadGame();
+    Event loadEvent(const std::string& eventId); 
+    void displayMessage(const std::string& message);
 
 private:
     GameManager(); // Private constructor for singleton

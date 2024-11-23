@@ -1,16 +1,10 @@
+// Player.cpp
 #include <algorithm> // Added to resolve std::find usage
 #include "Player.h"
+#include <iostream> // For console output in applyDefeatPenalty
 
 Player::Player(const std::string& name, int health, int mentalStrength, int attackPower, int money)
-    : name(name), health(health), mentalStrength(mentalStrength), attackPower(attackPower), money(money), itemInventory(), abilityInventory() {}
-
-void Player::setName(const std::string& name) {
-    this->name = name;
-}
-
-std::string Player::getName() const {
-    return name;
-}
+    : name(name), health(health), mentalStrength(mentalStrength), attackPower(attackPower), money(money), combatHealth(health), itemInventory(), abilityInventory() {}
 
 void Player::setHealth(int health) {
     this->health = health;
@@ -94,4 +88,53 @@ void Player::removeAbility(const Ability& ability) {
 
 bool Player::hasAbility(const std::string& abilityId) const {
     return abilityInventory.hasAbility(abilityId);
+}
+
+bool Player::isDefeated() const {
+    return health <= 0; // 추가된 멤버 함수 구현
+}
+
+void Player::takeDamage(int damage) {
+    modifyHealth(-damage);
+    if (health < 0) {
+        health = 0;
+    }
+}
+
+void Player::applyDefeatPenalty() {
+    // 패배 시 체력과 정신력 감소
+    int healthPenalty = 10;
+    int mentalStrengthPenalty = 5;
+
+    modifyHealth(-healthPenalty);
+    modifyMentalStrength(-mentalStrengthPenalty);
+
+    std::cout << "You have been defeated. Health reduced by " << healthPenalty
+              << ", Mental Strength reduced by " << mentalStrengthPenalty << ".\n";
+}
+
+void Player::setCombatHealth(int health) {
+    combatHealth = health;
+}
+
+int Player::getCombatHealth() const {
+    return combatHealth;
+}
+
+void Player::modifyCombatHealth(int amount) {
+    combatHealth += amount;
+    if (combatHealth < 0) {
+        combatHealth = 0;
+    }
+}
+
+bool Player::isCombatDefeated() const {
+    return combatHealth <= 0;
+}
+
+void Player::takeCombatDamage(int damage) {
+    combatHealth -= damage;
+    if (combatHealth < 0) {
+        combatHealth = 0;
+    }
 }
