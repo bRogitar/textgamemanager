@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Event id="event_7">
     <name>고블린 습격</name>
-    <description>고블린 appears in front of you. What do you do?</description>
+    <description>고블린이 당신 앞에 나타났습니다. 당신은 무엇을 하시겠습니까?</description>
     <Monster name="Goblin" health="100" attackPower="15"/>
     <Choices>
-        <Choice id="fight" description="Fight the beast." />
-        <Choice id="flee" description="Try to flee." mentalStrengthImpact="-10"/>
-        <Choice id="tame" description="Attempt to tame the beast." mentalStrengthImpact="-15" attackPowerImpact="5"/>
+        <Choice id="fight" description="Fight the beast." nextEventId="event_8" />
+        <Choice id="flee" description="Try to flee." mentalStrengthImpact="-10" nextEventId="event_9"/>
+        <Choice id="tame" description="Attempt to tame the beast." mentalStrengthImpact="-15" attackPowerImpact="5" nextEventId="event_10"/>
     </Choices>
 </Event>

@@ -261,7 +261,7 @@ void GameManager::gameLoop() {
 
                 if (event.hasMonster()) {
                     BaseMonster* monster = event.getMonster();
-                    CombatManager combat(player, *monster);
+                    CombatManager combat(player, monster); // 포인터를 그대로 전달합니다.
                     combat.startCombat();
 
                     if (player.isDefeated()) {

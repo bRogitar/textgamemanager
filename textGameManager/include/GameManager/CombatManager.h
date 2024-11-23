@@ -1,3 +1,4 @@
+// CombatManager.h
 #ifndef COMBATMANAGER_H
 #define COMBATMANAGER_H
 
@@ -11,7 +12,7 @@ public:
 
 private:
     Player& player;
-    BaseMonster* monster;
+    BaseMonster* monster; // Use pointer type to match the constructor in Event class
     void playerAttack();
     void monsterAttack();
     void displayCombatStatus() const;

@@ -4,6 +4,12 @@
 #include <chrono>
 #include "BaseMonster.h"
 
+#include "CombatManager.h"
+#include <iostream>
+#include <thread>
+#include <chrono>
+#include "BaseMonster.h"
+
 // CombatManager Constructor
 CombatManager::CombatManager(Player& player, BaseMonster* monster)
     : player(player), monster(monster) {}
@@ -20,24 +26,25 @@ void CombatManager::startCombat() {
     }
 }
 
+
 // Combat Loop Logic
 void CombatManager::combatLoop() {
     while (!player.isCombatDefeated() && !monster->isCombatDefeated()) {
-        playerAttack();  // Player attacks the monster
+        playerAttack();  // 플레이어가 몬스터를 공격
         if (monster->isCombatDefeated()) {
             std::cout << "You have defeated the " << monster->getName() << "!" << std::endl;
             break;
         }
         
-        monsterAttack();  // Monster attacks the player
+        monsterAttack();  // 몬스터가 플레이어를 공격
         if (player.isCombatDefeated()) {
             std::cout << "You have been defeated by the " << monster->getName() << "!" << std::endl;
-            player.applyDefeatPenalty(); // Apply penalty for losing (reduce health and mental strength)
+            player.applyDefeatPenalty(); // 플레이어 패배 시 패널티 적용 (체력 및 정신력 감소)
             break;
         }
 
-        displayCombatStatus();  // Display combat status
-        std::this_thread::sleep_for(std::chrono::seconds(1)); // Wait for 1 second
+        displayCombatStatus();  // 전투 상태 출력
+        std::this_thread::sleep_for(std::chrono::seconds(1)); // 1초 대기
     }
 }
 
