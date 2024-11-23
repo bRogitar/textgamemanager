@@ -40,12 +40,21 @@ public:
     void addAbility(const Ability& ability);
     void removeAbility(const Ability& ability);
     bool hasAbility(const std::string& abilityId) const;
+    bool isDefeated() const; // 추가된 멤버 함수
+    void takeDamage(int damage); // 추가된 멤버 함수
+    void applyDefeatPenalty(); // 추가된 멤버 함수
 
+    void setCombatHealth(int health); // 전투 체력 설정 함수
+    int getCombatHealth() const; // 전투 체력 가져오기 함수
+    void modifyCombatHealth(int amount); // 전투 체력 수정 함수
+    bool isCombatDefeated() const; // 전투 체력 기준 패배 여부 확인
+    void takeCombatDamage(int damage);
 private:
     std::string name;
     int health;
     int mentalStrength;
     int attackPower;
+    int combatHealth; // 전투 체력 추가
     int money;
 
     ItemInventory itemInventory;
