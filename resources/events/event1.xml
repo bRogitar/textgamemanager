@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Event id="event_7">
+<Event id="event_1">
     <name>고블린 습격</name>
     <description>고블린이 당신 앞에 나타났습니다. 당신은 무엇을 하시겠습니까?</description>
     <Monster name="Goblin" health="100" attackPower="15"/>
