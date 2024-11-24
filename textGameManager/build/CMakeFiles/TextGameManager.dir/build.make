@@ -426,38 +426,38 @@ TextGameManager_OBJECTS = \
 # External object files for target TextGameManager
 TextGameManager_EXTERNAL_OBJECTS =
 
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/main.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/Ability.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/AbilityInventory.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/Item.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/ItemInventory.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/Player.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Events/Choice.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/InteractionManager.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/build.make
-bin/TextGameManager.exe: libtinyxml2.a
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/linkLibs.rsp
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/objects1.rsp
-bin/TextGameManager.exe: CMakeFiles/TextGameManager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable bin\TextGameManager.exe"
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/main.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/Ability.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/AbilityInventory.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/Item.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/ItemInventory.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Entities/Player.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Events/Choice.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/InteractionManager.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/build.make
+TextGameManager.exe: libtinyxml2.a
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/linkLibs.rsp
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/objects1.rsp
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable TextGameManager.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TextGameManager.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/TextGameManager.dir/build: bin/TextGameManager.exe
+CMakeFiles/TextGameManager.dir/build: TextGameManager.exe
 .PHONY : CMakeFiles/TextGameManager.dir/build
 
 CMakeFiles/TextGameManager.dir/clean:

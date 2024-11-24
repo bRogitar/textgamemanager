@@ -43,9 +43,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/TextGameManager.dir/src/main.cpp.obj.d"
   "CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj"
   "CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj.d"
-  "bin/TextGameManager.exe"
-  "bin/TextGameManager.exe.manifest"
-  "bin/TextGameManager.pdb"
+  "TextGameManager.exe"
+  "TextGameManager.exe.manifest"
+  "TextGameManager.pdb"
   "libTextGameManager.dll.a"
 )
 
