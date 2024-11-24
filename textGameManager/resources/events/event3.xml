@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Event id="event3">
+    <name>유령의 만찬</name>
+    <description>빈 접시들이 갑자기 흔들리기 시작합니다. 당신은 유령의 만찬을 지나치고 계속 나아갑니다.</description>
+    <Choices>
+        <Choice id="proceed" description="next" nextEventId="event4"/>
+    </Choices>
+</Event>

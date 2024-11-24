@@ -6,6 +6,7 @@
 #include "MonsterFactory.h"
 #include "CombatManager.h"
 
+
 using namespace tinyxml2;
 
 GameManager& GameManager::getInstance() {
@@ -16,7 +17,7 @@ GameManager& GameManager::getInstance() {
 GameManager::GameManager() : worldMap(createWorldMap()) {}
 
 void GameManager::initializeGame() {
-    std::cout << "Initializing game...";
+    std::cout << "Initializing game...\n";
     player = Player();
     player.setHealth(100);
     player.setMentalStrength(50);
@@ -42,10 +43,12 @@ void GameManager::startGame() {
         if (choice == 1) {
             displayMessage("Starting a new game...\n");
             validInput = true;
+            displayPlayerStatus(); // 게임 시작 시 플레이어 상태 표시
         } else if (choice == 2) {
             displayMessage("Loading saved game...\n");
             validInput = true;
             loadGame();
+            displayPlayerStatus(); // 게임 로드 후 플레이어 상태 표시
         } else {
             displayMessage("Invalid choice. Please enter 1 or 2.\n");
         }
@@ -54,30 +57,19 @@ void GameManager::startGame() {
     gameLoop();
 }
 
-void GameManager::gameLoop() {
-    for (auto& room : worldMap) {
-        if (!room.isCleared()) {
-            displayMessage("You have entered " + room.getRoomName() + ".\n");
-            displayMessage("Do you want to save your progress? (y/n): ");
-            char saveChoice = getUserInput()[0];
-            if (saveChoice == 'y' || saveChoice == 'Y') {
-                saveGame();
-            }
-
-            if (room.hasEvent()) {
-                displayMessage("An event is happening in " + room.getRoomName() + "...\n");
-                Event event = loadEvent(room.getEventId());
-                event.execute(player);
-                room.setCleared(true);
-            }
-        }
-    }
-
-    displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
+void GameManager::displayPlayerStatus() {
+    displayMessage("===========================\n");
+    displayMessage("Player Status:\n");
+    displayMessage("Name: " + player.getName() + "\n");
+    displayMessage("Health: " + std::to_string(player.getHealth()) + "\n");
+    displayMessage("Mental Strength: " + std::to_string(player.getMentalStrength()) + "\n");
+    displayMessage("Attack Power: " + std::to_string(player.getAttackPower()) + "\n");
+    displayMessage("Money: " + std::to_string(player.getMoney()) + "\n");
+    displayMessage("===========================\n");
 }
 
 void GameManager::displayMessage(const std::string& message) {
-    std::cout << message;
+    std::cout << message << std::endl;
 }
 
 void GameManager::displayOptions(const std::vector<std::string>& options) {
@@ -92,9 +84,13 @@ std::string GameManager::getUserInput() {
     return input;
 }
 
-void GameManager::startCombat(BaseMonster enemy) {
-    // Combat logic will be implemented here
+void GameManager::startCombat(BaseMonster& enemy) {
+    // 전투 로직 구현
     displayMessage("Combat started with " + enemy.getName() + "!\n");
+
+    // 실제 전투 로직 호출하기
+    CombatManager combat(player, &enemy); // 포인터로 전달
+    combat.startCombat();
 }
 
 void GameManager::saveGame() {
@@ -125,10 +121,6 @@ void GameManager::saveGame() {
     } else {
         displayMessage("Game saved successfully!\n");
     }
-}
-
-void GameManager::displayMessage(const std::string& message) {
-    std::cout << message << std::endl;
 }
 
 void GameManager::loadGame() {
@@ -174,8 +166,11 @@ void GameManager::loadGame() {
 std::vector<Room> GameManager::createWorldMap() {
     std::vector<Room> worldMap;
     XMLDocument doc;
-    XMLError eResult = doc.LoadFile("resource/worldmap.xml");
+
+    std::cout << "Loading world map from: resources/worldmap.xml" << std::endl; // 디버깅 메시지
+    XMLError eResult = doc.LoadFile("../resources/worldmap.xml");
     if (eResult != XML_SUCCESS) {
+        std::cout << "Error: Unable to load world map. Error code: " << eResult << std::endl;
         displayMessage("Error loading world map from XML file!\n");
         return worldMap;
     }
@@ -191,18 +186,68 @@ std::vector<Room> GameManager::createWorldMap() {
         std::string roomName = pRoom->Attribute("name") ? pRoom->Attribute("name") : "Unknown";
         std::string description = pRoom->Attribute("description") ? pRoom->Attribute("description") : "";
         std::string eventId = pRoom->Attribute("eventId") ? pRoom->Attribute("eventId") : "";
-        
-        worldMap.emplace_back(roomId, roomName, description, eventId);
+
+        Room newRoom(roomId, roomName, description, eventId);
+        newRoom.setCleared(false); // 모든 방은 처음에 클리어되지 않은 상태로 설정합니다.
+        worldMap.push_back(newRoom);
+
+        // 로드된 방 정보 출력 (디버깅용)
+        std::cout << "Loaded Room: " << roomName << ", ID: " << roomId << ", Event ID: " << eventId << std::endl;
     }
 
     return worldMap;
 }
 
-MonsterFactory monsterFactory;
+void GameManager::gameLoop() {
+    bool allRoomsCleared = false;
+
+    while (!allRoomsCleared) {
+        allRoomsCleared = true; // 초기값을 true로 설정한 후 모든 방을 확인
+
+        for (auto& room : worldMap) {
+            if (!room.isCleared()) {
+                allRoomsCleared = false; // 클리어되지 않은 방이 있다면 false로 변경
+                
+                // 방에 들어가는 메시지 출력 (디버깅용)
+                displayMessage("Entering room: " + room.getRoomName() + "\n");
+                
+                if (room.hasEvent()) {
+                    Event event = loadEvent(room.getEventId());
+
+                    if (event.hasMonster()) {
+                        BaseMonster* monster = event.getMonster();
+                        CombatManager combat(player, monster);
+                        combat.startCombat();
+
+                        if (player.isDefeated()) {
+                            displayMessage("You have been defeated. Returning to starting point with penalties...\n");
+                            player.applyDefeatPenalty();
+                            return;
+                        } else {
+                            displayMessage("You defeated the monster!\n");
+                        }
+                    }
+
+                    event.displayChoices();
+                    int choice = std::stoi(getUserInput());
+                    event.executeChoice(choice - 1, player);
+                }
+
+                room.setCleared(true); // 이벤트가 끝나면 방을 클리어 처리
+            }
+        }
+
+        if (allRoomsCleared) {
+            displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
+        } else {
+            displayMessage("There are still rooms to explore...\n");
+        }
+    }
+}
 
 Event GameManager::loadEvent(const std::string& eventId) {
     XMLDocument doc;
-    std::string filePath = "resource/events/" + eventId + ".xml";
+    std::string filePath = "../resources/events/" + eventId + ".xml";
     XMLError eResult = doc.LoadFile(filePath.c_str());
     if (eResult != XML_SUCCESS) {
         displayMessage("Error loading event file: " + filePath + "\n");
@@ -251,35 +296,4 @@ Event GameManager::loadEvent(const std::string& eventId) {
     }
 
     return event;
-}
-void GameManager::gameLoop() {
-    for (auto& room : worldMap) {
-        if (!room.isCleared()) {
-            displayMessage("You have entered " + room.getRoomName() + ".\n");
-            if (room.hasEvent()) {
-                Event event = loadEvent(room.getEventId());
-
-                if (event.hasMonster()) {
-                    BaseMonster* monster = event.getMonster();
-                    CombatManager combat(player, monster); // 포인터를 그대로 전달합니다.
-                    combat.startCombat();
-
-                    if (player.isDefeated()) {
-                        displayMessage("You have been defeated. Returning to starting point with penalties...\n");
-                        player.applyDefeatPenalty();
-                        return; // 종료 혹은 리셋 처리
-                    } else {
-                        displayMessage("You defeated the monster!\n");
-                    }
-                }
-
-                event.displayChoices();
-                int choice = std::stoi(getUserInput());
-                event.executeChoice(choice - 1, player);
-            }
-            room.setCleared(true);
-        }
-    }
-
-    displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
 }

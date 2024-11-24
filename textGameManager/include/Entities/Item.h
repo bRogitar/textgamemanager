@@ -5,13 +5,13 @@
 #include <string>
 #include <unordered_map>
 
-class PlayerStatus; // Forward declaration
+class Player; // Forward declaration
 
 class Item {
 public:
     Item(const std::string& itemId, const std::string& name, const std::string& description, bool isConsumable);
     void addEffect(const std::string& stat, int value);
-    void use(PlayerStatus& playerStatus) const;
+    void use(Player& player) const;
     std::string getItemId() const;
     std::string getName() const;
     std::string getDescription() const;

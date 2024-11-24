@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Event id="event2">
+    <name>마법의 책</name>
+    <description>당신은 오래된 마법의 책을 발견했습니다. 책을 어떻게 할지 결정한 후 길을 계속합니다.</description>
+    <Choices>
+        <Choice id="proceed" description="next" nextEventId="event3"/>
+    </Choices>
+</Event>

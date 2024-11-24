@@ -1,6 +1,9 @@
 #include "Room.h"
 #include <iostream>
 
+Room::Room()
+    : roomId("Unknown"), roomName("Unnamed Room"), roomDescription("No Description"), eventId("None"), cleared(false) {}
+
 Room::Room(const std::string& id, const std::string& name, const std::string& description, const std::string& eventId)
     : roomId(id), roomName(name), roomDescription(description), eventId(eventId), cleared(false) {}
 

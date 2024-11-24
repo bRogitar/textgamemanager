@@ -5,6 +5,7 @@
 
 class Room {
 public:
+    Room();
     Room(const std::string& id, const std::string& name, const std::string& description, const std::string& eventId = "");
 
     void enter();
@@ -21,7 +22,7 @@ private:
     std::string roomName;
     std::string roomDescription;
     std::string eventId;
-    bool cleared;
+    bool cleared = false;
 };
 
 #endif // ROOM_H

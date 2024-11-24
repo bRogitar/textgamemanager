@@ -1,4 +1,5 @@
 #include "MonsterFactory.h"
+#include "Goblin.h"  // Goblin 헤더 추가
 
 std::unique_ptr<BaseMonster> MonsterFactory::createMonster(const std::string& type, int health, int attackPower) {
     if (type == "Goblin") {

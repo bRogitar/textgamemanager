@@ -33,3 +33,4 @@ int BaseMonster::getHealth() const {
 int BaseMonster::getAttackPower() const {
     return attackPower;
 }
+
