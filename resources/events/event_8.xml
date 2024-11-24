@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Event id="event_8">
+    <name>신비한 상인</name>
+    <description>어두운 통로 끝에서 희미한 불빛이 보입니다. 수상한 상인이 당신을 바라보고 있습니다.</description>
+    <NPC name="MysteriousTrader" type="Shopkeeper"/>
+    <Choices>
+        <Choice id="approach" description="상인에게 다가간다." nextEventId="event_11"/>
+        <Choice id="ignore" description="상인을 무시하고 지나간다." mentalStrengthImpact="-5" nextEventId="event_12"/>
+        <Choice id="negotiate" description="거래를 제안한다." moneyImpact="-10" nextEventId="event_13"/>
+    </Choices>
+</Event>

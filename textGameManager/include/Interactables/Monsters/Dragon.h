@@ -5,7 +5,7 @@
 
 class Dragon : public BaseMonster {
 public:
-    Dragon() : BaseMonster("Dragon", 200, 40) {}
+    Dragon(int health = 200, int attackPower = 40);
 };
 
 #endif // DRAGON_H
