@@ -237,8 +237,12 @@ void GameManager::gameLoop() {
             }
         }
 
+        // 모든 방을 다 돌았는지 확인
         if (allRoomsCleared) {
             displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
+            displayMessage("Press Enter to exit the game...");
+            std::cin.get();  // 프로그램 종료 대기
+            break; // while 루프 종료
         } else {
             displayMessage("There are still rooms to explore...\n");
         }
