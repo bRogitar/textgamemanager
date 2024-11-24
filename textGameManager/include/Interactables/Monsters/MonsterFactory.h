@@ -5,6 +5,7 @@
 #include <memory>
 #include "BaseMonster.h"
 #include "Goblin.h" // 구체적인 몬스터 클래스 포함
+#include "Dragon.h" // 드래곤 클래스 포함
 
 class MonsterFactory {
 public:

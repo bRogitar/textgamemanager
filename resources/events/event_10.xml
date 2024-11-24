@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Event id="event_10">
+    <name>독가스 함정</name>
+    <description>통로를 걷던 중 바닥에서 수상한 소리가 들립니다. 녹색 가스가 새어나오기 시작합니다.</description>
+    <Trap name="PoisonGas" damage="20" poisonDuration="3"/>
+    <Choices>
+        <Choice id="investigate" description="함정을 조사한다." nextEventId="event_14">
+            <Requirement>
+                <Ability>trap_detection</Ability>
+            </Requirement>
+        </Choice>
+        <Choice id="rush" description="빠르게 통과한다." healthImpact="-15" mentalStrengthImpact="-10" nextEventId="event_15"/>
+        <Choice id="careful" description="조심스럽게 우회한다." mentalStrengthImpact="-5" nextEventId="event_16"/>
+    </Choices>
+</Event> 
