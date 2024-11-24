@@ -5,6 +5,7 @@
 #include "tinyxml2.h"
 #include "MonsterFactory.h"
 #include "CombatManager.h"
+#include <filesystem>
 
 using namespace tinyxml2;
 
@@ -93,7 +94,6 @@ std::string GameManager::getUserInput() {
 }
 
 void GameManager::startCombat(BaseMonster enemy) {
-    // Combat logic will be implemented here
     displayMessage("Combat started with " + enemy.getName() + "!\n");
 }
 
@@ -125,10 +125,6 @@ void GameManager::saveGame() {
     } else {
         displayMessage("Game saved successfully!\n");
     }
-}
-
-void GameManager::displayMessage(const std::string& message) {
-    std::cout << message << std::endl;
 }
 
 void GameManager::loadGame() {
@@ -198,8 +194,6 @@ std::vector<Room> GameManager::createWorldMap() {
     return worldMap;
 }
 
-MonsterFactory monsterFactory;
-
 Event GameManager::loadEvent(const std::string& eventId) {
     XMLDocument doc;
     std::string filePath = "resource/events/" + eventId + ".xml";
@@ -252,34 +246,13 @@ Event GameManager::loadEvent(const std::string& eventId) {
 
     return event;
 }
-void GameManager::gameLoop() {
-    for (auto& room : worldMap) {
-        if (!room.isCleared()) {
-            displayMessage("You have entered " + room.getRoomName() + ".\n");
-            if (room.hasEvent()) {
-                Event event = loadEvent(room.getEventId());
 
-                if (event.hasMonster()) {
-                    BaseMonster* monster = event.getMonster();
-                    CombatManager combat(player, monster); // 포인터를 그대로 전달합니다.
-                    combat.startCombat();
-
-                    if (player.isDefeated()) {
-                        displayMessage("You have been defeated. Returning to starting point with penalties...\n");
-                        player.applyDefeatPenalty();
-                        return; // 종료 혹은 리셋 처리
-                    } else {
-                        displayMessage("You defeated the monster!\n");
-                    }
-                }
-
-                event.displayChoices();
-                int choice = std::stoi(getUserInput());
-                event.executeChoice(choice - 1, player);
-            }
-            room.setCleared(true);
+std::vector<std::string> GameManager::getSaveFiles() const {
+    std::vector<std::string> saveFiles;
+    for (const auto& entry : std::filesystem::directory_iterator(SAVE_DIRECTORY)) {
+        if (entry.is_regular_file()) {
+            saveFiles.push_back(entry.path().filename().string());
         }
     }
-
-    displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
+    return saveFiles;
 }
