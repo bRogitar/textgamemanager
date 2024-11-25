@@ -1,0 +1,39 @@
+sequenceDiagram
+    title 입력 처리 및 이벤트 처리 흐름도
+    
+    participant U as User/Game
+    participant GM as GameManager
+    participant EM as EventManager
+    participant EV as Event
+    participant CH as Choice
+    participant IM as InteractionManager
+
+    %% 입력 처리 흐름
+    rect rgb(200, 220, 240)
+    Note over U,IM: 입력 처리 프로세스
+    U->>GM: 사용자 입력
+    activate GM
+    GM->>GM: 입력 처리
+    GM->>U: 결과 처리 및 상태 업데이트
+    deactivate GM
+    end
+
+    %% 이벤트 처리 흐름
+    rect rgb(220, 240, 200)
+    Note over U,IM: 이벤트 처리 프로세스
+    U->>EV: Event 발생
+    EV->>EM: EventManager 처리
+    EM->>CH: Choice 제공
+    
+    activate CH
+    CH->>IM: 선택된 옵션 전달
+    deactivate CH
+    
+    activate IM
+    IM->>GM: 처리 결과 전달
+    deactivate IM
+    
+    activate GM
+    GM->>U: 최종 결과 및 상태 업데이트
+    deactivate GM
+    end

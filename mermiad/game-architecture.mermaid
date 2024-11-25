@@ -1,0 +1,89 @@
+graph TB
+    subgraph "매니저 계층"
+        GM[GameManager<br/>전체 게임 로직 제어]
+        CM[CombatManager<br/>전투 시스템 관리]
+        EM[EventManager<br/>게임 이벤트 관리]
+        INT[InteractionManager<br/>상호작용 처리]
+        
+        GM --> CM
+        GM --> EM
+        GM --> INT
+    end
+    
+    subgraph "게임 월드 구조"
+        WM[WorldMap<br/>전체 게임 맵 관리]
+        RM[Room<br/>개별 공간 관리]
+        II[IInteractable<br/>상호작용 가능 객체 인터페이스]
+        
+        WM --> RM
+        RM --> II
+    end
+    
+    subgraph "플레이어 시스템"
+        PS[PlayerStatus<br/>플레이어 상태 관리]
+        
+        subgraph "능력치 시스템"
+            AF[AbilityFactory<br/>어빌리티 생성]
+            CA[ConcreteAbilityFactory<br/>심화 어빌리티]
+            AI[AbilityInventory<br/>능력치 관리]
+            
+            AF --> CA
+            AF --> AI
+        end
+        
+        subgraph "아이템 시스템"
+            IF[ItemFactory<br/>아이템 생성]
+            IA[ConcreteItemFactory<br/>심화 아이템]
+            ITI[ItemInventory<br/>아이템 관리]
+            
+            IF --> IA
+            IF --> ITI
+        end
+        
+        PS --> AF
+        PS --> IF
+    end
+    
+    subgraph "상호작용 객체 계층"
+        MI[MonsterFactory<br/>몬스터 상호작용]
+        BM[BaseMonster<br/>몬스터 기본 클래스]
+        CM2[ConcreteMonster<br/>심화 몬스터]
+        
+        NI[NPCFactory<br/>NPC 상호작용]
+        BN[BaseNPC<br/>NPC 기본 클래스]
+        CN[ConcreteNPC<br/>심화 NPC]
+        
+        TI[TrapFactory<br/>트랩 상호작용]
+        BT[BaseTrap<br/>트랩 기본 클래스]
+        CT[ConcreteTrap<br/>심화 트랩]
+        
+        MI --> BM
+        MI --> CM2
+        NI --> BN
+        NI --> CN
+        TI --> BT
+        TI --> CT
+    end
+    
+    subgraph "액션 처리 시스템"
+        OP[Option<br/>상호작용 선택지]
+        AR[ActionResult<br/>액션 결과 처리]
+        CO[Condition<br/>조건 검사]
+        RQ[Requirement<br/>요구사항 검사]
+        SE[StatusEffect<br/>상태 효과 처리]
+        
+        OP --> AR
+        AR --> CO
+        AR --> RQ
+        AR --> SE
+    end
+    
+    %% Global connections
+    GM --> WM
+    GM --> PS
+    INT --> MI
+    INT --> NI
+    INT --> TI
+    MI --> OP
+    NI --> OP
+    TI --> OP

@@ -1,0 +1,15 @@
+graph TD
+    subgraph "입력 처리 흐름"
+        A[GameManager] --> B[InputManager]
+        B --> C[CommandParser]
+        C --> D[Command]
+        D --> E[적절한 Manager 호출]
+        E --> F[결과 처리 및 상태 업데이트]
+    end
+
+    subgraph "이벤트 처리 흐름"
+        G[Event 발생] --> H[EventManager 처리]
+        H --> I[Choice 제공]
+        I --> J[ActionResult 실행]
+        J --> K[상태 업데이트]
+    end
