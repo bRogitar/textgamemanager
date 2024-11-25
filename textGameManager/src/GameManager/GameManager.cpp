@@ -220,11 +220,11 @@ void GameManager::gameLoop() {
                         combat.startCombat();
 
                         if (player.isDefeated()) {
-                            displayMessage("You have been defeated. Returning to starting point with penalties...\n");
+                            
                             player.applyDefeatPenalty();
                             return;
                         } else {
-                            displayMessage("You defeated the monster!\n");
+
                         }
                     }
 

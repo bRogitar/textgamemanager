@@ -1,0 +1,193 @@
+[33mcommit a8ed75b660ab9fd9ebe0049c09d78ab3ae8a6e97[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mversion_1[m[33m, [m[1;31morigin/version_1[m[33m)[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sun Nov 24 18:10:15 2024 +0900
+
+    종료 대기 설정
+
+[33mcommit 058a7d679f609994a9d4564e128f8a3864123aea[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sun Nov 24 18:02:20 2024 +0900
+
+    exe 파일 위치 변경
+
+[33mcommit dc103b83044b41a8d45eb5bea27a06372fbe6d08[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sun Nov 24 17:31:41 2024 +0900
+
+    불필요한 build 제거
+
+[33mcommit e3266eeb94190c825d374408c3eb3df6ad76f9b8[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sun Nov 24 17:28:29 2024 +0900
+
+    1번 내용
+
+[33mcommit 8fb884fe9a37880ca1fa32a8708e5b34d94f2dd7[m[33m ([m[1;32mmin[m[33m)[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sun Nov 24 17:26:04 2024 +0900
+
+    최신화
+
+[33mcommit e720bc47aa9f8e4797e7a8ef1ed6e6e74cdebfb6[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sun Nov 24 17:25:53 2024 +0900
+
+    최신화
+
+[33mcommit 95f26476b43aa35b875a6eea1dec47b7e1049806[m[33m ([m[1;31morigin/min[m[33m)[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sun Nov 24 17:07:20 2024 +0900
+
+    실행파일 추가 및 디렉터리 구조 변경
+
+[33mcommit 7427aff4188a06a8d369f64498e0b62b63a54eec[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 18:12:22 2024 +0900
+
+    새로 커밋
+
+[33mcommit bfa784ae73edd050f61397715d4e80d013d65857[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 18:10:15 2024 +0900
+
+    xml 수정
+
+[33mcommit 43a100eb5e05951b0d41848b05bcc48e12681fc1[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 18:01:24 2024 +0900
+
+    event수정
+
+[33mcommit e34282c95a883c12d5427a2b097a6ccf8b5cffb8[m
+Merge: 009eb2f f29d29c
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 17:35:04 2024 +0900
+
+    Merge branch 'main' of https://github.com/bRogitar/textgamemanager
+
+[33mcommit 009eb2f717b89355da0746c6fb6df7398ce767d5[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 17:35:01 2024 +0900
+
+    이벤트 및 전투 몬스터 수정
+
+[33mcommit f29d29c72fab1fb6f024dfcd2bf8986f6ea23ce5[m
+Author: jodoo1 <jodoo20@gmail.com>
+Date:   Sat Nov 23 17:33:31 2024 +0900
+
+    mmd class PlayerStatus  수정
+
+[33mcommit c2512c5195ba0aeb13b81a2a1f6c1442567d8ba0[m
+Author: jodoo1 <jodoo20@gmail.com>
+Date:   Sat Nov 23 16:52:17 2024 +0900
+
+    mmd
+
+[33mcommit a6131069bbc4b3a109fbf49e3e5203ffa5658f7c[m
+Merge: 7558819 9bc1792
+Author: jodoo1 <jodoo20@gmail.com>
+Date:   Sat Nov 23 16:45:17 2024 +0900
+
+    Merge branch 'main' of https://github.com/bRogitar/textgamemanager
+
+[33mcommit 7558819671ff42fc9818b9a9add9cadf6df47634[m
+Author: jodoo1 <jodoo20@gmail.com>
+Date:   Sat Nov 23 16:45:11 2024 +0900
+
+    readme 수정
+
+[33mcommit 9bc17921fb49498f3240bd825c92b3b301f0fd0b[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 16:13:34 2024 +0900
+
+    player 정보 수정
+
+[33mcommit 68d3526ae8e7f2e7e26fa363c6a87fb7799b7413[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 15:30:47 2024 +0900
+
+    attackPoint 추가
+
+[33mcommit 5fb785a796804d5281d2ab0bc820c5ea697f7964[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 15:16:10 2024 +0900
+
+    소스 추가
+
+[33mcommit 7a18f16e0a85af74a4294ad7ba0e166a5ee4e5ab[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 14:10:54 2024 +0900
+
+    디렉터리 최신화
+
+[33mcommit 59f24d54a5bb6edb1246c822ef326061a753b4e8[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Sat Nov 23 13:46:18 2024 +0900
+
+    test
+
+[33mcommit d103b88a758f567070a733acb0bd39263d7e6b50[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Tue Nov 19 21:47:44 2024 +0900
+
+    초기본
+
+[33mcommit 0791cd072d3ad0bd53b50e6cd188e3a531fedd0a[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Tue Nov 19 14:28:45 2024 +0900
+
+    테스트 파일 동기화
+
+[33mcommit 35950116546f86d9c10ae89209535c1c4cbe5965[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Tue Nov 19 13:44:34 2024 +0900
+
+    최신화
+
+[33mcommit 29661bcaec536a08050eb954a2e0ca0a4fbf709a[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Tue Nov 19 13:42:01 2024 +0900
+
+    테스트
+
+[33mcommit f93baa03ff08784394ca0079581e91df6f05e17d[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Tue Nov 19 13:23:47 2024 +0900
+
+    테스트
+
+[33mcommit d0f2e0f3ebdc9d31181dce42499d2cfc6605c173[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Tue Nov 19 13:22:24 2024 +0900
+
+    테스트
+
+[33mcommit ecac759fa3306a9d3a4dab4feddd8eb51b44d972[m
+Author: DOVAHKIIN404 <bmw5779@gmail.com>
+Date:   Tue Nov 19 12:55:18 2024 +0900
+
+    테스트
+
+[33mcommit 97ad126578b51ffffdc8757f34bdd2d00be768cc[m
+Author: bRogitar <78689836+bRogitar@users.noreply.github.com>
+Date:   Tue Nov 12 23:02:54 2024 +0900
+
+    Create README.md
+
+[33mcommit 36c699337477400d100231fb9ac8bcd3250caf73[m
+Author: jodoo1 <jodoo20@gmail.com>
+Date:   Tue Nov 12 23:27:34 2024 +0900
+
+    second commit
+
+[33mcommit 45452011cc58f1cb2cf967299872ab4c66c41cd5[m
+Author: jodoo1 <jodoo20@gmail.com>
+Date:   Tue Nov 12 23:25:42 2024 +0900
+
+    first commit
+
+[33mcommit 1b2e2ffdb8beab2eaefb20df22c6249a7e2505b0[m
+Author: jodoo1 <jodoo20@gmail.com>
+Date:   Tue Nov 12 23:22:25 2024 +0900
+
+    master

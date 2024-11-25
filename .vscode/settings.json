@@ -62,5 +62,6 @@
         "map": "cpp",
         "fstream": "cpp",
         "cinttypes": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "D:/TextAdventures/textgamemanager/textGameManager"
 }
