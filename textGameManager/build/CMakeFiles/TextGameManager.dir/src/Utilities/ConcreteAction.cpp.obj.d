@@ -1,6 +1,6 @@
 CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.obj: \
  D:\TextAdventures\textgamemanager\textGameManager\src\Utilities\ConcreteAction.cpp \
- D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/ConcreteAction.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
  C:/msys64/mingw64/include/c++/14.2.0/string \
