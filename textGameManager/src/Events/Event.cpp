@@ -27,13 +27,7 @@ void Event::displayChoices() const {
 void Event::executeChoice(const std::string& choiceId, Player& player) {
     for (const auto& choice : choices) {
         if (choice.getId() == choiceId) {
-            // 전투 선택지인지 확인
-            if (choiceId == "fight" && monster != nullptr) {
-                CombatManager combatManager(player, monster.get()); // 포인터 전달
-                combatManager.startCombat();
-            } else {
-                choice.execute(player); // 일반 선택지 실행
-            }
+            choice.execute(player); // 선택지에 연결된 행동 실행
             return;
         }
     }
@@ -75,6 +69,11 @@ bool Event::hasMonster() const {
 // 현재 이벤트의 몬스터를 반환하는 함수
 BaseMonster* Event::getMonster() const {
     return monster.get();
+}
+
+// 선택지 리스트를 반환하는 함수 추가
+const std::vector<Choice>& Event::getChoices() const {
+    return choices;
 }
 
 std::string Event::getEventText() const {

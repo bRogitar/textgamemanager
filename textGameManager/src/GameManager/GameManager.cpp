@@ -209,38 +209,28 @@ void GameManager::gameLoop() {
     bool allRoomsCleared = false;
 
     while (!allRoomsCleared) {
-        allRoomsCleared = true; // 초기값을 true로 설정한 후 모든 방을 확인
+        allRoomsCleared = true;
 
         for (auto& room : worldMap) {
             if (!room.isCleared()) {
-                allRoomsCleared = false; // 클리어되지 않은 방이 있다면 false로 변경
-                
-                // 방에 들어가는 메시지 출력 (디버깅용)
+                allRoomsCleared = false;
+
                 displayMessage("Entering room: " + room.getRoomName() + "\n");
-                
+
                 if (room.hasEvent()) {
                     EventManager& eventManager = EventManager::getInstance();
-                    eventManager.processEvent(room.getEventId(), player);  // 이벤트 실행
-                    
+                    eventManager.processEvent(room.getEventId(), player);
+
                     // 이벤트 처리 후 선택지 실행
                     Event* currentEvent = eventManager.getEvent(room.getEventId());
                     if (currentEvent != nullptr) {
                         currentEvent->displayChoices();
                         std::string choice = getUserInput();
                         eventManager.executeChoice(choice, currentEvent, player);
-
-                        // 선택지가 전투를 의미할 경우 전투 시작
-                        if (choice == "fight") {
-                            BaseMonster* monster = currentEvent->getMonster();
-                            if (monster != nullptr) {
-                                startCombat(*monster);
-                            }
-                        }
                     }
                 }
-                }
 
-                room.setCleared(true); // 이벤트가 끝나면 방을 클리어 처리
+                room.setCleared(true);
             }
         }
 
@@ -249,4 +239,6 @@ void GameManager::gameLoop() {
         } else {
             displayMessage("There are still rooms to explore...\n");
         }
-    
+    }
+}
+

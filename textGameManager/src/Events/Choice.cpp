@@ -1,23 +1,39 @@
-#include "Choice.h"
-#include <iostream>
+// Choice.h
+#ifndef CHOICE_H
+#define CHOICE_H
 
-Choice::Choice(const std::string& id, const std::string& description, int healthImpact, int mentalStrengthImpact, int attackPowerImpact, int moneyImpact)
-    : id(id), description(description), healthImpact(healthImpact), mentalStrengthImpact(mentalStrengthImpact), attackPowerImpact(attackPowerImpact), moneyImpact(moneyImpact) {}
+#include <string>
+#include <memory>
+#include "BaseAction.h"
 
-void Choice::execute(Player& player) const {
-    // 플레이어 상태에 영향을 미칩니다.
-    player.modifyHealth(healthImpact);
-    player.modifyMentalStrength(mentalStrengthImpact);
-    player.modifyAttackPower(attackPowerImpact);
-    player.modifyMoney(moneyImpact);
+class Choice {
+private:
+    std::string id;
+    std::string description;
+    std::unique_ptr<BaseAction> action;
+    std::string nextEventId; // 후속 이벤트 ID
 
-    std::cout << "You chose: " << description << std::endl;
-}
+public:
+    Choice(const std::string& id, const std::string& description, std::unique_ptr<BaseAction> action, const std::string& nextEventId = "")
+        : id(id), description(description), action(std::move(action)), nextEventId(nextEventId) {}
 
-std::string Choice::getDescription() const {
-    return description;
-}
+    const std::string& getId() const {
+        return id;
+    }
 
-std::string Choice::getId() const {
-    return id;
-}
+    const std::string& getDescription() const {
+        return description;
+    }
+
+    const std::string& getNextEventId() const {
+        return nextEventId;
+    }
+
+    void execute(Player& player) const {
+        if (action) {
+            action->execute(player);
+        }
+    }
+};
+
+#endif // CHOICE_H

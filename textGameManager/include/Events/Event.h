@@ -20,6 +20,9 @@ public:
     bool hasMonster() const;
     BaseMonster* getMonster() const;
     void execute(Player& player);
+    const std::vector<Choice>& getChoices() const; 
+
+
 
 private:
     std::string eventId;

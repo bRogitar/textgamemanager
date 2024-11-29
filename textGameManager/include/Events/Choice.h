@@ -1,24 +1,42 @@
+// Choice.h
 #ifndef CHOICE_H
 #define CHOICE_H
 
 #include <string>
+#include <memory>
+#include "BaseAction.h"
 #include "Player.h"
 
 class Choice {
-public:
-    Choice(const std::string& id, const std::string& description, int healthImpact = 0, int mentalStrengthImpact = 0, int attackPowerImpact = 0, int moneyImpact = 0);
-    
-    void execute(Player& player) const;
-    std::string getDescription() const;
-    std::string getId() const;  // 선택지 ID 반환
-
 private:
-    std::string id;  // 선택지의 고유 ID
+    std::string id;
     std::string description;
-    int healthImpact;
-    int mentalStrengthImpact;
-    int attackPowerImpact;
-    int moneyImpact;
+    std::unique_ptr<BaseAction> action;
+    std::string nextEventId; // 후속 이벤트 ID
+
+public:
+    // 생성자에 nextEventId를 추가
+    Choice(const std::string& id, const std::string& description, std::unique_ptr<BaseAction> action, const std::string& nextEventId = "")
+        : id(id), description(description), action(std::move(action)), nextEventId(nextEventId) {}
+
+    const std::string& getId() const {
+        return id;
+    }
+
+    const std::string& getDescription() const {
+        return description;
+    }
+
+    // 후속 이벤트 ID를 반환하는 함수
+    const std::string& getNextEventId() const {
+        return nextEventId;
+    }
+
+    void execute(Player& player) const {
+        if (action) {
+            action->execute(player);
+        }
+    }
 };
 
 #endif // CHOICE_H
