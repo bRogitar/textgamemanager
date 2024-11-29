@@ -1,7 +1,6 @@
 // Ability.h
 #ifndef BASEABILITY_H
-#define BASE
-ABILITY_H
+#define BASEABILITY_H
 
 #include <string>
 
