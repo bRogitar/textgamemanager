@@ -6,6 +6,15 @@
 Player::Player(const std::string& name, int health, int mentalStrength, int attackPower, int money)
     : name(name), health(health), mentalStrength(mentalStrength), attackPower(attackPower), money(money), combatHealth(health), itemInventory(), abilityInventory() {}
 
+void Player::setName(const std::string& name) {
+    this->name = name;
+}
+
+std::string Player::getName() const {
+    return name;
+
+}
+
 void Player::setHealth(int health) {
     this->health = health;
 }

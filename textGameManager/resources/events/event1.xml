@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Event id="event1">
+    <name>Entrance Hall</name>
+    <description>한 무리의 고블린이 입구에서 당신을 습격합니다. 당신은 이 상황을 헤쳐 나가야 합니다.</description>
+    <Monster name="Goblin" health="50" attackPower="10"/>
+    <Choices>
+        <Choice id="proceed" description="next" nextEventId="event2"/>
+    </Choices>
+</Event>

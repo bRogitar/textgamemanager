@@ -7,7 +7,7 @@
 #include <vector>
 #include "Room.h"
 
-class WorldMap {
+class WorldMap {    
 public:
     void addRoom(const Room& room);
     Room* getRoom(const std::string& roomId);

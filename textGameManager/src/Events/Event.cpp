@@ -75,3 +75,7 @@ bool Event::hasMonster() const {
 BaseMonster* Event::getMonster() const {
     return monster.get();
 }
+
+std::string Event::getEventText() const {
+    return eventText; // eventText는 Event 클래스의 멤버로 가정
+}

@@ -4,12 +4,6 @@
 #include <chrono>
 #include "BaseMonster.h"
 
-#include "CombatManager.h"
-#include <iostream>
-#include <thread>
-#include <chrono>
-#include "BaseMonster.h"
-
 // CombatManager Constructor
 CombatManager::CombatManager(Player& player, BaseMonster* monster)
     : player(player), monster(monster) {}
@@ -18,33 +12,35 @@ CombatManager::CombatManager(Player& player, BaseMonster* monster)
 void CombatManager::startCombat() {
     if (monster != nullptr) {
         std::cout << "Combat with " << monster->getName() << " started!" << std::endl;
-        player.setCombatHealth(player.getHealth()); // Set combat health to current health
-        monster->setCombatHealth(monster->getHealth()); // Set combat health to current health
+
+        // Set combat health to current health
+        player.setCombatHealth(player.getHealth());
+        monster->setCombatHealth(monster->getHealth());
+
         combatLoop();
     } else {
         std::cout << "No monster to fight!" << std::endl;
     }
 }
 
-
 // Combat Loop Logic
 void CombatManager::combatLoop() {
     while (!player.isCombatDefeated() && !monster->isCombatDefeated()) {
-        playerAttack();  // 플레이어가 몬스터를 공격
+        playerAttack();  // Player attacks monster
         if (monster->isCombatDefeated()) {
             std::cout << "You have defeated the " << monster->getName() << "!" << std::endl;
             break;
         }
         
-        monsterAttack();  // 몬스터가 플레이어를 공격
+        monsterAttack();  // Monster attacks player
         if (player.isCombatDefeated()) {
             std::cout << "You have been defeated by the " << monster->getName() << "!" << std::endl;
-            player.applyDefeatPenalty(); // 플레이어 패배 시 패널티 적용 (체력 및 정신력 감소)
+            player.applyDefeatPenalty(); // Apply penalty to player after defeat
             break;
         }
 
-        displayCombatStatus();  // 전투 상태 출력
-        std::this_thread::sleep_for(std::chrono::seconds(1)); // 1초 대기
+        displayCombatStatus();  // Display the combat status after each turn
+        std::this_thread::sleep_for(std::chrono::seconds(1)); // Pause for 1 second between actions
     }
 }
 

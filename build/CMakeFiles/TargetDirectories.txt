@@ -1,2 +1,4 @@
+D:/TextAdventures/textgamemanager/build/CMakeFiles/TextGameManager.dir
+D:/TextAdventures/textgamemanager/build/CMakeFiles/tinyxml2.dir
 D:/TextAdventures/textgamemanager/build/CMakeFiles/edit_cache.dir
 D:/TextAdventures/textgamemanager/build/CMakeFiles/rebuild_cache.dir
