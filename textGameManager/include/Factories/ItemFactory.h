@@ -2,7 +2,7 @@
 #define ITEMFACTORY_H
 
 #include <memory>
-#include "Item.h"
+#include "BaseItem.h"
 
 class ItemFactory {
 public:

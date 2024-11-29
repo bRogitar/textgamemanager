@@ -69,39 +69,43 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # 소스 파일 목록 추가
 set(SOURCES
-    src/main.cpp
-    src/Entities/Abilities/AbilityInventory.cpp
-    src/Entities/Abilities/BaseAbility.cpp
-    src/Entities/Abilities/BloodEssence.cpp
-    src/Entities/Abilities/HealthBoost.cpp
-    src/Entities/Abilities/muscular.cpp
-    src/Entities/Abilities/WorldTrapMagazine.cpp
-    src/Entities/Items/BaseItem.cpp
-    src/Entities/Items/HealthPotion.cpp
-    src/Entities/Items/ItemInventory.cpp
-    src/Entities/Items/MentalPotion.cpp
-    src/Entities/Player.cpp
-    src/Events/Choice.cpp
-    src/Events/Event.cpp
-    src/Factories/AbilityFactory.cpp
-    src/Factories/ItemFactory.cpp
-    src/Factories/MonsterFactory.cpp
-    src/Factories/NPCFactory.cpp
-    src/Factories/TrapFactory.cpp
-    src/GameManager/CombatManager.cpp
-    src/GameManager/EventManager.cpp
-    src/GameManager/GameManager.cpp
-    src/GameManager/InputManager.cpp
-    src/GameManager/InteractionManager.cpp
-    src/GameManager/SaveLoadManager.cpp
-    src/Interactables/Monsters/BaseMonster.cpp
-    src/Interactables/Monsters/Dragon.cpp
-    src/tinyxml2.cpp
+src/main.cpp
+src/test.cpp  # 추가
+src/Entities/Abilities/AbilityInventory.cpp
+src/Entities/Abilities/BaseAbility.cpp
+src/Entities/Items/BaseItem.cpp
+src/Entities/Items/ItemInventory.cpp
+src/Entities/Player.cpp
+src/Events/Choice.cpp
+src/Events/Event.cpp
+src/Factories/AbilityFactory.cpp
+src/Factories/ItemFactory.cpp
+src/Factories/MonsterFactory.cpp
+src/Factories/NPCFactory.cpp
+src/Factories/TrapFactory.cpp
+src/GameManager/CombatManager.cpp
+src/GameManager/EventManager.cpp
+src/GameManager/GameManager.cpp
+src/GameManager/InputManager.cpp
+src/GameManager/InteractionManager.cpp
+src/GameManager/SaveLoadManager.cpp
+src/Interactables/Monsters/BaseMonster.cpp
+src/Interactables/Monsters/Dragon.cpp
+src/Interactables/Monsters/Goblin.cpp  # 추가
+src/Interactables/NPCs/BaseNPC.cpp  # 추가
+src/Interactables/NPCs/QuestGiver.cpp  # 추가
+src/Interactables/NPCs/Shopkeeper.cpp  # 추가
+src/Interactables/Traps/BaseTrap.cpp  # 추가
+src/Interactables/Traps/Pitfall.cpp  # 추가
+src/Interactables/Traps/PoisonGas.cpp  # 추가
+src/Utilities/FightAction.cpp  # 추가
+src/World/Room.cpp  # 추가
+src/World/WorldMap.cpp  # 추가
+src/tinyxml2.cpp
 )
 
 # 헤더 파일 경로 설정
 include_directories(
-    include
     include/Commands
     include/Entities
     include/Entities/Abilities
@@ -111,6 +115,8 @@ include_directories(
     include/GameManager
     include/Interactables
     include/Interactables/Monsters
+    include/Interactables/NPCs  # 추가
+    include/Interactables/Traps  # 추가
     include/Utilities
     include/World
 )
