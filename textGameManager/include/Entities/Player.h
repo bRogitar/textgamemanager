@@ -2,8 +2,8 @@
 #define PLAYER_H
 
 #include <string>
-#include "ItemInventory.h"
 #include "AbilityInventory.h"
+#include "ItemInventory.h"
 
 class Player {
 public:
