@@ -1,6 +1,5 @@
 CMakeFiles/TextGameManager.dir/src/Events/Choice.cpp.obj: \
  D:\TextAdventures\textgamemanager\textGameManager\src\Events\Choice.cpp \
- D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
  C:/msys64/mingw64/include/c++/14.2.0/string \
  C:/msys64/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -98,33 +97,19 @@ CMakeFiles/TextGameManager.dir/src/Events/Choice.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
  C:/msys64/mingw64/include/c++/14.2.0/tuple \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
- C:/msys64/mingw64/include/c++/14.2.0/vector \
+ C:/msys64/mingw64/include/c++/14.2.0/memory \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_vector.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/vector.tcc \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Item.h \
- C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
- C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
- C:/msys64/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/node_handle.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h \
- C:/msys64/mingw64/include/c++/14.2.0/iostream \
- C:/msys64/mingw64/include/c++/14.2.0/ostream \
- C:/msys64/mingw64/include/c++/14.2.0/ios \
- C:/msys64/mingw64/include/c++/14.2.0/exception \
- C:/msys64/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/align.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+ C:/msys64/mingw64/include/stdint.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
  C:/msys64/mingw64/include/c++/14.2.0/typeinfo \
- C:/msys64/mingw64/include/c++/14.2.0/bits/nested_exception.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/ios_base.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
  C:/msys64/mingw64/include/c++/14.2.0/ext/atomicity.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
@@ -141,22 +126,31 @@ CMakeFiles/TextGameManager.dir/src/Events/Choice.cpp.obj: \
  C:/msys64/mingw64/include/pthread_compat.h \
  C:/msys64/mingw64/include/pthread_unistd.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/locale_classes.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
- C:/msys64/mingw64/include/c++/14.2.0/system_error \
- C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
- C:/msys64/mingw64/include/c++/14.2.0/stdexcept \
- C:/msys64/mingw64/include/c++/14.2.0/streambuf \
- C:/msys64/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
- C:/msys64/mingw64/include/c++/14.2.0/bits/basic_ios.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/locale_facets.h \
- C:/msys64/mingw64/include/c++/14.2.0/cwctype \
- C:/msys64/mingw64/include/wctype.h \
- C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
- C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
- C:/msys64/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
- C:/msys64/mingw64/include/c++/14.2.0/bits/ostream.tcc \
- C:/msys64/mingw64/include/c++/14.2.0/istream \
- C:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc
+ C:/msys64/mingw64/include/c++/14.2.0/ext/concurrence.h \
+ C:/msys64/mingw64/include/c++/14.2.0/exception \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/nested_exception.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
+ C:/msys64/mingw64/include/c++/14.2.0/vector \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/vector.tcc \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Item.h \
+ C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h

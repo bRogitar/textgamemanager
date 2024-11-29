@@ -20,11 +20,6 @@ void GameManager::initializeGame() {
     std::cout << "Initializing game...\n";
     player = Player();
 
-    // 플레이어 이름 설정
-    displayMessage("Enter your player's name: ");
-    std::string playerName = getUserInput();
-    player.setName(playerName);
-
     player.setHealth(100);
     player.setMentalStrength(50);
     player.setAttackPower(20);
@@ -48,13 +43,16 @@ void GameManager::startGame() {
 
         if (choice == 1) {
             displayMessage("Starting a new game...\n");
-            initializeGame(); // 플레이어 이름 설정 포함
+            displayMessage("Enter your player's name: ");
+            std::string playerName = getUserInput();
+            player.setName(playerName);
+            initializeGame(); // 초기화 한 번만 수행
             validInput = true;
             displayPlayerStatus(); // 게임 시작 시 플레이어 상태 표시
         } else if (choice == 2) {
             displayMessage("Loading saved game...\n");
-            validInput = true;
             loadGame();
+            validInput = true;
             displayPlayerStatus(); // 게임 로드 후 플레이어 상태 표시
         } else {
             displayMessage("Invalid choice. Please enter 1 or 2.\n");
@@ -63,6 +61,7 @@ void GameManager::startGame() {
 
     gameLoop();
 }
+
 
 void GameManager::displayPlayerStatus() {
     displayMessage("===========================\n");
@@ -209,38 +208,28 @@ void GameManager::gameLoop() {
     bool allRoomsCleared = false;
 
     while (!allRoomsCleared) {
-        allRoomsCleared = true; // 초기값을 true로 설정한 후 모든 방을 확인
+        allRoomsCleared = true;
 
         for (auto& room : worldMap) {
             if (!room.isCleared()) {
-                allRoomsCleared = false; // 클리어되지 않은 방이 있다면 false로 변경
-                
-                // 방에 들어가는 메시지 출력 (디버깅용)
+                allRoomsCleared = false;
+
                 displayMessage("Entering room: " + room.getRoomName() + "\n");
-                
+
                 if (room.hasEvent()) {
                     EventManager& eventManager = EventManager::getInstance();
-                    eventManager.processEvent(room.getEventId(), player);  // 이벤트 실행
-                    
+                    eventManager.processEvent(room.getEventId(), player);
+
                     // 이벤트 처리 후 선택지 실행
                     Event* currentEvent = eventManager.getEvent(room.getEventId());
                     if (currentEvent != nullptr) {
                         currentEvent->displayChoices();
                         std::string choice = getUserInput();
                         eventManager.executeChoice(choice, currentEvent, player);
-
-                        // 선택지가 전투를 의미할 경우 전투 시작
-                        if (choice == "fight") {
-                            BaseMonster* monster = currentEvent->getMonster();
-                            if (monster != nullptr) {
-                                startCombat(*monster);
-                            }
-                        }
                     }
                 }
-                }
 
-                room.setCleared(true); // 이벤트가 끝나면 방을 클리어 처리
+                room.setCleared(true);
             }
         }
 
@@ -249,4 +238,6 @@ void GameManager::gameLoop() {
         } else {
             displayMessage("There are still rooms to explore...\n");
         }
-    
+    }
+}
+

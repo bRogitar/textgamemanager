@@ -1,6 +1,7 @@
-#ifndef INTERACTION_MANAGER_H
-#define INTERACTION_MANAGER_H
+// #ifndef INTERACTION_MANAGER_H
+// #define INTERACTION_MANAGER_H
 
+<<<<<<< HEAD
 #include "Player.h"
 #include "BaseNPC.h"
 #include "BaseTrap.h"
@@ -44,11 +45,29 @@ public:
     BaseTrap* createTrap(const std::string& type);
 =======
 >>>>>>> c9dde9b632d118257875ad075c88ed21cca3f920
+=======
+// #include "Player.h"
+// #include "BaseNPC.h"
+// #include "BaseTrap.h"
 
-private:
-    // 싱글톤을 위한 생성자 (private)
-    InteractionManager();
+// // InteractionManager 클래스 선언
+// class InteractionManager {
+// public:
+//     // 싱글톤 인스턴스를 얻기 위한 정적 메서드
+//     static InteractionManager& getInstance();
 
+//     // NPC와의 상호작용 처리 함수
+//     void handleNPCInteraction(Player& player, BaseNPC* npc);
+
+//     // 함정과의 상호작용 처리 함수
+//     void handleTrapInteraction(Player& player, BaseTrap* trap);
+>>>>>>> 131a76a54a8f3dc29b3839d3d3f294c9da90065e
+
+// private:
+//     // 싱글톤을 위한 생성자 (private)
+//     InteractionManager();
+
+<<<<<<< HEAD
     // 복사 생성자와 대입 연산자를 삭제하여 싱글톤 보장
     InteractionManager(const InteractionManager&) = delete;
     InteractionManager& operator=(const InteractionManager&) = delete;
@@ -60,5 +79,11 @@ private:
 =======
 >>>>>>> c9dde9b632d118257875ad075c88ed21cca3f920
 };
+=======
+//     // 복사 생성자와 대입 연산자를 삭제하여 싱글톤 보장
+//     InteractionManager(const InteractionManager&) = delete;
+//     InteractionManager& operator=(const InteractionManager&) = delete;
+// };
+>>>>>>> 131a76a54a8f3dc29b3839d3d3f294c9da90065e
 
-#endif // INTERACTION_MANAGER_H
+// #endif // INTERACTION_MANAGER_H

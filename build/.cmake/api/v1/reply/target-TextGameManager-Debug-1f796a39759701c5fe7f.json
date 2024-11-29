@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "bin/TextGameManager.exe"
+			"path" : "TextGameManager.exe"
 		},
 		{
-			"path" : "bin/TextGameManager.pdb"
+			"path" : "TextGameManager.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -289,18 +289,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Interactables/BaseInteractable.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Interactables/InteractableFactory.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/Interactables/Monsters/BaseMonster.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -331,7 +319,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/Interactables/Monsters/Dragon.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/Interactables/Monsters/MonsterFactory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Utilities/ConcreteAction.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
