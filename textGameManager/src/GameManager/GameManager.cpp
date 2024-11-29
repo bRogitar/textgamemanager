@@ -210,10 +210,8 @@ std::vector<Room> GameManager::createWorldMap() {
 }
 
 void GameManager::gameLoop() {
-    bool allRoomsCleared = false;
-
-    while (!allRoomsCleared) {
-        allRoomsCleared = true;
+    while (true) {
+        bool allRoomsCleared = true;
 
         for (auto& room : worldMap) {
             if (!room.isCleared()) {
@@ -224,22 +222,23 @@ void GameManager::gameLoop() {
                 if (room.hasEvent()) {
                     EventManager& eventManager = EventManager::getInstance();
                     eventManager.processEvent(room.getEventId(), player);
-
-                    // 이벤트 처리 후 선택지 실행
-                    Event* currentEvent = eventManager.getEvent(room.getEventId());
-                    if (currentEvent != nullptr) {
-                        currentEvent->displayChoices();
-                        std::string choice = getUserInput();
-                        eventManager.executeChoice(choice, currentEvent, player);
-                    }
                 }
 
+                // 방을 "cleared" 상태로 설정
                 room.setCleared(true);
             }
         }
 
+        // 모든 방 상태를 디버깅 메시지로 출력
+        for (const auto& room : worldMap) {
+            std::cout << "Room: " << room.getRoomName() 
+                      << " | Cleared: " << (room.isCleared() ? "true" : "false") << "\n";
+        }
+
+        // 모든 방이 클리어되었는지 확인
         if (allRoomsCleared) {
             displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
+            break;
         } else {
             displayMessage("There are still rooms to explore...\n");
         }

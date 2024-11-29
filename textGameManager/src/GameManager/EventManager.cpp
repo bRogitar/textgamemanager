@@ -8,6 +8,7 @@
 #include "FightAction.h"
 #include "RunAwayAction.h"
 #include <algorithm>
+#include "GameManager.h"
 
 using namespace tinyxml2;
 
@@ -39,43 +40,41 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
         }
     }
 
-    // 이미 완료된 이벤트인지 확인
+    // 이벤트 완료 상태 확인
     if (event->isCompleted()) {
-        std::cout << "This event has already been completed." << std::endl;
+        std::cout << "This event has already been completed.\n";
         return;
     }
 
     // 이벤트 실행
     event->execute(player);
-
-    // 이벤트 완료로 표시
-    event->markAsCompleted(); // 이벤트 상태 업데이트
+    event->markAsCompleted();
 }
 
-
-
 void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {
-    // 선택지 목록에서 입력한 ID를 찾는다.
     auto& choices = currentEvent->getChoices();
     auto it = std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
         return choice.getId() == choiceId;
     });
 
     if (it != choices.end()) {
-        // 선택지 실행
         it->execute(player);
 
-        // 다음 이벤트가 있는 경우 처리
+        // 다음 이벤트로 이동
         std::string nextEventId = it->getNextEventId();
-        if (!nextEventId.empty()) {
+        if (nextEventId == "end") {
+            std::cout << "Congratulations! You have completed the game.\n";
+            exit(0); // 프로그램 종료
+        } else if (!nextEventId.empty()) {
             processEvent(nextEventId, player);
         }
     } else {
         std::cout << "Invalid choice ID. Please try again.\n";
+        currentEvent->displayChoices();
+        std::string newChoiceId = GameManager::getInstance().getUserInput();
+        executeChoice(newChoiceId, currentEvent, player);
     }
 }
-
-
 
 std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePath, const std::string& eventId) {
     XMLDocument doc;
@@ -114,30 +113,30 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
 
             // Choices 정보를 읽어들임
             XMLElement* pChoices = pEventElement->FirstChildElement("Choices");
-if (pChoices != nullptr) {
-    for (XMLElement* pChoice = pChoices->FirstChildElement("Choice");
-         pChoice != nullptr;
-         pChoice = pChoice->NextSiblingElement("Choice")) {
+            if (pChoices != nullptr) {
+                for (XMLElement* pChoice = pChoices->FirstChildElement("Choice");
+                     pChoice != nullptr;
+                     pChoice = pChoice->NextSiblingElement("Choice")) {
 
-        std::string choiceId = pChoice->Attribute("id");
-        std::string choiceDescription = pChoice->Attribute("description");
-        std::string nextEventId = pChoice->Attribute("nextEventId");
+                    std::string choiceId = pChoice->Attribute("id");
+                    std::string choiceDescription = pChoice->Attribute("description");
+                    std::string nextEventId = pChoice->Attribute("nextEventId");
 
-        std::unique_ptr<BaseAction> action;
+                    std::unique_ptr<BaseAction> action;
 
-        if (choiceId == "fight") {
-            action = std::make_unique<FightAction>(monster);
-        } else if (choiceId == "run") {
-            action = std::make_unique<RunAwayAction>();
-        } else {
-            // Default action or other specific actions can be added here
-            action = std::make_unique<FightAction>();
-        }
+                    if (choiceId == "fight") {
+                        action = std::make_unique<FightAction>(monster);
+                    } else if (choiceId == "run") {
+                        action = std::make_unique<RunAwayAction>();
+                    } else {
+                        // Default action or other specific actions can be added here
+                        action = std::make_unique<FightAction>();
+                    }
 
-        Choice choice(choiceId, choiceDescription, std::move(action), nextEventId);
-        newEvent->addChoice(std::move(choice));
-    }
-}
+                    Choice choice(choiceId, choiceDescription, std::move(action), nextEventId);
+                    newEvent->addChoice(std::move(choice));
+                }
+            }
             return newEvent;
         }
         pEventElement = pEventElement->NextSiblingElement("Event");

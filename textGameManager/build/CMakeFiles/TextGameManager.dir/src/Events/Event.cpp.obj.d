@@ -187,4 +187,14 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_heap.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
- C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/EventManager.h \
+ C:/msys64/mingw64/include/c++/14.2.0/map \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h \
+ C:/msys64/mingw64/include/c++/14.2.0/climits \
+ C:/msys64/mingw64/include/c++/14.2.0/cstring \
+ C:/msys64/mingw64/include/string.h \
+ C:/msys64/mingw64/include/sec_api/string_s.h

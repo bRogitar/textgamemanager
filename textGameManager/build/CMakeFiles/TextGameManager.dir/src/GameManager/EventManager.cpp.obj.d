@@ -207,4 +207,8 @@ CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_heap.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
- C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/GameManager.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h

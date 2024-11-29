@@ -14,6 +14,7 @@ using namespace tinyxml2;
 
 class GameManager {
 public:
+
     static GameManager& getInstance();  // 싱글톤 패턴을 위한 함수
     void initializeGame();  // 게임 초기화
     void startGame();  // 게임 시작

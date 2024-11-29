@@ -915,9 +915,12 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: D:/TextAdventures/textg
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_iterator.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
+  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_map.h \
+  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_pair.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tree.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/stl_vector.h \
   C:/msys64/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
@@ -934,11 +937,13 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: D:/TextAdventures/textg
   C:/msys64/mingw64/include/c++/14.2.0/bits/version.h \
   C:/msys64/mingw64/include/c++/14.2.0/cctype \
   C:/msys64/mingw64/include/c++/14.2.0/cerrno \
+  C:/msys64/mingw64/include/c++/14.2.0/climits \
   C:/msys64/mingw64/include/c++/14.2.0/clocale \
   C:/msys64/mingw64/include/c++/14.2.0/concepts \
   C:/msys64/mingw64/include/c++/14.2.0/cstddef \
   C:/msys64/mingw64/include/c++/14.2.0/cstdio \
   C:/msys64/mingw64/include/c++/14.2.0/cstdlib \
+  C:/msys64/mingw64/include/c++/14.2.0/cstring \
   C:/msys64/mingw64/include/c++/14.2.0/cwchar \
   C:/msys64/mingw64/include/c++/14.2.0/cwctype \
   C:/msys64/mingw64/include/c++/14.2.0/debug/assertions.h \
@@ -957,6 +962,7 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: D:/TextAdventures/textg
   C:/msys64/mingw64/include/c++/14.2.0/iostream \
   C:/msys64/mingw64/include/c++/14.2.0/istream \
   C:/msys64/mingw64/include/c++/14.2.0/limits \
+  C:/msys64/mingw64/include/c++/14.2.0/map \
   C:/msys64/mingw64/include/c++/14.2.0/memory \
   C:/msys64/mingw64/include/c++/14.2.0/new \
   C:/msys64/mingw64/include/c++/14.2.0/ostream \
@@ -1005,6 +1011,7 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: D:/TextAdventures/textg
   C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
   C:/msys64/mingw64/include/sec_api/stdio_s.h \
   C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+  C:/msys64/mingw64/include/sec_api/string_s.h \
   C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
   C:/msys64/mingw64/include/sec_api/wchar_s.h \
   C:/msys64/mingw64/include/signal.h \
@@ -1012,6 +1019,7 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: D:/TextAdventures/textg
   C:/msys64/mingw64/include/stdint.h \
   C:/msys64/mingw64/include/stdio.h \
   C:/msys64/mingw64/include/stdlib.h \
+  C:/msys64/mingw64/include/string.h \
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sys/timeb.h \
   C:/msys64/mingw64/include/sys/types.h \
@@ -1032,8 +1040,10 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: D:/TextAdventures/textg
   D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
+  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/EventManager.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
-  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/baseAction.h
+  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/baseAction.h \
+  D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h
 
 CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/CombatManager.cpp \
   C:/msys64/mingw64/include/_mingw.h \
@@ -1417,12 +1427,14 @@ CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj: D:/TextAdve
   D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/EventManager.h \
+  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/GameManager.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/baseAction.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/RunAwayAction.h \
+  D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h
 
 CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/GameManager.cpp \
@@ -2272,6 +2284,18 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h
 
+CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/BaseNPC.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/BaseNPC.cpp
+
+CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/QuestGiver.cpp
+
+CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/Shopkeeper.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/Shopkeeper.cpp
+
+CMakeFiles/TextGameManager.dir/src/Interactables/Traps/BaseTrap.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/BaseTrap.cpp
+
+CMakeFiles/TextGameManager.dir/src/Interactables/Traps/Pitfall.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/Pitfall.cpp
+
+CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/PoisonGas.cpp
+
 CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -2874,6 +2898,8 @@ CMakeFiles/TextGameManager.dir/src/main.cpp.obj: D:/TextAdventures/textgamemanag
   D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h
 
+CMakeFiles/TextGameManager.dir/src/test.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/test.cpp
+
 CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/tinyxml2.cpp \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
@@ -3139,6 +3165,8 @@ C:/msys64/mingw64/include/errno.h:
 
 C:/msys64/mingw64/include/limits.h:
 
+D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/BaseTrap.cpp:
+
 C:/msys64/mingw64/include/locale.h:
 
 C:/msys64/mingw64/include/malloc.h:
@@ -3168,6 +3196,8 @@ C:/msys64/mingw64/include/swprintf.inl:
 C:/msys64/mingw64/include/vadefs.h:
 
 C:/msys64/mingw64/include/wchar.h:
+
+D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/Shopkeeper.cpp:
 
 C:/msys64/mingw64/include/c++/14.2.0/bits/ios_base.h:
 
@@ -3337,9 +3367,9 @@ C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr.h:
 
 C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h:
 
-C:/msys64/mingw64/include/c++/14.2.0/bits/stl_map.h:
-
 C:/msys64/mingw64/include/c++/14.2.0/bits/codecvt.h:
+
+C:/msys64/mingw64/include/c++/14.2.0/bits/stl_map.h:
 
 C:/msys64/mingw64/include/c++/14.2.0/bits/unique_ptr.h:
 
@@ -3353,7 +3383,19 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h:
 
 D:/TextAdventures/textgamemanager/textGameManager/src/Events/Event.cpp:
 
+C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multimap.h:
+
+C:/msys64/mingw64/include/c++/14.2.0/cstring:
+
 C:/msys64/mingw64/include/c++/14.2.0/limits:
+
+C:/msys64/mingw64/include/c++/14.2.0/map:
+
+D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/CombatManager.cpp:
+
+C:/msys64/mingw64/include/sec_api/string_s.h:
+
+C:/msys64/mingw64/include/string.h:
 
 D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h:
 
@@ -3363,9 +3405,7 @@ D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h:
 
 D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h:
 
-C:/msys64/mingw64/include/sec_api/string_s.h:
-
-D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/CombatManager.cpp:
+D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h:
 
 C:/msys64/mingw64/include/c++/14.2.0/bits/chrono.h:
 
@@ -3383,23 +3423,13 @@ D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/EventManager.c
 
 C:/msys64/mingw64/include/c++/14.2.0/bits/fstream.tcc:
 
-C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multimap.h:
-
-C:/msys64/mingw64/include/c++/14.2.0/cstring:
-
-C:/msys64/mingw64/include/c++/14.2.0/map:
-
 C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h:
 
 C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h:
 
-C:/msys64/mingw64/include/string.h:
-
 D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h:
 
 D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/RunAwayAction.h:
-
-D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h:
 
 D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h:
 
@@ -3415,11 +3445,21 @@ D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Gob
 
 D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/MonsterFactory.cpp:
 
+D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/BaseNPC.cpp:
+
+D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/QuestGiver.cpp:
+
+D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/Pitfall.cpp:
+
+D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/PoisonGas.cpp:
+
 D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp:
 
 D:/TextAdventures/textgamemanager/textGameManager/src/World/WorldMap.cpp:
 
 D:/TextAdventures/textgamemanager/textGameManager/include/World/WorldMap.h:
+
+D:/TextAdventures/textgamemanager/textGameManager/src/test.cpp:
 
 D:/TextAdventures/textgamemanager/textGameManager/src/tinyxml2.cpp:
 

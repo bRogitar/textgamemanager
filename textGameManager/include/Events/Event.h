@@ -22,7 +22,6 @@ public:
 
     void execute(Player& player);
     void displayChoices() const;
-    void executeChoice(const std::string& choiceIndex, Player& player);
     std::string getEventText() const;
     void setMonster(std::unique_ptr<BaseMonster> monster);
     bool hasMonster() const;
