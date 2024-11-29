@@ -3,8 +3,9 @@
 #include <iostream>
 #include <fstream>
 #include "MonsterFactory.h"
-#include "ConcreteAction.h"  // ConcreteAction 클래스 포함
+#include "FightAction.h"  // ConcreteAction 클래스 포함
 #include "Event.h"
+#include "FightAction.h"
 #include "RunAwayAction.h"
 
 using namespace tinyxml2;
@@ -118,12 +119,12 @@ if (pChoices != nullptr) {
         std::unique_ptr<BaseAction> action;
 
         if (choiceId == "fight") {
-            action = std::make_unique<ConcreteAction>(monster);
+            action = std::make_unique<FightAction>(monster);
         } else if (choiceId == "run") {
             action = std::make_unique<RunAwayAction>();
         } else {
             // Default action or other specific actions can be added here
-            action = std::make_unique<ConcreteAction>();
+            action = std::make_unique<FightAction>();
         }
 
         Choice choice(choiceId, choiceDescription, std::move(action), nextEventId);
