@@ -55,5 +55,5 @@ target_link_libraries(TextGameManager PRIVATE tinyxml2)
 
 # 출력 디렉토리 설정 (옵션)
 set_target_properties(TextGameManager PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
 )
