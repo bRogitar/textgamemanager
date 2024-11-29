@@ -1,2 +1,7 @@
 cmake -G "MinGW Makefiles" ..
 mingw32-make
+
+
+파일 목록 만들기
+ Get-ChildItem -Recurse -Include *.cpp,*.h | Select-Object FullName > project_files.txt
+PS D:\김가람의 공부\textgamemanager> cd textGameManager
