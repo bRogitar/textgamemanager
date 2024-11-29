@@ -16,6 +16,11 @@
         <description>You have found an ancient magic book. Decide what to do with it and then continue your journey.</description>
         <Choices>
             <Choice id="run" description="next" nextEventId="event3"/>
+            <Choice id="dummy" description="dummy" nextEventId="event3"/>
+            <Choice id="dummy" description="dummy" nextEventId="event3"/>
+            <Choice id="dummy" description="dummy" nextEventId="event3"/>
+            <Choice id="dummy" description="dummy" nextEventId="event3"/>
+            <Choice id="dummy" description="dummy" nextEventId="event3"/>
         </Choices>
     </Event>
 
