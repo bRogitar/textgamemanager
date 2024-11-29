@@ -45,13 +45,13 @@ public:
     void applyDefeatPenalty(); // 패배 시 패널티 적용 함수
 
     // Inventory methods
-    void addItem(const Item& item);
-    void removeItem(const Item& item);
+    void addItem(const BaseItem& item);
+    void removeItem(const BaseItem& item);
     bool hasItem(const std::string& itemId) const;
 
     // Ability methods
-    void addAbility(const Ability& ability);
-    void removeAbility(const Ability& ability);
+    void addAbility(const BaseAbility& ability);
+    void removeAbility(const BaseAbility& ability);
     bool hasAbility(const std::string& abilityId) const;
 
 private:

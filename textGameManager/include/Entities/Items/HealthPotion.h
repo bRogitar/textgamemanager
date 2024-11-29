@@ -1,11 +1,11 @@
 #ifndef HEALTHPOTION_H
 #define HEALTHPOTION_H
 
-#include "Item.h"
+#include "BaseItem.h"
 
-class HealthPotion : public Item {
+class HealthPotion : public BaseItem {
 public:
-    HealthPotion() : Item("health_potion", "Health Potion", "Restores 50 health.", true) {
+    HealthPotion() : BaseItem("health_potion", "Health Potion", "Restores 50 health.", true) {
         addEffect("health", 50);
     }
 };
