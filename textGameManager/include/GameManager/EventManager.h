@@ -13,7 +13,7 @@ public:
     void loadEvents();
     Event* getEvent(const std::string& eventId);
     void processEvent(const std::string& eventId, Player& player);
-    void executeChoice(int choiceId, Event* currentEvent, Player& player);
+    void executeChoice(const std::string& choiceId, Event* currentEvent, Player& player);
 
 private:
     EventManager();

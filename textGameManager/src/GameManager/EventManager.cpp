@@ -29,7 +29,7 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
     }
 }
 
-void EventManager::executeChoice(int choiceId, Event* currentEvent, Player& player) {
+void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {
     if (currentEvent != nullptr) {
         currentEvent->executeChoice(choiceId, player);
     } else {

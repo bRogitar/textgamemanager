@@ -226,9 +226,18 @@ void GameManager::gameLoop() {
                     Event* currentEvent = eventManager.getEvent(room.getEventId());
                     if (currentEvent != nullptr) {
                         currentEvent->displayChoices();
-                        int choice = std::stoi(getUserInput());
-                        eventManager.executeChoice(choice - 1, currentEvent, player);
+                        std::string choice = getUserInput();
+                        eventManager.executeChoice(choice, currentEvent, player);
+
+                        // 선택지가 전투를 의미할 경우 전투 시작
+                        if (choice == "fight") {
+                            BaseMonster* monster = currentEvent->getMonster();
+                            if (monster != nullptr) {
+                                startCombat(*monster);
+                            }
+                        }
                     }
+                }
                 }
 
                 room.setCleared(true); // 이벤트가 끝나면 방을 클리어 처리
@@ -240,5 +249,4 @@ void GameManager::gameLoop() {
         } else {
             displayMessage("There are still rooms to explore...\n");
         }
-    }
-}
+    

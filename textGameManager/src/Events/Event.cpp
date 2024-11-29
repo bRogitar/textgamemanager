@@ -19,25 +19,25 @@ void Event::addChoice(const Choice& choice) {
 // 선택지를 화면에 표시하는 함수
 void Event::displayChoices() const {
     for (size_t i = 0; i < choices.size(); ++i) {
-        std::cout << i + 1 << ". " << choices[i].getDescription() << std::endl;
+        std::cout << i + 1 << ". " << choices[i].getDescription() << " (" << choices[i].getId() << ")" << std::endl;
     }
 }
 
-// 선택지를 실행하는 함수
-void Event::executeChoice(int choiceIndex, Player& player) {
-    const Choice& choice = choices[choiceIndex];
-
-    // 전투 선택지인지 확인
-    if (choice.getId() == "fight") {
-        if (monster != nullptr) {
-            CombatManager combatManager(player, monster.get()); // 포인터 전달
-            combatManager.startCombat();
-        } else {
-            std::cout << "No monster assigned to this event for combat!" << std::endl;
+// 선택지를 실행하는 함수 (문자열 ID로 확인)
+void Event::executeChoice(const std::string& choiceId, Player& player) {
+    for (const auto& choice : choices) {
+        if (choice.getId() == choiceId) {
+            // 전투 선택지인지 확인
+            if (choiceId == "fight" && monster != nullptr) {
+                CombatManager combatManager(player, monster.get()); // 포인터 전달
+                combatManager.startCombat();
+            } else {
+                choice.execute(player); // 일반 선택지 실행
+            }
+            return;
         }
-    } else {
-        choice.execute(player); // 일반 선택지 실행
     }
+    std::cout << "Invalid choice ID." << std::endl;
 }
 
 // 이벤트를 실행하는 함수
@@ -58,7 +58,8 @@ void Event::execute(Player& player) {
     }
 
     // 선택지를 1부터 사용자에게 보여주었으므로, 인덱스는 -1을 해주어야 함
-    executeChoice(choiceIndex - 1, player);
+    const std::string choiceId = choices[choiceIndex - 1].getId();
+    executeChoice(choiceId, player);
 }
 
 // 몬스터를 설정하는 함수
