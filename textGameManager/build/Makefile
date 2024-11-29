@@ -549,29 +549,29 @@ src/Interactables/Monsters/MonsterFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.s
 .PHONY : src/Interactables/Monsters/MonsterFactory.cpp.s
 
-src/Utilities/ConcreteAction.obj: src/Utilities/ConcreteAction.cpp.obj
-.PHONY : src/Utilities/ConcreteAction.obj
+src/Utilities/FightAction.obj: src/Utilities/FightAction.cpp.obj
+.PHONY : src/Utilities/FightAction.obj
 
 # target to build an object file
-src/Utilities/ConcreteAction.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.obj
-.PHONY : src/Utilities/ConcreteAction.cpp.obj
+src/Utilities/FightAction.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj
+.PHONY : src/Utilities/FightAction.cpp.obj
 
-src/Utilities/ConcreteAction.i: src/Utilities/ConcreteAction.cpp.i
-.PHONY : src/Utilities/ConcreteAction.i
+src/Utilities/FightAction.i: src/Utilities/FightAction.cpp.i
+.PHONY : src/Utilities/FightAction.i
 
 # target to preprocess a source file
-src/Utilities/ConcreteAction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.i
-.PHONY : src/Utilities/ConcreteAction.cpp.i
+src/Utilities/FightAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.i
+.PHONY : src/Utilities/FightAction.cpp.i
 
-src/Utilities/ConcreteAction.s: src/Utilities/ConcreteAction.cpp.s
-.PHONY : src/Utilities/ConcreteAction.s
+src/Utilities/FightAction.s: src/Utilities/FightAction.cpp.s
+.PHONY : src/Utilities/FightAction.s
 
 # target to generate assembly for a file
-src/Utilities/ConcreteAction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.s
-.PHONY : src/Utilities/ConcreteAction.cpp.s
+src/Utilities/FightAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.s
+.PHONY : src/Utilities/FightAction.cpp.s
 
 src/World/Room.obj: src/World/Room.cpp.obj
 .PHONY : src/World/Room.obj
@@ -733,9 +733,9 @@ help:
 	@echo ... src/Interactables/Monsters/MonsterFactory.obj
 	@echo ... src/Interactables/Monsters/MonsterFactory.i
 	@echo ... src/Interactables/Monsters/MonsterFactory.s
-	@echo ... src/Utilities/ConcreteAction.obj
-	@echo ... src/Utilities/ConcreteAction.i
-	@echo ... src/Utilities/ConcreteAction.s
+	@echo ... src/Utilities/FightAction.obj
+	@echo ... src/Utilities/FightAction.i
+	@echo ... src/Utilities/FightAction.s
 	@echo ... src/World/Room.obj
 	@echo ... src/World/Room.i
 	@echo ... src/World/Room.s

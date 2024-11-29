@@ -1406,7 +1406,8 @@ CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj: D:/TextAdve
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/baseAction.h \
-  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/ConcreteAction.h \
+  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h \
+  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/RunAwayAction.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h
 
 CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/GameManager.cpp \
@@ -2259,7 +2260,7 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h
 
-CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/ConcreteAction.cpp \
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \
@@ -2425,7 +2426,7 @@ CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.obj: D:/TextAdve
   D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
   D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/baseAction.h \
-  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/ConcreteAction.h
+  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h
 
 CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/World/Room.cpp \
   C:/msys64/mingw64/include/_mingw.h \
@@ -3392,8 +3393,6 @@ C:/msys64/mingw64/include/c++/14.2.0/bits/parse_numbers.h:
 
 C:/msys64/mingw64/include/c++/14.2.0/bits/std_thread.h:
 
-D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/ConcreteAction.h:
-
 C:/msys64/mingw64/include/c++/14.2.0/ctime:
 
 C:/msys64/mingw64/include/c++/14.2.0/thread:
@@ -3418,6 +3417,10 @@ C:/msys64/mingw64/include/string.h:
 
 D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Dragon.h:
 
+D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h:
+
+D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/RunAwayAction.h:
+
 D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h:
 
 D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h:
@@ -3434,7 +3437,7 @@ D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Gob
 
 D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/MonsterFactory.cpp:
 
-D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/ConcreteAction.cpp:
+D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp:
 
 D:/TextAdventures/textgamemanager/textGameManager/src/World/WorldMap.cpp:
 

@@ -1415,7 +1415,8 @@ CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/baseAction.h
- D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/ConcreteAction.h
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/RunAwayAction.h
  D:/TextAdventures/textgamemanager/textGameManager/include/tinyxml2.h
 
 CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj
@@ -2276,8 +2277,8 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h
 
-CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.obj
- D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/ConcreteAction.cpp
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj
+ D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp
  C:/msys64/mingw64/include/_mingw.h
  C:/msys64/mingw64/include/_mingw_mac.h
  C:/msys64/mingw64/include/_mingw_off_t.h
@@ -2443,7 +2444,7 @@ CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.obj
  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/baseAction.h
- D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/ConcreteAction.h
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h
 
 CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj
  D:/TextAdventures/textgamemanager/textGameManager/src/World/Room.cpp

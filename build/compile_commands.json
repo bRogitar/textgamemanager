@@ -133,8 +133,8 @@
 },
 {
   "directory": "D:/TextAdventures/textgamemanager/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Utilities\\ConcreteAction.cpp.obj -c D:\\TextAdventures\\textgamemanager\\textGameManager\\src\\Utilities\\ConcreteAction.cpp",
-  "file": "D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/ConcreteAction.cpp",
-  "output": "CMakeFiles/TextGameManager.dir/src/Utilities/ConcreteAction.cpp.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Utilities\\FightAction.cpp.obj -c D:\\TextAdventures\\textgamemanager\\textGameManager\\src\\Utilities\\FightAction.cpp",
+  "file": "D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj"
 }
 ]

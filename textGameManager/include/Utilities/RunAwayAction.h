@@ -8,8 +8,8 @@
 class RunAwayAction : public BaseAction {
 public:
     void execute(Player& player) override {
-        std::cout << "You decided to run away from the trap!" << std::endl;
-        // 도망가기로 했을 때의 효과 (예: 체력 손실 또는 위치 이동 등)
+        std::cout << "You decided to run away from the fight!" << std::endl;
+        // 도망가는 경우, 예를 들어 체력을 줄이거나 다른 효과 적용
         player.setMentalStrength(player.getMentalStrength() - 10);
     }
 };

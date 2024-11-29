@@ -30,7 +30,7 @@ set(SOURCES
     src/Interactables/Monsters/Goblin.cpp   
     src/Interactables/Monsters/Dragon.cpp          # 추가된 부분
     src/Interactables/Monsters/MonsterFactory.cpp
-    src/Utilities/ConcreteAction.cpp
+    src/Utilities/FightAction.cpp
 )
 
 # 헤더 파일 경로 설정
