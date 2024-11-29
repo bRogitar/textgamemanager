@@ -2,7 +2,7 @@
 #define SHOPKEEPER_H
 
 #include "BaseNPC.h"
-#include "../../Entities/Item.h"
+#include "../../Entities/BaseItem.h"
 #include <vector>
 #include <utility>
 
