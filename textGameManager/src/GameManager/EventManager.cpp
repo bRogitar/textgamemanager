@@ -38,8 +38,17 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
         }
     }
 
+    // 이미 완료된 이벤트인지 확인
+    if (event->isCompleted()) {
+        std::cout << "This event has already been completed." << std::endl;
+        return;
+    }
+
     // 이벤트 실행
     event->execute(player);
+
+    // 이벤트 완료로 표시
+    event->markAsCompleted();
 
     // 선택지를 화면에 표시
     event->displayChoices();
@@ -53,6 +62,7 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
     executeChoice(choiceId, event, player);
 }
 
+
 void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {
     for (const auto& choice : currentEvent->getChoices()) {
         if (choice.getId() == choiceId) {
@@ -64,6 +74,7 @@ void EventManager::executeChoice(const std::string& choiceId, Event* currentEven
             if (!nextEventId.empty()) {
                 processEvent(nextEventId, player);
             }
+            
             return;
         }
     }
@@ -131,7 +142,6 @@ if (pChoices != nullptr) {
         newEvent->addChoice(std::move(choice));
     }
 }
-
             return newEvent;
         }
         pEventElement = pEventElement->NextSiblingElement("Event");

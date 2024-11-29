@@ -9,23 +9,13 @@
 
 class Event {
 public:
-
-    void markAsCompleted() {
-        completed = true;
-    }
-
-    bool isCompleted() const {
-        return completed;
-    }
-
     Event(const std::string& eventId, const std::string& eventName, const std::string& eventDescription)
-        : id(eventId), name(eventName), description(eventDescription) {}
+        : id(eventId), name(eventName), description(eventDescription), completed(false) {}
 
     void addChoice(Choice&& choice) {
         choices.push_back(std::move(choice));
     }
 
-    // 선택지 리스트 반환
     const std::vector<Choice>& getChoices() const {
         return choices;
     }
@@ -37,7 +27,15 @@ public:
     void setMonster(std::unique_ptr<BaseMonster> monster);
     bool hasMonster() const;
     BaseMonster* getMonster() const;
-    
+
+    // 이벤트 완료 상태 관리
+    void markAsCompleted() {
+        completed = true;
+    }
+
+    bool isCompleted() const {
+        return completed;
+    }
 
 private:
     std::string id;
@@ -45,7 +43,7 @@ private:
     std::string description;
     std::vector<Choice> choices;
     std::unique_ptr<BaseMonster> monster;
-    bool completed = false;
+    bool completed; // 이벤트 완료 여부
 };
 
 #endif // EVENT_H
