@@ -7,6 +7,7 @@
 #include "Event.h"
 #include "FightAction.h"
 #include "RunAwayAction.h"
+#include <algorithm>
 
 using namespace tinyxml2;
 
@@ -48,38 +49,33 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
     event->execute(player);
 
     // 이벤트 완료로 표시
-    event->markAsCompleted();
-
-    // 선택지를 화면에 표시
-    event->displayChoices();
-
-    // 사용자 입력을 받아 선택지 처리
-    std::string choiceId;
-    std::cout << "Enter your choice ID: ";
-    std::cin >> choiceId;
-
-    // 선택지 실행
-    executeChoice(choiceId, event, player);
+    event->markAsCompleted(); // 이벤트 상태 업데이트
 }
+
 
 
 void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {
-    for (const auto& choice : currentEvent->getChoices()) {
-        if (choice.getId() == choiceId) {
-            // 선택지에 따른 행동을 실행
-            choice.execute(player);
+    // 선택지 목록에서 입력한 ID를 찾는다.
+    auto& choices = currentEvent->getChoices();
+    auto it = std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
+        return choice.getId() == choiceId;
+    });
 
-            // 후속 이벤트가 정의되어 있다면 해당 이벤트로 이동
-            std::string nextEventId = choice.getNextEventId();
-            if (!nextEventId.empty()) {
-                processEvent(nextEventId, player);
-            }
-            
-            return;
+    if (it != choices.end()) {
+        // 선택지 실행
+        it->execute(player);
+
+        // 다음 이벤트가 있는 경우 처리
+        std::string nextEventId = it->getNextEventId();
+        if (!nextEventId.empty()) {
+            processEvent(nextEventId, player);
         }
+    } else {
+        std::cout << "Invalid choice ID. Please try again.\n";
     }
-    std::cout << "Invalid choice ID." << std::endl;
 }
+
+
 
 std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePath, const std::string& eventId) {
     XMLDocument doc;

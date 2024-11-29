@@ -381,78 +381,6 @@ src/GameManager/GameManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.s
 .PHONY : src/GameManager/GameManager.cpp.s
 
-src/GameManager/InputManager.obj: src/GameManager/InputManager.cpp.obj
-.PHONY : src/GameManager/InputManager.obj
-
-# target to build an object file
-src/GameManager/InputManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.obj
-.PHONY : src/GameManager/InputManager.cpp.obj
-
-src/GameManager/InputManager.i: src/GameManager/InputManager.cpp.i
-.PHONY : src/GameManager/InputManager.i
-
-# target to preprocess a source file
-src/GameManager/InputManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.i
-.PHONY : src/GameManager/InputManager.cpp.i
-
-src/GameManager/InputManager.s: src/GameManager/InputManager.cpp.s
-.PHONY : src/GameManager/InputManager.s
-
-# target to generate assembly for a file
-src/GameManager/InputManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.s
-.PHONY : src/GameManager/InputManager.cpp.s
-
-src/GameManager/InteractionManager.obj: src/GameManager/InteractionManager.cpp.obj
-.PHONY : src/GameManager/InteractionManager.obj
-
-# target to build an object file
-src/GameManager/InteractionManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/InteractionManager.cpp.obj
-.PHONY : src/GameManager/InteractionManager.cpp.obj
-
-src/GameManager/InteractionManager.i: src/GameManager/InteractionManager.cpp.i
-.PHONY : src/GameManager/InteractionManager.i
-
-# target to preprocess a source file
-src/GameManager/InteractionManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/InteractionManager.cpp.i
-.PHONY : src/GameManager/InteractionManager.cpp.i
-
-src/GameManager/InteractionManager.s: src/GameManager/InteractionManager.cpp.s
-.PHONY : src/GameManager/InteractionManager.s
-
-# target to generate assembly for a file
-src/GameManager/InteractionManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/InteractionManager.cpp.s
-.PHONY : src/GameManager/InteractionManager.cpp.s
-
-src/GameManager/SaveLoadManager.obj: src/GameManager/SaveLoadManager.cpp.obj
-.PHONY : src/GameManager/SaveLoadManager.obj
-
-# target to build an object file
-src/GameManager/SaveLoadManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.obj
-.PHONY : src/GameManager/SaveLoadManager.cpp.obj
-
-src/GameManager/SaveLoadManager.i: src/GameManager/SaveLoadManager.cpp.i
-.PHONY : src/GameManager/SaveLoadManager.i
-
-# target to preprocess a source file
-src/GameManager/SaveLoadManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.i
-.PHONY : src/GameManager/SaveLoadManager.cpp.i
-
-src/GameManager/SaveLoadManager.s: src/GameManager/SaveLoadManager.cpp.s
-.PHONY : src/GameManager/SaveLoadManager.s
-
-# target to generate assembly for a file
-src/GameManager/SaveLoadManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.s
-.PHONY : src/GameManager/SaveLoadManager.cpp.s
-
 src/Interactables/Monsters/BaseMonster.obj: src/Interactables/Monsters/BaseMonster.cpp.obj
 .PHONY : src/Interactables/Monsters/BaseMonster.obj
 
@@ -712,15 +640,6 @@ help:
 	@echo ... src/GameManager/GameManager.obj
 	@echo ... src/GameManager/GameManager.i
 	@echo ... src/GameManager/GameManager.s
-	@echo ... src/GameManager/InputManager.obj
-	@echo ... src/GameManager/InputManager.i
-	@echo ... src/GameManager/InputManager.s
-	@echo ... src/GameManager/InteractionManager.obj
-	@echo ... src/GameManager/InteractionManager.i
-	@echo ... src/GameManager/InteractionManager.s
-	@echo ... src/GameManager/SaveLoadManager.obj
-	@echo ... src/GameManager/SaveLoadManager.i
-	@echo ... src/GameManager/SaveLoadManager.s
 	@echo ... src/Interactables/Monsters/BaseMonster.obj
 	@echo ... src/Interactables/Monsters/BaseMonster.i
 	@echo ... src/Interactables/Monsters/BaseMonster.s

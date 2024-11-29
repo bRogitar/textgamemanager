@@ -2,13 +2,14 @@
 #include <iostream>
 #include <limits>
 #include "CombatManager.h"
+#include <algorithm>
 
 // Event Constructor: 기본 이벤트 생성자는 헤더 파일에만 존재
 
 // 선택지를 화면에 표시하는 함수
 void Event::displayChoices() const {
-    for (size_t i = 0; i < choices.size(); ++i) {
-        std::cout << i + 1 << ". " << choices[i].getDescription() << " (" << choices[i].getId() << ")" << std::endl;
+    for (const auto& choice : choices) {
+        std::cout << choice.getId() << ": " << choice.getDescription() << std::endl;
     }
 }
 
@@ -28,21 +29,22 @@ void Event::execute(Player& player) {
     std::cout << description << "\n";
     displayChoices();
 
-    std::cout << "Enter your choice: ";
-    int choiceIndex;
-    std::cin >> choiceIndex;
+    // 유효한 선택지 ID를 입력받기
+    std::string choiceId;
+    while (true) {
+        std::cout << "Enter your choice ID: ";
+        std::cin >> choiceId;
 
-    // 입력 검증
-    while (std::cin.fail() || choiceIndex < 1 || choiceIndex > static_cast<int>(choices.size())) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Invalid choice. Please enter a valid choice: ";
-        std::cin >> choiceIndex;
+        // 입력값 검증 및 선택 실행
+        if (std::any_of(choices.begin(), choices.end(), [&](const Choice& choice) {
+                return choice.getId() == choiceId;
+            })) {
+            executeChoice(choiceId, player);
+            break; // 유효한 선택지를 실행하면 루프 종료
+        } else {
+            std::cout << "Invalid choice ID. Please try again.\n";
+        }
     }
-
-    // 선택지 실행
-    const std::string choiceId = choices[choiceIndex - 1].getId();
-    executeChoice(choiceId, player);
 }
 
 // 몬스터를 설정하는 함수

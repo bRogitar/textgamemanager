@@ -38,12 +38,12 @@ public:
     }
 
 private:
+    bool completed = false;
     std::string id;
     std::string name;
     std::string description;
     std::vector<Choice> choices;
     std::unique_ptr<BaseMonster> monster;
-    bool completed; // 이벤트 완료 여부
 };
 
 #endif // EVENT_H

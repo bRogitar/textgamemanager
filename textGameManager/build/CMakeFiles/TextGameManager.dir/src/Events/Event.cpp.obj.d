@@ -181,4 +181,10 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/istream \
  C:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc \
  C:/msys64/mingw64/include/c++/14.2.0/limits \
- D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h
+ D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
+ C:/msys64/mingw64/include/c++/14.2.0/algorithm \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h

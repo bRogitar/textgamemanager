@@ -19,9 +19,6 @@ set(SOURCES
     src/GameManager/CombatManager.cpp
     src/GameManager/EventManager.cpp
     src/GameManager/GameManager.cpp
-    src/GameManager/InputManager.cpp
-    src/GameManager/InteractionManager.cpp
-    src/GameManager/SaveLoadManager.cpp
     src/Interactables/Monsters/BaseMonster.cpp
     src/World/Room.cpp
     src/World/WorldMap.cpp

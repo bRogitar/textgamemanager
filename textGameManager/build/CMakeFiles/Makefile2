@@ -82,12 +82,12 @@ clean: CMakeFiles/tinyxml2.dir/clean
 CMakeFiles/TextGameManager.dir/all: CMakeFiles/tinyxml2.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target TextGameManager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target TextGameManager"
 .PHONY : CMakeFiles/TextGameManager.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TextGameManager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/TextGameManager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles 0
 .PHONY : CMakeFiles/TextGameManager.dir/rule
@@ -108,7 +108,7 @@ CMakeFiles/TextGameManager.dir/clean:
 CMakeFiles/tinyxml2.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyxml2.dir\build.make CMakeFiles/tinyxml2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyxml2.dir\build.make CMakeFiles/tinyxml2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=24,25 "Built target tinyxml2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=21,22 "Built target tinyxml2"
 .PHONY : CMakeFiles/tinyxml2.dir/all
 
 # Build rule for subdir invocation for target.
