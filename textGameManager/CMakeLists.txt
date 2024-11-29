@@ -102,6 +102,7 @@ src/Utilities/FightAction.cpp  # 추가
 src/World/Room.cpp  # 추가
 src/World/WorldMap.cpp  # 추가
 src/tinyxml2.cpp
+src/Items/ItemInventory.cpp
 )
 
 # 헤더 파일 경로 설정

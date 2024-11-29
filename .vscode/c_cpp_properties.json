@@ -10,7 +10,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "/usr/bin/g++"
+            "compilerPath": "/usr/bin/gcc"
         }
     ],
     "version": 4

@@ -1,5 +1,5 @@
 // Ability.cpp
-#include "Ability.h"
+#include "BaseAbility.h"
 
 Ability::Ability(const std::string& abilityId, const std::string& name, const std::string& description, int strengthBoost)
     : abilityId(abilityId), name(name), description(description), strengthBoost(strengthBoost) {}
