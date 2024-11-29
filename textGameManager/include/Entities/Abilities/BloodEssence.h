@@ -3,9 +3,9 @@
 
 #include "BaseAbility.h"
 
-class BloodEssence : public Item {
+class BloodEssence : public Ability {
 public:
-    BloodEssence() : Item(
+    BloodEssence() : Ability(
         "blood_essence", 
         "피의 정수", 
         "최대 체력을 20 증가시킵니다.", 

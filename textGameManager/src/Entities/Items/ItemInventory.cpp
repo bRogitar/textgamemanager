@@ -1,6 +1,6 @@
 
 // ItemInventory.cpp
-#include "../ItemInventory.h"
+#include "ItemInventory.h"
 #include <algorithm>
 
 void ItemInventory::addItem(const Item& item) {
