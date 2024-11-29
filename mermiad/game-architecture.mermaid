@@ -26,18 +26,22 @@ graph TB
             AF[AbilityFactory<br/>어빌리티 생성]
             CA[ConcreteAbilityFactory<br/>심화 어빌리티]
             AI[AbilityInventory<br/>능력치 관리]
+            BA[BaseAbility<br/>기본 능력치]
             
             AF --> CA
             AF --> AI
+            AF --> BA
         end
         
         subgraph "아이템 시스템"
             IF[ItemFactory<br/>아이템 생성]
             IA[ConcreteItemFactory<br/>심화 아이템]
             ITI[ItemInventory<br/>아이템 관리]
+            BI[BaseItem<br/>기본 아이템]
             
             IF --> IA
             IF --> ITI
+            IF --> BI
         end
         
         PS --> AF
