@@ -145,7 +145,7 @@ void GameManager::saveGame(const std::string& filename) {
     }
 }
 
-// 게임을 XML 파일에서 불러오는 ㅁ서드
+// 게임을 XML 파일에서 불러오는 매서드
 void GameManager::loadGame(const std::string& filename) {
     XMLDocument doc;
     XMLError eResult = doc.LoadFile(filename.c_str());
