@@ -10,8 +10,6 @@ std::unique_ptr<BaseMonster> MonsterFactory::createMonster(
     else if (type == "Dragon") {
         return std::make_unique<Dragon>(id, name, health, attackPower);
     }
-    // else if (type == "Skeleton") {
-    //     return std::make_unique<Skeleton>(id, name, health, attackPower);
-    // }
+
     return nullptr;
 } 

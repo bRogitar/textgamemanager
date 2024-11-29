@@ -1,4 +1,4 @@
-// Item.h
+// baseitem.h
 #ifndef BASEITEM_H
 #define BASEITEM_H
 
@@ -26,4 +26,4 @@ private:
     friend class ItemInventory;
 };
 
-#endif // ITEM_H
+#endif // baseitem 

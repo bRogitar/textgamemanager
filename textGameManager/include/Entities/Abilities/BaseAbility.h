@@ -1,12 +1,12 @@
-// Ability.h
+// BASEABILITY.h
 #ifndef BASEABILITY_H
 #define BASEABILITY_H
 
 #include <string>
 
-class Ability {
+class BaseAbility {
 public:
-    Ability(const std::string& abilityId, const std::string& name, const std::string& description, int strengthBoost);
+    BaseAbility(const std::string& abilityId, const std::string& name, const std::string& description, int strengthBoost);
     std::string getAbilityId() const;
     std::string getName() const;
     std::string getDescription() const;
@@ -21,4 +21,4 @@ private:
     friend class AbilityInventory;
 };
 
-#endif // ABILITY_H
+#endif // BASEABILITY_H
