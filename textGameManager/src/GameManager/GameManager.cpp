@@ -18,14 +18,17 @@ GameManager::GameManager() : worldMap(createWorldMap()) {}
 
 void GameManager::initializeGame() {
     std::cout << "Initializing game...\n";
-    player = Player();
 
+    // 기존 Player 객체의 상태를 초기화 (이름 유지)
     player.setHealth(100);
     player.setMentalStrength(50);
     player.setAttackPower(20);
     player.setMoney(100);
+
+    // 월드 맵 초기화
     worldMap = createWorldMap();
 }
+
 
 void GameManager::startGame() {
     int choice = 0;
@@ -42,14 +45,16 @@ void GameManager::startGame() {
         choice = std::stoi(getUserInput());
 
         if (choice == 1) {
-            displayMessage("Starting a new game...\n");
-            displayMessage("Enter your player's name: ");
-            std::string playerName = getUserInput();
-            player.setName(playerName);
-            initializeGame(); // 초기화 한 번만 수행
-            validInput = true;
-            displayPlayerStatus(); // 게임 시작 시 플레이어 상태 표시
-        } else if (choice == 2) {
+    displayMessage("Starting a new game...\n");
+    displayMessage("Enter your player's name: ");
+    std::string playerName = getUserInput();
+    player.setName(playerName); // 이름 설정
+
+    initializeGame(); // 초기화 함수는 이름 설정 이후에 호출
+    validInput = true;
+    displayPlayerStatus(); // 플레이어 상태 표시
+}
+ else if (choice == 2) {
             displayMessage("Loading saved game...\n");
             loadGame();
             validInput = true;
