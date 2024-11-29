@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Commands/Command.cpp" "CMakeFiles/TextGameManager.dir/src/Commands/Command.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Commands/Command.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Commands/CommandParser.cpp" "CMakeFiles/TextGameManager.dir/src/Commands/CommandParser.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Commands/CommandParser.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Entities/Ability.cpp" "CMakeFiles/TextGameManager.dir/src/Entities/Ability.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Entities/Ability.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Entities/AbilityInventory.cpp" "CMakeFiles/TextGameManager.dir/src/Entities/AbilityInventory.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Entities/AbilityInventory.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Entities/Item.cpp" "CMakeFiles/TextGameManager.dir/src/Entities/Item.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Entities/Item.cpp.obj.d"
@@ -18,14 +20,23 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/CombatManager.cpp" "CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/EventManager.cpp" "CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/GameManager.cpp" "CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/BaseInteractable.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/InteractableFactory.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/BaseMonster.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Dragon.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Goblin.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/MonsterFactory.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/BaseNPC.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/BaseNPC.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/BaseNPC.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/QuestGiver.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/NPCs/Shopkeeper.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/Shopkeeper.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/Shopkeeper.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/BaseTrap.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/BaseTrap.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/BaseTrap.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/Pitfall.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/Pitfall.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/Pitfall.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Traps/PoisonGas.cpp" "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp" "CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/World/Room.cpp" "CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/World/WorldMap.cpp" "CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/main.cpp" "CMakeFiles/TextGameManager.dir/src/main.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/main.cpp.obj.d"
+  "D:/TextAdventures/textgamemanager/textGameManager/src/test.cpp" "CMakeFiles/TextGameManager.dir/src/test.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/test.cpp.obj.d"
   "D:/TextAdventures/textgamemanager/textGameManager/src/tinyxml2.cpp" "CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj" "gcc" "CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj.d"
   )
 

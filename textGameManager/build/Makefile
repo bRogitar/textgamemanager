@@ -112,6 +112,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
@@ -140,6 +141,54 @@ tinyxml2: cmake_check_build_system
 tinyxml2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyxml2.dir\build.make CMakeFiles/tinyxml2.dir/build
 .PHONY : tinyxml2/fast
+
+src/Commands/Command.obj: src/Commands/Command.cpp.obj
+.PHONY : src/Commands/Command.obj
+
+# target to build an object file
+src/Commands/Command.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Commands/Command.cpp.obj
+.PHONY : src/Commands/Command.cpp.obj
+
+src/Commands/Command.i: src/Commands/Command.cpp.i
+.PHONY : src/Commands/Command.i
+
+# target to preprocess a source file
+src/Commands/Command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Commands/Command.cpp.i
+.PHONY : src/Commands/Command.cpp.i
+
+src/Commands/Command.s: src/Commands/Command.cpp.s
+.PHONY : src/Commands/Command.s
+
+# target to generate assembly for a file
+src/Commands/Command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Commands/Command.cpp.s
+.PHONY : src/Commands/Command.cpp.s
+
+src/Commands/CommandParser.obj: src/Commands/CommandParser.cpp.obj
+.PHONY : src/Commands/CommandParser.obj
+
+# target to build an object file
+src/Commands/CommandParser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Commands/CommandParser.cpp.obj
+.PHONY : src/Commands/CommandParser.cpp.obj
+
+src/Commands/CommandParser.i: src/Commands/CommandParser.cpp.i
+.PHONY : src/Commands/CommandParser.i
+
+# target to preprocess a source file
+src/Commands/CommandParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Commands/CommandParser.cpp.i
+.PHONY : src/Commands/CommandParser.cpp.i
+
+src/Commands/CommandParser.s: src/Commands/CommandParser.cpp.s
+.PHONY : src/Commands/CommandParser.s
+
+# target to generate assembly for a file
+src/Commands/CommandParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Commands/CommandParser.cpp.s
+.PHONY : src/Commands/CommandParser.cpp.s
 
 src/Entities/Ability.obj: src/Entities/Ability.cpp.obj
 .PHONY : src/Entities/Ability.obj
@@ -381,6 +430,54 @@ src/GameManager/GameManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.s
 .PHONY : src/GameManager/GameManager.cpp.s
 
+src/Interactables/BaseInteractable.obj: src/Interactables/BaseInteractable.cpp.obj
+.PHONY : src/Interactables/BaseInteractable.obj
+
+# target to build an object file
+src/Interactables/BaseInteractable.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj
+.PHONY : src/Interactables/BaseInteractable.cpp.obj
+
+src/Interactables/BaseInteractable.i: src/Interactables/BaseInteractable.cpp.i
+.PHONY : src/Interactables/BaseInteractable.i
+
+# target to preprocess a source file
+src/Interactables/BaseInteractable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.i
+.PHONY : src/Interactables/BaseInteractable.cpp.i
+
+src/Interactables/BaseInteractable.s: src/Interactables/BaseInteractable.cpp.s
+.PHONY : src/Interactables/BaseInteractable.s
+
+# target to generate assembly for a file
+src/Interactables/BaseInteractable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.s
+.PHONY : src/Interactables/BaseInteractable.cpp.s
+
+src/Interactables/InteractableFactory.obj: src/Interactables/InteractableFactory.cpp.obj
+.PHONY : src/Interactables/InteractableFactory.obj
+
+# target to build an object file
+src/Interactables/InteractableFactory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj
+.PHONY : src/Interactables/InteractableFactory.cpp.obj
+
+src/Interactables/InteractableFactory.i: src/Interactables/InteractableFactory.cpp.i
+.PHONY : src/Interactables/InteractableFactory.i
+
+# target to preprocess a source file
+src/Interactables/InteractableFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.i
+.PHONY : src/Interactables/InteractableFactory.cpp.i
+
+src/Interactables/InteractableFactory.s: src/Interactables/InteractableFactory.cpp.s
+.PHONY : src/Interactables/InteractableFactory.s
+
+# target to generate assembly for a file
+src/Interactables/InteractableFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.s
+.PHONY : src/Interactables/InteractableFactory.cpp.s
+
 src/Interactables/Monsters/BaseMonster.obj: src/Interactables/Monsters/BaseMonster.cpp.obj
 .PHONY : src/Interactables/Monsters/BaseMonster.obj
 
@@ -476,6 +573,150 @@ src/Interactables/Monsters/MonsterFactory.s: src/Interactables/Monsters/MonsterF
 src/Interactables/Monsters/MonsterFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.s
 .PHONY : src/Interactables/Monsters/MonsterFactory.cpp.s
+
+src/Interactables/NPCs/BaseNPC.obj: src/Interactables/NPCs/BaseNPC.cpp.obj
+.PHONY : src/Interactables/NPCs/BaseNPC.obj
+
+# target to build an object file
+src/Interactables/NPCs/BaseNPC.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/BaseNPC.cpp.obj
+.PHONY : src/Interactables/NPCs/BaseNPC.cpp.obj
+
+src/Interactables/NPCs/BaseNPC.i: src/Interactables/NPCs/BaseNPC.cpp.i
+.PHONY : src/Interactables/NPCs/BaseNPC.i
+
+# target to preprocess a source file
+src/Interactables/NPCs/BaseNPC.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/BaseNPC.cpp.i
+.PHONY : src/Interactables/NPCs/BaseNPC.cpp.i
+
+src/Interactables/NPCs/BaseNPC.s: src/Interactables/NPCs/BaseNPC.cpp.s
+.PHONY : src/Interactables/NPCs/BaseNPC.s
+
+# target to generate assembly for a file
+src/Interactables/NPCs/BaseNPC.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/BaseNPC.cpp.s
+.PHONY : src/Interactables/NPCs/BaseNPC.cpp.s
+
+src/Interactables/NPCs/QuestGiver.obj: src/Interactables/NPCs/QuestGiver.cpp.obj
+.PHONY : src/Interactables/NPCs/QuestGiver.obj
+
+# target to build an object file
+src/Interactables/NPCs/QuestGiver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.obj
+.PHONY : src/Interactables/NPCs/QuestGiver.cpp.obj
+
+src/Interactables/NPCs/QuestGiver.i: src/Interactables/NPCs/QuestGiver.cpp.i
+.PHONY : src/Interactables/NPCs/QuestGiver.i
+
+# target to preprocess a source file
+src/Interactables/NPCs/QuestGiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.i
+.PHONY : src/Interactables/NPCs/QuestGiver.cpp.i
+
+src/Interactables/NPCs/QuestGiver.s: src/Interactables/NPCs/QuestGiver.cpp.s
+.PHONY : src/Interactables/NPCs/QuestGiver.s
+
+# target to generate assembly for a file
+src/Interactables/NPCs/QuestGiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.s
+.PHONY : src/Interactables/NPCs/QuestGiver.cpp.s
+
+src/Interactables/NPCs/Shopkeeper.obj: src/Interactables/NPCs/Shopkeeper.cpp.obj
+.PHONY : src/Interactables/NPCs/Shopkeeper.obj
+
+# target to build an object file
+src/Interactables/NPCs/Shopkeeper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/Shopkeeper.cpp.obj
+.PHONY : src/Interactables/NPCs/Shopkeeper.cpp.obj
+
+src/Interactables/NPCs/Shopkeeper.i: src/Interactables/NPCs/Shopkeeper.cpp.i
+.PHONY : src/Interactables/NPCs/Shopkeeper.i
+
+# target to preprocess a source file
+src/Interactables/NPCs/Shopkeeper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/Shopkeeper.cpp.i
+.PHONY : src/Interactables/NPCs/Shopkeeper.cpp.i
+
+src/Interactables/NPCs/Shopkeeper.s: src/Interactables/NPCs/Shopkeeper.cpp.s
+.PHONY : src/Interactables/NPCs/Shopkeeper.s
+
+# target to generate assembly for a file
+src/Interactables/NPCs/Shopkeeper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/Shopkeeper.cpp.s
+.PHONY : src/Interactables/NPCs/Shopkeeper.cpp.s
+
+src/Interactables/Traps/BaseTrap.obj: src/Interactables/Traps/BaseTrap.cpp.obj
+.PHONY : src/Interactables/Traps/BaseTrap.obj
+
+# target to build an object file
+src/Interactables/Traps/BaseTrap.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/BaseTrap.cpp.obj
+.PHONY : src/Interactables/Traps/BaseTrap.cpp.obj
+
+src/Interactables/Traps/BaseTrap.i: src/Interactables/Traps/BaseTrap.cpp.i
+.PHONY : src/Interactables/Traps/BaseTrap.i
+
+# target to preprocess a source file
+src/Interactables/Traps/BaseTrap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/BaseTrap.cpp.i
+.PHONY : src/Interactables/Traps/BaseTrap.cpp.i
+
+src/Interactables/Traps/BaseTrap.s: src/Interactables/Traps/BaseTrap.cpp.s
+.PHONY : src/Interactables/Traps/BaseTrap.s
+
+# target to generate assembly for a file
+src/Interactables/Traps/BaseTrap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/BaseTrap.cpp.s
+.PHONY : src/Interactables/Traps/BaseTrap.cpp.s
+
+src/Interactables/Traps/Pitfall.obj: src/Interactables/Traps/Pitfall.cpp.obj
+.PHONY : src/Interactables/Traps/Pitfall.obj
+
+# target to build an object file
+src/Interactables/Traps/Pitfall.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/Pitfall.cpp.obj
+.PHONY : src/Interactables/Traps/Pitfall.cpp.obj
+
+src/Interactables/Traps/Pitfall.i: src/Interactables/Traps/Pitfall.cpp.i
+.PHONY : src/Interactables/Traps/Pitfall.i
+
+# target to preprocess a source file
+src/Interactables/Traps/Pitfall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/Pitfall.cpp.i
+.PHONY : src/Interactables/Traps/Pitfall.cpp.i
+
+src/Interactables/Traps/Pitfall.s: src/Interactables/Traps/Pitfall.cpp.s
+.PHONY : src/Interactables/Traps/Pitfall.s
+
+# target to generate assembly for a file
+src/Interactables/Traps/Pitfall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/Pitfall.cpp.s
+.PHONY : src/Interactables/Traps/Pitfall.cpp.s
+
+src/Interactables/Traps/PoisonGas.obj: src/Interactables/Traps/PoisonGas.cpp.obj
+.PHONY : src/Interactables/Traps/PoisonGas.obj
+
+# target to build an object file
+src/Interactables/Traps/PoisonGas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.obj
+.PHONY : src/Interactables/Traps/PoisonGas.cpp.obj
+
+src/Interactables/Traps/PoisonGas.i: src/Interactables/Traps/PoisonGas.cpp.i
+.PHONY : src/Interactables/Traps/PoisonGas.i
+
+# target to preprocess a source file
+src/Interactables/Traps/PoisonGas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.i
+.PHONY : src/Interactables/Traps/PoisonGas.cpp.i
+
+src/Interactables/Traps/PoisonGas.s: src/Interactables/Traps/PoisonGas.cpp.s
+.PHONY : src/Interactables/Traps/PoisonGas.s
+
+# target to generate assembly for a file
+src/Interactables/Traps/PoisonGas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.s
+.PHONY : src/Interactables/Traps/PoisonGas.cpp.s
 
 src/Utilities/FightAction.obj: src/Utilities/FightAction.cpp.obj
 .PHONY : src/Utilities/FightAction.obj
@@ -573,6 +814,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/test.obj: src/test.cpp.obj
+.PHONY : src/test.obj
+
+# target to build an object file
+src/test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/test.cpp.obj
+.PHONY : src/test.cpp.obj
+
+src/test.i: src/test.cpp.i
+.PHONY : src/test.i
+
+# target to preprocess a source file
+src/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/test.cpp.i
+.PHONY : src/test.cpp.i
+
+src/test.s: src/test.cpp.s
+.PHONY : src/test.s
+
+# target to generate assembly for a file
+src/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/test.cpp.s
+.PHONY : src/test.cpp.s
+
 src/tinyxml2.obj: src/tinyxml2.cpp.obj
 .PHONY : src/tinyxml2.obj
 
@@ -610,6 +875,12 @@ help:
 	@echo ... rebuild_cache
 	@echo ... TextGameManager
 	@echo ... tinyxml2
+	@echo ... src/Commands/Command.obj
+	@echo ... src/Commands/Command.i
+	@echo ... src/Commands/Command.s
+	@echo ... src/Commands/CommandParser.obj
+	@echo ... src/Commands/CommandParser.i
+	@echo ... src/Commands/CommandParser.s
 	@echo ... src/Entities/Ability.obj
 	@echo ... src/Entities/Ability.i
 	@echo ... src/Entities/Ability.s
@@ -640,6 +911,12 @@ help:
 	@echo ... src/GameManager/GameManager.obj
 	@echo ... src/GameManager/GameManager.i
 	@echo ... src/GameManager/GameManager.s
+	@echo ... src/Interactables/BaseInteractable.obj
+	@echo ... src/Interactables/BaseInteractable.i
+	@echo ... src/Interactables/BaseInteractable.s
+	@echo ... src/Interactables/InteractableFactory.obj
+	@echo ... src/Interactables/InteractableFactory.i
+	@echo ... src/Interactables/InteractableFactory.s
 	@echo ... src/Interactables/Monsters/BaseMonster.obj
 	@echo ... src/Interactables/Monsters/BaseMonster.i
 	@echo ... src/Interactables/Monsters/BaseMonster.s
@@ -652,6 +929,24 @@ help:
 	@echo ... src/Interactables/Monsters/MonsterFactory.obj
 	@echo ... src/Interactables/Monsters/MonsterFactory.i
 	@echo ... src/Interactables/Monsters/MonsterFactory.s
+	@echo ... src/Interactables/NPCs/BaseNPC.obj
+	@echo ... src/Interactables/NPCs/BaseNPC.i
+	@echo ... src/Interactables/NPCs/BaseNPC.s
+	@echo ... src/Interactables/NPCs/QuestGiver.obj
+	@echo ... src/Interactables/NPCs/QuestGiver.i
+	@echo ... src/Interactables/NPCs/QuestGiver.s
+	@echo ... src/Interactables/NPCs/Shopkeeper.obj
+	@echo ... src/Interactables/NPCs/Shopkeeper.i
+	@echo ... src/Interactables/NPCs/Shopkeeper.s
+	@echo ... src/Interactables/Traps/BaseTrap.obj
+	@echo ... src/Interactables/Traps/BaseTrap.i
+	@echo ... src/Interactables/Traps/BaseTrap.s
+	@echo ... src/Interactables/Traps/Pitfall.obj
+	@echo ... src/Interactables/Traps/Pitfall.i
+	@echo ... src/Interactables/Traps/Pitfall.s
+	@echo ... src/Interactables/Traps/PoisonGas.obj
+	@echo ... src/Interactables/Traps/PoisonGas.i
+	@echo ... src/Interactables/Traps/PoisonGas.s
 	@echo ... src/Utilities/FightAction.obj
 	@echo ... src/Utilities/FightAction.i
 	@echo ... src/Utilities/FightAction.s
@@ -664,6 +959,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/test.obj
+	@echo ... src/test.i
+	@echo ... src/test.s
 	@echo ... src/tinyxml2.obj
 	@echo ... src/tinyxml2.i
 	@echo ... src/tinyxml2.s
@@ -678,6 +976,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
