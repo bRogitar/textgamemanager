@@ -7,7 +7,7 @@
 #include "tinyxml2.h"
 #include "World/Room.h"  // Room 클래스의 경로가 World 폴더에 있으므로 경로에 맞게 수정
 #include "Entities/Player.h"  // Player 클래스의 경로
-#include "Interactables/Monsters/MonsterFactory.h"  // 몬스터 팩토리 헤더 경로 수정
+#include "MonsterFactory.h"  // 몬스터 팩토리 헤더 경로 수정
 #include "Events/Event.h"  // Event 클래스 헤더 추가로 로드
 
 using namespace tinyxml2;

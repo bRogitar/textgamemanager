@@ -166,8 +166,14 @@ CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj: \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/EventManager.h \
+ C:/msys64/mingw64/include/c++/14.2.0/map \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
  C:/msys64/mingw64/include/c++/14.2.0/iostream \
  C:/msys64/mingw64/include/c++/14.2.0/ostream \
  C:/msys64/mingw64/include/c++/14.2.0/ios \
@@ -197,5 +203,4 @@ CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_heap.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
  C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h

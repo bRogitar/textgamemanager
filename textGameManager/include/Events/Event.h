@@ -3,30 +3,47 @@
 
 #include <string>
 #include <vector>
-#include <memory>  // 추가됨
+#include <memory>
 #include "Choice.h"
 #include "BaseMonster.h"
 
 class Event {
 public:
-    Event(const std::string& eventId, const std::string& eventText);
-    Event(const std::string& eventId, const std::string& name, const std::string& description);
+    Event(const std::string& eventId, const std::string& eventName, const std::string& eventDescription)
+        : id(eventId), name(eventName), description(eventDescription), completed(false) {}
 
-    void addChoice(const Choice& choice);
+    void addChoice(Choice&& choice) {
+        choices.push_back(std::move(choice));
+    }
+
+    const std::vector<Choice>& getChoices() const {
+        return choices;
+    }
+
+    void execute(Player& player);
     void displayChoices() const;
-    void executeChoice(int choiceIndex, Player& Player);
+    void executeChoice(const std::string& choiceIndex, Player& player);
     std::string getEventText() const;
     void setMonster(std::unique_ptr<BaseMonster> monster);
     bool hasMonster() const;
     BaseMonster* getMonster() const;
-    void execute(Player& player);
+
+    // 이벤트 완료 상태 관리
+    void markAsCompleted() {
+        completed = true;
+    }
+
+    bool isCompleted() const {
+        return completed;
+    }
 
 private:
-    std::string eventId;
-    std::string eventText;
+    std::string id;
     std::string name;
+    std::string description;
     std::vector<Choice> choices;
-    std::unique_ptr<BaseMonster> monster;  // Monster와 관련된 유일한 소유권을 위해 unique_ptr 사용
+    std::unique_ptr<BaseMonster> monster;
+    bool completed; // 이벤트 완료 여부
 };
 
 #endif // EVENT_H

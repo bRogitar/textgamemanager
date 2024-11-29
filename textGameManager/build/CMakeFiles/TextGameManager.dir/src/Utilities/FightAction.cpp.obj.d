@@ -1,6 +1,7 @@
-CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj: \
- D:\TextAdventures\textgamemanager\textGameManager\src\GameManager\CombatManager.cpp \
- D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj: \
+ D:\TextAdventures\textgamemanager\textGameManager\src\Utilities\FightAction.cpp \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
  C:/msys64/mingw64/include/c++/14.2.0/string \
  C:/msys64/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
@@ -117,6 +118,7 @@ CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj: \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
  C:/msys64/mingw64/include/c++/14.2.0/iostream \
  C:/msys64/mingw64/include/c++/14.2.0/ostream \
  C:/msys64/mingw64/include/c++/14.2.0/ios \
@@ -160,17 +162,4 @@ CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
  C:/msys64/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/14.2.0/istream \
- C:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc \
- C:/msys64/mingw64/include/c++/14.2.0/thread \
- C:/msys64/mingw64/include/c++/14.2.0/bits/std_thread.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/this_thread_sleep.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/chrono.h \
- C:/msys64/mingw64/include/c++/14.2.0/ratio \
- C:/msys64/mingw64/include/c++/14.2.0/cstdint \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
- C:/msys64/mingw64/include/stdint.h \
- C:/msys64/mingw64/include/c++/14.2.0/limits \
- C:/msys64/mingw64/include/c++/14.2.0/ctime \
- C:/msys64/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
- C:/msys64/mingw64/include/c++/14.2.0/chrono
+ C:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc

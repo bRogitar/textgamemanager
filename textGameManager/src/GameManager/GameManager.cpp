@@ -1,11 +1,11 @@
 #include "GameManager.h"
 #include "Event.h"
+#include "EventManager.h"
 #include <iostream>
 #include <algorithm>
 #include "tinyxml2.h"
 #include "MonsterFactory.h"
 #include "CombatManager.h"
-
 
 using namespace tinyxml2;
 
@@ -19,6 +19,7 @@ GameManager::GameManager() : worldMap(createWorldMap()) {}
 void GameManager::initializeGame() {
     std::cout << "Initializing game...\n";
     player = Player();
+
     player.setHealth(100);
     player.setMentalStrength(50);
     player.setAttackPower(20);
@@ -42,12 +43,16 @@ void GameManager::startGame() {
 
         if (choice == 1) {
             displayMessage("Starting a new game...\n");
+            displayMessage("Enter your player's name: ");
+            std::string playerName = getUserInput();
+            player.setName(playerName);
+            initializeGame(); // 초기화 한 번만 수행
             validInput = true;
             displayPlayerStatus(); // 게임 시작 시 플레이어 상태 표시
         } else if (choice == 2) {
             displayMessage("Loading saved game...\n");
-            validInput = true;
             loadGame();
+            validInput = true;
             displayPlayerStatus(); // 게임 로드 후 플레이어 상태 표시
         } else {
             displayMessage("Invalid choice. Please enter 1 or 2.\n");
@@ -56,6 +61,7 @@ void GameManager::startGame() {
 
     gameLoop();
 }
+
 
 void GameManager::displayPlayerStatus() {
     displayMessage("===========================\n");
@@ -202,38 +208,28 @@ void GameManager::gameLoop() {
     bool allRoomsCleared = false;
 
     while (!allRoomsCleared) {
-        allRoomsCleared = true; // 초기값을 true로 설정한 후 모든 방을 확인
+        allRoomsCleared = true;
 
         for (auto& room : worldMap) {
             if (!room.isCleared()) {
-                allRoomsCleared = false; // 클리어되지 않은 방이 있다면 false로 변경
-                
-                // 방에 들어가는 메시지 출력 (디버깅용)
+                allRoomsCleared = false;
+
                 displayMessage("Entering room: " + room.getRoomName() + "\n");
-                
+
                 if (room.hasEvent()) {
-                    Event event = loadEvent(room.getEventId());
+                    EventManager& eventManager = EventManager::getInstance();
+                    eventManager.processEvent(room.getEventId(), player);
 
-                    if (event.hasMonster()) {
-                        BaseMonster* monster = event.getMonster();
-                        CombatManager combat(player, monster);
-                        combat.startCombat();
-
-                        if (player.isDefeated()) {
-                            displayMessage("You have been defeated. Returning to starting point with penalties...\n");
-                            player.applyDefeatPenalty();
-                            return;
-                        } else {
-                            displayMessage("You defeated the monster!\n");
-                        }
+                    // 이벤트 처리 후 선택지 실행
+                    Event* currentEvent = eventManager.getEvent(room.getEventId());
+                    if (currentEvent != nullptr) {
+                        currentEvent->displayChoices();
+                        std::string choice = getUserInput();
+                        eventManager.executeChoice(choice, currentEvent, player);
                     }
-
-                    event.displayChoices();
-                    int choice = std::stoi(getUserInput());
-                    event.executeChoice(choice - 1, player);
                 }
 
-                room.setCleared(true); // 이벤트가 끝나면 방을 클리어 처리
+                room.setCleared(true);
             }
         }
 
@@ -243,57 +239,4 @@ void GameManager::gameLoop() {
             displayMessage("There are still rooms to explore...\n");
         }
     }
-}
-
-Event GameManager::loadEvent(const std::string& eventId) {
-    XMLDocument doc;
-    std::string filePath = "../resources/events/" + eventId + ".xml";
-    XMLError eResult = doc.LoadFile(filePath.c_str());
-    if (eResult != XML_SUCCESS) {
-        displayMessage("Error loading event file: " + filePath + "\n");
-    }
-
-    XMLElement* pEvent = doc.FirstChildElement("Event");
-    if (pEvent == nullptr) {
-        displayMessage("Invalid event file format: " + filePath + "\n");
-    }
-
-    std::string eventName = pEvent->FirstChildElement("name")->GetText() ? pEvent->FirstChildElement("name")->GetText() : "Unknown";
-    std::string eventDescription = pEvent->FirstChildElement("description")->GetText() ? pEvent->FirstChildElement("description")->GetText() : "";
-    Event event(eventId, eventName, eventDescription);
-
-    // Load Monster from XML
-    XMLElement* pMonster = pEvent->FirstChildElement("Monster");
-    if (pMonster != nullptr) {
-        std::string monsterType = pMonster->Attribute("name") ? pMonster->Attribute("name") : "Unknown";
-        int health = 0;
-        int attackPower = 0;
-        pMonster->QueryIntAttribute("health", &health);
-        pMonster->QueryIntAttribute("attackPower", &attackPower);
-
-        auto monster = MonsterFactory::createMonster(monsterType, health, attackPower);
-        if (monster != nullptr) {
-            event.setMonster(std::move(monster));
-        }
-    }
-
-    // Load Choices from XML
-    XMLElement* pChoices = pEvent->FirstChildElement("Choices");
-    if (pChoices != nullptr) {
-        for (XMLElement* pChoice = pChoices->FirstChildElement("Choice"); pChoice != nullptr; pChoice = pChoice->NextSiblingElement("Choice")) {
-            std::string choiceId = pChoice->Attribute("id") ? pChoice->Attribute("id") : "Unknown";
-            std::string description = pChoice->Attribute("description") ? pChoice->Attribute("description") : "";
-            int healthImpact = 0, mentalStrengthImpact = 0, attackPowerImpact = 0, moneyImpact = 0;
-
-            pChoice->QueryIntAttribute("healthImpact", &healthImpact);
-            pChoice->QueryIntAttribute("mentalStrengthImpact", &mentalStrengthImpact);
-            pChoice->QueryIntAttribute("attackPowerImpact", &attackPowerImpact);
-            pChoice->QueryIntAttribute("moneyImpact", &moneyImpact);
-
-            Choice choice(choiceId, description, healthImpact, mentalStrengthImpact, attackPowerImpact, moneyImpact);
-            event.addChoice(choice);
-        }
-    }
-
-    return event;
 }

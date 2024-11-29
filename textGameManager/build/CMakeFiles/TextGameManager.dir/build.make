@@ -278,41 +278,11 @@ CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\TextAdventures\textgamemanager\textGameManager\src\GameManager\SaveLoadManager.cpp -o CMakeFiles\TextGameManager.dir\src\GameManager\SaveLoadManager.cpp.s
 
-CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj: CMakeFiles/TextGameManager.dir/flags.make
-CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
-CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/BaseInteractable.cpp
-CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\Interactables\BaseInteractable.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\Interactables\BaseInteractable.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\BaseInteractable.cpp
-
-CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\BaseInteractable.cpp > CMakeFiles\TextGameManager.dir\src\Interactables\BaseInteractable.cpp.i
-
-CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\BaseInteractable.cpp -o CMakeFiles\TextGameManager.dir\src\Interactables\BaseInteractable.cpp.s
-
-CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj: CMakeFiles/TextGameManager.dir/flags.make
-CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
-CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/InteractableFactory.cpp
-CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\Interactables\InteractableFactory.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\Interactables\InteractableFactory.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\InteractableFactory.cpp
-
-CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\InteractableFactory.cpp > CMakeFiles\TextGameManager.dir\src\Interactables\InteractableFactory.cpp.i
-
-CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\InteractableFactory.cpp -o CMakeFiles\TextGameManager.dir\src\Interactables\InteractableFactory.cpp.s
-
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj: CMakeFiles/TextGameManager.dir/flags.make
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/BaseMonster.cpp
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\BaseMonster.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\BaseMonster.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\BaseMonster.cpp
 
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.i: cmake_force
@@ -327,7 +297,7 @@ CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj: CMakeFiles/TextGameManage
 CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
 CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/World/Room.cpp
 CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\World\Room.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\World\Room.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\World\Room.cpp
 
 CMakeFiles/TextGameManager.dir/src/World/Room.cpp.i: cmake_force
@@ -342,7 +312,7 @@ CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj: CMakeFiles/TextGameMa
 CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
 CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/World/WorldMap.cpp
 CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\World\WorldMap.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\World\WorldMap.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\World\WorldMap.cpp
 
 CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.i: cmake_force
@@ -357,7 +327,7 @@ CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj: CMakeFiles/TextGameManager.
 CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
 CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/tinyxml2.cpp
 CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\tinyxml2.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\tinyxml2.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\tinyxml2.cpp
 
 CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.i: cmake_force
@@ -372,7 +342,7 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj: CMakeF
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Goblin.cpp
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\Goblin.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\Goblin.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\Goblin.cpp
 
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.i: cmake_force
@@ -383,11 +353,26 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\Goblin.cpp -o CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\Goblin.cpp.s
 
+CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj: CMakeFiles/TextGameManager.dir/flags.make
+CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
+CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Dragon.cpp
+CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\Dragon.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\Dragon.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\Dragon.cpp
+
+CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\Dragon.cpp > CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\Dragon.cpp.i
+
+CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\Dragon.cpp -o CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\Dragon.cpp.s
+
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj: CMakeFiles/TextGameManager.dir/flags.make
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/MonsterFactory.cpp
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\MonsterFactory.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\MonsterFactory.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\MonsterFactory.cpp
 
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.i: cmake_force
@@ -397,6 +382,21 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.i: 
 CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\TextAdventures\textgamemanager\textGameManager\src\Interactables\Monsters\MonsterFactory.cpp -o CMakeFiles\TextGameManager.dir\src\Interactables\Monsters\MonsterFactory.cpp.s
+
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj: CMakeFiles/TextGameManager.dir/flags.make
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj: CMakeFiles/TextGameManager.dir/includes_CXX.rsp
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj: D:/TextAdventures/textgamemanager/textGameManager/src/Utilities/FightAction.cpp
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj: CMakeFiles/TextGameManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\TextAdventures\textgamemanager\textGameManager\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj -MF CMakeFiles\TextGameManager.dir\src\Utilities\FightAction.cpp.obj.d -o CMakeFiles\TextGameManager.dir\src\Utilities\FightAction.cpp.obj -c D:\TextAdventures\textgamemanager\textGameManager\src\Utilities\FightAction.cpp
+
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\TextAdventures\textgamemanager\textGameManager\src\Utilities\FightAction.cpp > CMakeFiles\TextGameManager.dir\src\Utilities\FightAction.cpp.i
+
+CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\TextAdventures\textgamemanager\textGameManager\src\Utilities\FightAction.cpp -o CMakeFiles\TextGameManager.dir\src\Utilities\FightAction.cpp.s
 
 # Object files for target TextGameManager
 TextGameManager_OBJECTS = \
@@ -414,14 +414,14 @@ TextGameManager_OBJECTS = \
 "CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.obj" \
 "CMakeFiles/TextGameManager.dir/src/GameManager/InteractionManager.cpp.obj" \
 "CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.obj" \
-"CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj" \
-"CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj" \
 "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj" \
 "CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj" \
 "CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj" \
 "CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj" \
 "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj" \
-"CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj"
+"CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj" \
+"CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj" \
+"CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj"
 
 # External object files for target TextGameManager
 TextGameManager_EXTERNAL_OBJECTS =
@@ -440,14 +440,14 @@ TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/InteractionManager.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.obj
-TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj
-TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj
+TextGameManager.exe: CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/build.make
 TextGameManager.exe: libtinyxml2.a
 TextGameManager.exe: CMakeFiles/TextGameManager.dir/linkLibs.rsp

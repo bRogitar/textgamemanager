@@ -6,7 +6,6 @@ project(TextGameManager)
 # C++ 표준 설정
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-
 # 소스 파일 목록 추가
 set(SOURCES
     src/main.cpp
@@ -23,14 +22,14 @@ set(SOURCES
     src/GameManager/InputManager.cpp
     src/GameManager/InteractionManager.cpp
     src/GameManager/SaveLoadManager.cpp
-    src/Interactables/BaseInteractable.cpp
-    src/Interactables/InteractableFactory.cpp
     src/Interactables/Monsters/BaseMonster.cpp
     src/World/Room.cpp
     src/World/WorldMap.cpp
     src/tinyxml2.cpp # tinyxml2 소스 파일 추가
-    src/Interactables/Monsters/Goblin.cpp          # 추가된 부분
-    src/Interactables/Monsters/MonsterFactory.cpp  
+    src/Interactables/Monsters/Goblin.cpp   
+    src/Interactables/Monsters/Dragon.cpp          # 추가된 부분
+    src/Interactables/Monsters/MonsterFactory.cpp
+    src/Utilities/FightAction.cpp
 )
 
 # 헤더 파일 경로 설정

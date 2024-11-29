@@ -453,54 +453,6 @@ src/GameManager/SaveLoadManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/SaveLoadManager.cpp.s
 .PHONY : src/GameManager/SaveLoadManager.cpp.s
 
-src/Interactables/BaseInteractable.obj: src/Interactables/BaseInteractable.cpp.obj
-.PHONY : src/Interactables/BaseInteractable.obj
-
-# target to build an object file
-src/Interactables/BaseInteractable.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj
-.PHONY : src/Interactables/BaseInteractable.cpp.obj
-
-src/Interactables/BaseInteractable.i: src/Interactables/BaseInteractable.cpp.i
-.PHONY : src/Interactables/BaseInteractable.i
-
-# target to preprocess a source file
-src/Interactables/BaseInteractable.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.i
-.PHONY : src/Interactables/BaseInteractable.cpp.i
-
-src/Interactables/BaseInteractable.s: src/Interactables/BaseInteractable.cpp.s
-.PHONY : src/Interactables/BaseInteractable.s
-
-# target to generate assembly for a file
-src/Interactables/BaseInteractable.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.s
-.PHONY : src/Interactables/BaseInteractable.cpp.s
-
-src/Interactables/InteractableFactory.obj: src/Interactables/InteractableFactory.cpp.obj
-.PHONY : src/Interactables/InteractableFactory.obj
-
-# target to build an object file
-src/Interactables/InteractableFactory.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj
-.PHONY : src/Interactables/InteractableFactory.cpp.obj
-
-src/Interactables/InteractableFactory.i: src/Interactables/InteractableFactory.cpp.i
-.PHONY : src/Interactables/InteractableFactory.i
-
-# target to preprocess a source file
-src/Interactables/InteractableFactory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.i
-.PHONY : src/Interactables/InteractableFactory.cpp.i
-
-src/Interactables/InteractableFactory.s: src/Interactables/InteractableFactory.cpp.s
-.PHONY : src/Interactables/InteractableFactory.s
-
-# target to generate assembly for a file
-src/Interactables/InteractableFactory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.s
-.PHONY : src/Interactables/InteractableFactory.cpp.s
-
 src/Interactables/Monsters/BaseMonster.obj: src/Interactables/Monsters/BaseMonster.cpp.obj
 .PHONY : src/Interactables/Monsters/BaseMonster.obj
 
@@ -524,6 +476,30 @@ src/Interactables/Monsters/BaseMonster.s: src/Interactables/Monsters/BaseMonster
 src/Interactables/Monsters/BaseMonster.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.s
 .PHONY : src/Interactables/Monsters/BaseMonster.cpp.s
+
+src/Interactables/Monsters/Dragon.obj: src/Interactables/Monsters/Dragon.cpp.obj
+.PHONY : src/Interactables/Monsters/Dragon.obj
+
+# target to build an object file
+src/Interactables/Monsters/Dragon.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj
+.PHONY : src/Interactables/Monsters/Dragon.cpp.obj
+
+src/Interactables/Monsters/Dragon.i: src/Interactables/Monsters/Dragon.cpp.i
+.PHONY : src/Interactables/Monsters/Dragon.i
+
+# target to preprocess a source file
+src/Interactables/Monsters/Dragon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.i
+.PHONY : src/Interactables/Monsters/Dragon.cpp.i
+
+src/Interactables/Monsters/Dragon.s: src/Interactables/Monsters/Dragon.cpp.s
+.PHONY : src/Interactables/Monsters/Dragon.s
+
+# target to generate assembly for a file
+src/Interactables/Monsters/Dragon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.s
+.PHONY : src/Interactables/Monsters/Dragon.cpp.s
 
 src/Interactables/Monsters/Goblin.obj: src/Interactables/Monsters/Goblin.cpp.obj
 .PHONY : src/Interactables/Monsters/Goblin.obj
@@ -572,6 +548,30 @@ src/Interactables/Monsters/MonsterFactory.s: src/Interactables/Monsters/MonsterF
 src/Interactables/Monsters/MonsterFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.s
 .PHONY : src/Interactables/Monsters/MonsterFactory.cpp.s
+
+src/Utilities/FightAction.obj: src/Utilities/FightAction.cpp.obj
+.PHONY : src/Utilities/FightAction.obj
+
+# target to build an object file
+src/Utilities/FightAction.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj
+.PHONY : src/Utilities/FightAction.cpp.obj
+
+src/Utilities/FightAction.i: src/Utilities/FightAction.cpp.i
+.PHONY : src/Utilities/FightAction.i
+
+# target to preprocess a source file
+src/Utilities/FightAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.i
+.PHONY : src/Utilities/FightAction.cpp.i
+
+src/Utilities/FightAction.s: src/Utilities/FightAction.cpp.s
+.PHONY : src/Utilities/FightAction.s
+
+# target to generate assembly for a file
+src/Utilities/FightAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.s
+.PHONY : src/Utilities/FightAction.cpp.s
 
 src/World/Room.obj: src/World/Room.cpp.obj
 .PHONY : src/World/Room.obj
@@ -721,21 +721,21 @@ help:
 	@echo ... src/GameManager/SaveLoadManager.obj
 	@echo ... src/GameManager/SaveLoadManager.i
 	@echo ... src/GameManager/SaveLoadManager.s
-	@echo ... src/Interactables/BaseInteractable.obj
-	@echo ... src/Interactables/BaseInteractable.i
-	@echo ... src/Interactables/BaseInteractable.s
-	@echo ... src/Interactables/InteractableFactory.obj
-	@echo ... src/Interactables/InteractableFactory.i
-	@echo ... src/Interactables/InteractableFactory.s
 	@echo ... src/Interactables/Monsters/BaseMonster.obj
 	@echo ... src/Interactables/Monsters/BaseMonster.i
 	@echo ... src/Interactables/Monsters/BaseMonster.s
+	@echo ... src/Interactables/Monsters/Dragon.obj
+	@echo ... src/Interactables/Monsters/Dragon.i
+	@echo ... src/Interactables/Monsters/Dragon.s
 	@echo ... src/Interactables/Monsters/Goblin.obj
 	@echo ... src/Interactables/Monsters/Goblin.i
 	@echo ... src/Interactables/Monsters/Goblin.s
 	@echo ... src/Interactables/Monsters/MonsterFactory.obj
 	@echo ... src/Interactables/Monsters/MonsterFactory.i
 	@echo ... src/Interactables/Monsters/MonsterFactory.s
+	@echo ... src/Utilities/FightAction.obj
+	@echo ... src/Utilities/FightAction.i
+	@echo ... src/Utilities/FightAction.s
 	@echo ... src/World/Room.obj
 	@echo ... src/World/Room.i
 	@echo ... src/World/Room.s
