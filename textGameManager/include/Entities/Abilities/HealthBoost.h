@@ -1,7 +1,7 @@
 #ifndef HEALTHBOOST_H
 #define HEALTHBOOST_H
 
-#include "Ability.h"
+#include "BaseAbility.h"
 
 class HealthBoost : public Ability {
 public:

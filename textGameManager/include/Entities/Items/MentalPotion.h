@@ -1,7 +1,7 @@
 #ifndef MENTALPOTION_H
 #define MENTALPOTION_H
 
-#include "Item.h"
+#include "BaseItem.h"
 
 class MentalPotion : public Item {
 public:

@@ -4,16 +4,16 @@
 
 #include <vector>
 #include <string>
-#include "Ability.h"
+#include "BaseAbility.h"
 
 class AbilityInventory {
 public:
-    void addAbility(const Ability& ability);
-    void removeAbility(const Ability& ability);
+    void addAbility(const BaseAbility& ability);
+    void removeAbility(const BaseAbility& ability);
     bool hasAbility(const std::string& abilityId) const;
 
 private:
-    std::vector<Ability> abilities;
+    std::vector<BaseAbility> abilities;
 };
 
 #endif // ABILITYINVENTORY_H
