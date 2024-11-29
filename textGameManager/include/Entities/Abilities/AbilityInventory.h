@@ -4,7 +4,7 @@
 
 #include <vector>
 #include <string>
-#include "Ability.h"
+#include "BaseAbility.h"
 
 class AbilityInventory {
 public:
