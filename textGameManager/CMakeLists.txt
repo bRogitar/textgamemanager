@@ -30,7 +30,7 @@ set(SOURCES
     src/World/WorldMap.cpp
     src/tinyxml2.cpp # tinyxml2 소스 파일 추가
     src/Interactables/Monsters/Goblin.cpp          # 추가된 부분
-    src/Interactables/Monsters/MonsterFactory.cpp  
+    src/Interactables/Monsters/MonsterFactory.cpp
 )
 
 # 헤더 파일 경로 설정
