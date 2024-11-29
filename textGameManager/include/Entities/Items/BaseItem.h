@@ -1,6 +1,6 @@
 // Item.h
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef BASEITEM_H
+#define BASEITEM_H
 
 #include <string>
 #include <unordered_map>
