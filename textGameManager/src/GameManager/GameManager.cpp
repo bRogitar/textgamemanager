@@ -20,11 +20,6 @@ void GameManager::initializeGame() {
     std::cout << "Initializing game...\n";
     player = Player();
 
-    // 플레이어 이름 설정
-    displayMessage("Enter your player's name: ");
-    std::string playerName = getUserInput();
-    player.setName(playerName);
-
     player.setHealth(100);
     player.setMentalStrength(50);
     player.setAttackPower(20);
@@ -48,13 +43,16 @@ void GameManager::startGame() {
 
         if (choice == 1) {
             displayMessage("Starting a new game...\n");
-            initializeGame(); // 플레이어 이름 설정 포함
+            displayMessage("Enter your player's name: ");
+            std::string playerName = getUserInput();
+            player.setName(playerName);
+            initializeGame(); // 초기화 한 번만 수행
             validInput = true;
             displayPlayerStatus(); // 게임 시작 시 플레이어 상태 표시
         } else if (choice == 2) {
             displayMessage("Loading saved game...\n");
-            validInput = true;
             loadGame();
+            validInput = true;
             displayPlayerStatus(); // 게임 로드 후 플레이어 상태 표시
         } else {
             displayMessage("Invalid choice. Please enter 1 or 2.\n");
@@ -63,6 +61,7 @@ void GameManager::startGame() {
 
     gameLoop();
 }
+
 
 void GameManager::displayPlayerStatus() {
     displayMessage("===========================\n");

@@ -1,7 +1,7 @@
 CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj: \
  D:\TextAdventures\textgamemanager\textGameManager\src\GameManager\CombatManager.cpp \
  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
  C:/msys64/mingw64/include/c++/14.2.0/string \
  C:/msys64/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -99,7 +99,6 @@ CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
  C:/msys64/mingw64/include/c++/14.2.0/tuple \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
  C:/msys64/mingw64/include/c++/14.2.0/vector \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
@@ -117,6 +116,7 @@ CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
  C:/msys64/mingw64/include/c++/14.2.0/iostream \
  C:/msys64/mingw64/include/c++/14.2.0/ostream \
  C:/msys64/mingw64/include/c++/14.2.0/ios \

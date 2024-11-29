@@ -143,6 +143,7 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  C:/msys64/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Item.h \

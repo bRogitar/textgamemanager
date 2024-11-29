@@ -23,14 +23,14 @@ set(SOURCES
     src/GameManager/InputManager.cpp
     src/GameManager/InteractionManager.cpp
     src/GameManager/SaveLoadManager.cpp
-    src/Interactables/BaseInteractable.cpp
-    src/Interactables/InteractableFactory.cpp
     src/Interactables/Monsters/BaseMonster.cpp
     src/World/Room.cpp
     src/World/WorldMap.cpp
     src/tinyxml2.cpp # tinyxml2 소스 파일 추가
-    src/Interactables/Monsters/Goblin.cpp          # 추가된 부분
+    src/Interactables/Monsters/Goblin.cpp   
+    src/Interactables/Monsters/Dragon.cpp          # 추가된 부분
     src/Interactables/Monsters/MonsterFactory.cpp
+    src/Utilities/ConcreteAction.cpp
 )
 
 # 헤더 파일 경로 설정
@@ -55,5 +55,5 @@ target_link_libraries(TextGameManager PRIVATE tinyxml2)
 
 # 출력 디렉토리 설정 (옵션)
 set_target_properties(TextGameManager PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
 )

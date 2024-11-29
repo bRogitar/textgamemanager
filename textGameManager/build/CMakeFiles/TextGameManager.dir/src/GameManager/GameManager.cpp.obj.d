@@ -164,10 +164,7 @@ CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj: \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Dragon.h \
  C:/msys64/mingw64/include/c++/14.2.0/iostream \
  C:/msys64/mingw64/include/c++/14.2.0/ostream \
  C:/msys64/mingw64/include/c++/14.2.0/ios \
@@ -191,6 +188,16 @@ CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/14.2.0/istream \
  C:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/EventManager.h \
+ C:/msys64/mingw64/include/c++/14.2.0/map \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
  C:/msys64/mingw64/include/c++/14.2.0/algorithm \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_algo.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
