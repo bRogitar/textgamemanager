@@ -14,7 +14,7 @@ public:
 
     void addChoice(const Choice& choice);
     void displayChoices() const;
-    void executeChoice(int choiceIndex, Player& Player);
+    void executeChoice(const std::string& choiceIndex, Player& Player);
     std::string getEventText() const;
     void setMonster(std::unique_ptr<BaseMonster> monster);
     bool hasMonster() const;
