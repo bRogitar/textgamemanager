@@ -1,13 +1,5 @@
 #include "Goblin.h"
-#include <iostream>
-#include "Player.h"
+#include "MonsterRegistration.h"
 
-// Goblin Constructor Definition
-Goblin::Goblin(int health, int attackPower)
-    : BaseMonster("Goblin", health, attackPower) {}  // BaseMonster의 생성자 호출
-
-// Attack Function Implementation
-void Goblin::attack(Player& player) {
-    std::cout << "The Goblin attacks you, dealing " << getAttackPower() << " damage!" << std::endl;
-    player.takeDamage(getAttackPower());
-}
+// Goblin 클래스를 팩토리에 등록
+REGISTER_MONSTER(Goblin);

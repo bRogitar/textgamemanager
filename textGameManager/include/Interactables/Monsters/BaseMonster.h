@@ -8,27 +8,24 @@ class BaseMonster {
 public:
     BaseMonster(const std::string& name, int health, int attackPower);
 
-    virtual ~BaseMonster() = default;
+    virtual void attack(Player& player) = 0; // 순수 가상 함수
 
-    // Getter methods
     std::string getName() const;
     int getHealth() const;
-    int getCombatHealth() const;
     int getAttackPower() const;
 
-    // Combat related methods
-    void setCombatHealth(int health);
-    void takeCombatDamage(int damage);
+    void setCombatHealth(int newHealth);
+    int getCombatHealth() const;
     bool isCombatDefeated() const;
+    void takeCombatDamage(int damage);
 
-    // Virtual attack method to be overridden by derived classes
-    virtual void attack(Player& player) = 0;
+protected:
+    int health;        // Initial health of the monster
+    int attackPower;   // Attack power of the monster
+    int combatHealth;  // Current health during combat
 
 private:
-    std::string name;
-    int health;
-    int combatHealth; // Combat health to track during battles
-    int attackPower;
+    std::string name;  // Name of the monster
 };
 
 #endif // BASEMONSTER_H

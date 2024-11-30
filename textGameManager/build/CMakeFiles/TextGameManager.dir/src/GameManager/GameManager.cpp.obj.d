@@ -161,9 +161,12 @@ CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  C:/msys64/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+ C:/msys64/mingw64/include/c++/14.2.0/functional \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/std_function.h \
+ C:/msys64/mingw64/include/c++/14.2.0/array \
+ C:/msys64/mingw64/include/c++/14.2.0/compare \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \

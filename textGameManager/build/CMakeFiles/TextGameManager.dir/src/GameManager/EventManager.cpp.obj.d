@@ -196,8 +196,11 @@ CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/fstream.tcc \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h \
+ C:/msys64/mingw64/include/c++/14.2.0/functional \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/std_function.h \
+ C:/msys64/mingw64/include/c++/14.2.0/array \
+ C:/msys64/mingw64/include/c++/14.2.0/compare \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/Goblin.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/FightAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \

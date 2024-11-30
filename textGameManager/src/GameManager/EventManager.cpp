@@ -53,28 +53,41 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
 
 void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {
     auto& choices = currentEvent->getChoices();
-    auto it = std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
-        return choice.getId() == choiceId;
-    });
+    std::string userChoice = choiceId; // 초기 선택값
 
-    if (it != choices.end()) {
-        it->execute(player);
+    while (true) { // 루프 유지
+        auto it = std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
+            return choice.getId() == userChoice;
+        });
 
-        // 다음 이벤트로 이동
-        std::string nextEventId = it->getNextEventId();
-        if (nextEventId == "end") {
-            std::cout << "Congratulations! You have completed the game.\n";
-            exit(0); // 프로그램 종료
-        } else if (!nextEventId.empty()) {
-            processEvent(nextEventId, player);
+        if (it != choices.end()) {
+            // 유효한 선택지를 실행
+            it->execute(player);
+
+            // 다음 이벤트로 이동
+            std::string nextEventId = it->getNextEventId();
+            if (nextEventId == "end") {
+                std::cout << "Congratulations! You have completed the game.\n";
+                exit(0); // 프로그램 종료
+            } else if (!nextEventId.empty()) {
+                processEvent(nextEventId, player);
+            }
+            break; // 올바른 입력이므로 루프 종료
+        } else {
+            // 잘못된 입력 처리
+            std::cout << "Invalid choice ID. Please try again." << std::endl;
+
+            // 선택지를 다시 표시
+            currentEvent->displayChoices();
+
+            // 새 입력을 받음
+            userChoice = GameManager::getInstance().getUserInput();
         }
-    } else {
-        std::cout << "Invalid choice ID. Please try again.\n";
-        currentEvent->displayChoices();
-        std::string newChoiceId = GameManager::getInstance().getUserInput();
-        executeChoice(newChoiceId, currentEvent, player);
     }
 }
+
+
+
 
 std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePath, const std::string& eventId) {
     XMLDocument doc;

@@ -19,17 +19,29 @@ void Event::execute(Player& player) {
     std::cout << description << "\n";
     displayChoices();
 
-    std::string choiceId;
     while (true) {
         std::cout << "Enter your choice ID: ";
+        std::string choiceId;
         std::cin >> choiceId;
 
         // 선택 실행을 EventManager에 위임
         EventManager& manager = EventManager::getInstance();
-        manager.executeChoice(choiceId, this, player);
-        break;
+        auto& choices = getChoices();
+
+        auto it = std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
+            return choice.getId() == choiceId;
+        });
+
+        if (it != choices.end()) {
+            manager.executeChoice(choiceId, this, player);
+            break; // 올바른 입력일 경우 루프 종료
+        } else {
+            std::cout << "Invalid choice ID. Please try again." << std::endl;
+            displayChoices(); // 선택지를 다시 표시
+        }
     }
 }
+
 
 
 // 몬스터를 설정하는 함수
