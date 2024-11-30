@@ -170,4 +170,6 @@ CMakeFiles/TextGameManager.dir/src/main.cpp.obj: \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h
+ D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/World/WorldMap.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h

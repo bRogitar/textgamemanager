@@ -8,7 +8,7 @@ class BaseMonster {
 public:
     BaseMonster(const std::string& name, int health, int attackPower);
 
-    virtual void attack(Player& player) = 0; // 순수 가상 함수
+    virtual void attack(Player& player) = 0; 
 
     std::string getName() const;
     int getHealth() const;
@@ -20,12 +20,12 @@ public:
     void takeCombatDamage(int damage);
 
 protected:
-    int health;        // Initial health of the monster
-    int attackPower;   // Attack power of the monster
-    int combatHealth;  // Current health during combat
+    int health;        
+    int attackPower;   
+    int combatHealth; 
 
 private:
-    std::string name;  // Name of the monster
+    std::string name;  
 };
 
 #endif // BASEMONSTER_H

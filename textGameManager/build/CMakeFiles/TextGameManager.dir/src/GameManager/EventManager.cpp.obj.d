@@ -214,4 +214,6 @@ CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj: \
  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/GameManager.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h
+ D:/TextAdventures/textgamemanager/textGameManager/include/Events/Event.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/World/WorldMap.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/World/Room.h

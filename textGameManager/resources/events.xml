@@ -17,10 +17,6 @@
         <Choices>
             <Choice id="run" description="next" nextEventId="event3"/>
             <Choice id="dummy" description="dummy" nextEventId="event3"/>
-            <Choice id="dummy" description="dummy" nextEventId="event3"/>
-            <Choice id="dummy" description="dummy" nextEventId="event3"/>
-            <Choice id="dummy" description="dummy" nextEventId="event3"/>
-            <Choice id="dummy" description="dummy" nextEventId="event3"/>
         </Choices>
     </Event>
 
