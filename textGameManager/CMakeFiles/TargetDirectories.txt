@@ -1,0 +1,4 @@
+C:/Users/jodoo/Desktop/textgamemanager-min2/textGameManager/CMakeFiles/TextGameManager.dir
+C:/Users/jodoo/Desktop/textgamemanager-min2/textGameManager/CMakeFiles/tinyxml2.dir
+C:/Users/jodoo/Desktop/textgamemanager-min2/textGameManager/CMakeFiles/ALL_BUILD.dir
+C:/Users/jodoo/Desktop/textgamemanager-min2/textGameManager/CMakeFiles/ZERO_CHECK.dir

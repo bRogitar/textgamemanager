@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Events>
+    <Event id="event1">
+        <name>Entrance Hall</name>
+        <description>A group of goblins attacks you at the entrance. You need to overcome this situation.</description>
+        <Monster name="Goblin" health="50" attackPower="10"/>
+        <Choices>
+            <Choice id="run" description="next" nextEventId="event2"/>
+            <Choice id="fight" description="Fight" nextEventId="event2"/>
+        </Choices>
+    </Event>
+
+    <Event id="event2">
+        <name>Magic Book</name>
+        <description>You have found an ancient magic book. Decide what to do with it and then continue your journey.</description>
+        <Choices>
+            <Choice id="run" description="next" nextEventId="event3"/>
+            <Choice id="dummy" description="dummy" nextEventId="event3"/>
+        </Choices>
+    </Event>
+
+    <Event id="event3">
+        <name>Ghostly Banquet</name>
+        <description>The empty plates suddenly start shaking. You pass by the ghostly banquet and continue on your way.</description>
+        <Choices>
+            <Choice id="run" description="next" nextEventId="shop_event"/>
+        </Choices>
+    </Event>
+
+    <Event id="shop_event">
+        <name>Wandering Merchant</name>
+        <description>당신은 방랑 상인을 만났습니다.</description>
+        <NPC type="Shopkeeper" 
+            id="merchant1" 
+            name="방랑 상인" 
+            dialogue="어서오세요! 특별한 물건들을 판매하고 있습니다."/>
+        <Choices>
+            <Choice id="shop" description="상점 이용하기" nextEventId="event4"/>
+            <Choice id="leave" description="그냥 지나간다" nextEventId="event4"/>
+        </Choices>
+    </Event>
+    
+    <Event id="event4">
+        <name>Suspicious Room</name>
+        <description>당신은 수상한 방에 들어섰다. 근데 뭔가 이상한 냄새가 난다....</description>
+        <Trap type="PoisonGas" damage="15" avoidChance="40"/>
+        <Choices>
+            <Choice id="continue" description="Just continue walking" nextEventId="end"/>
+            <Choice id="use_codex" description="Use World Trap Codex to analyze the room" requireAbility="trap_codex" nextEventId="end"/>
+        </Choices>
+    </Event>
+
+
+</Events>
