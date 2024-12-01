@@ -3,6 +3,7 @@ mingw32-make
 
 
 파일 목록 만들기
-Get-ChildItem -Path ., ./scr -Recurse -Include *.cpp,*.h | Select-Object FullName | Out-String -Width 500 | Set-Content project_files.txt
+Get-ChildItem -Path ./src, ./resources, ./include -Recurse -Include *.cpp,*.h,*.xml | Select-Object FullName | Out-String -Width 500 | Set-Content project_files.txt
+
 
 PS D:\김가람의 공부\textgamemanager> cd textGameManager
