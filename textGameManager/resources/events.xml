@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Events>
-    <Event id="event1">
-        <name>Entrance Hall</name>
-        <description>A group of goblins attacks you at the entrance. You need to overcome this situation.</description>
-        <Monster name="Goblin" health="50" attackPower="10"/>
-        <Choices>
-            <Choice id="run" description="next" nextEventId="event2"/>
-            <Choice id="fight" description="Fight" nextEventId="event2"/>
-        </Choices>
-    </Event>
+<Event id="event1">
+    <name>Entrance Hall</name>
+    <description>A group of goblins attacks you at the entrance. You need to overcome this situation.</description>
+    <Monster type="Goblin" name="Goblin Leader" health="50" attackPower="10"/>
+    <Choices>
+        <Choice id="run" description="next" nextEventId="event2"/>
+        <Choice id="fight" description="Fight" nextEventId="event2"/>
+    </Choices>
+</Event>
+
 
     <Event id="event2">
         <name>Magic Book</name>

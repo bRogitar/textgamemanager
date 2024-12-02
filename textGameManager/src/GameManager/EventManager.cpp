@@ -5,7 +5,6 @@
 #include "MonsterFactory.h"
 #include "FightAction.h"  // ConcreteAction 클래스 포함
 #include "Event.h"
-#include "FightAction.h"
 #include "RunAwayAction.h"
 #include <algorithm>
 #include "GameManager.h"
@@ -86,9 +85,6 @@ void EventManager::executeChoice(const std::string& choiceId, Event* currentEven
     }
 }
 
-
-
-
 std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePath, const std::string& eventId) {
     XMLDocument doc;
     XMLError eResult = doc.LoadFile(filePath.c_str());
@@ -112,16 +108,23 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
             auto newEvent = std::make_unique<Event>(eventId, name, description);
 
             // 몬스터 정보를 읽어들임
-            BaseMonster* monster = nullptr; // 원시 포인터로 변경
             XMLElement* pMonsterElement = pEventElement->FirstChildElement("Monster");
+            BaseMonster* monster = nullptr;
             if (pMonsterElement != nullptr) {
+                std::string monsterType = pMonsterElement->Attribute("type") ? pMonsterElement->Attribute("type") : "Unknown";
                 std::string monsterName = pMonsterElement->Attribute("name") ? pMonsterElement->Attribute("name") : "Unknown";
                 int health = 0, attackPower = 0;
                 pMonsterElement->QueryIntAttribute("health", &health);
                 pMonsterElement->QueryIntAttribute("attackPower", &attackPower);
 
-                monster = MonsterFactory::createMonster(monsterName, health, attackPower).release();
-                newEvent->setMonster(std::unique_ptr<BaseMonster>(monster));
+                // 몬스터 객체 생성
+                auto createdMonster = MonsterFactory::createMonster(monsterType, monsterName, health, attackPower);
+                if (createdMonster) {
+                    monster = createdMonster.get(); // 포인터로 저장 후 이벤트에 추가
+                    newEvent->setMonster(std::move(createdMonster));
+                } else {
+                    std::cerr << "Failed to create monster of type: " << monsterType << std::endl;
+                }
             }
 
             // Choices 정보를 읽어들임
@@ -138,11 +141,16 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                     std::unique_ptr<BaseAction> action;
 
                     if (choiceId == "fight") {
-                        action = std::make_unique<FightAction>(monster);
+                        // 전투 액션에 생성된 몬스터 전달
+                        if (monster) {
+                            action = std::make_unique<FightAction>(monster);
+                        } else {
+                            std::cerr << "No monster found for fight action in event: " << eventId << std::endl;
+                            continue;
+                        }
                     } else if (choiceId == "run") {
                         action = std::make_unique<RunAwayAction>();
                     } else {
-                        // Default action or other specific actions can be added here
                         action = std::make_unique<FightAction>();
                     }
 
@@ -150,6 +158,7 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                     newEvent->addChoice(std::move(choice));
                 }
             }
+
             return newEvent;
         }
         pEventElement = pEventElement->NextSiblingElement("Event");

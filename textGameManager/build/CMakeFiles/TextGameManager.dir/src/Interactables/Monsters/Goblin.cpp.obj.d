@@ -140,28 +140,9 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/istream \
  C:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc \
  D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
- C:/msys64/mingw64/include/c++/14.2.0/vector \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_vector.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/vector.tcc \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Item.h \
- C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
- C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
- C:/msys64/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/node_handle.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterRegistration.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h \
  C:/msys64/mingw64/include/c++/14.2.0/memory \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/align.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
@@ -170,6 +151,7 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
  C:/msys64/mingw64/include/c++/14.2.0/ext/concurrence.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/atomic_base.h \
@@ -177,7 +159,21 @@ CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  C:/msys64/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
- C:/msys64/mingw64/include/c++/14.2.0/functional \
- C:/msys64/mingw64/include/c++/14.2.0/bits/std_function.h \
- C:/msys64/mingw64/include/c++/14.2.0/array \
- C:/msys64/mingw64/include/c++/14.2.0/compare
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
+ C:/msys64/mingw64/include/c++/14.2.0/vector \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/vector.tcc \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Item.h \
+ C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterRegistration.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/MonsterFactory.h

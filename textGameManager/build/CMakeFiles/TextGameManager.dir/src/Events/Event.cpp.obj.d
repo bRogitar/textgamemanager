@@ -145,18 +145,6 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: \
  D:/TextAdventures/textgamemanager/textGameManager/include/Events/Choice.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Utilities/BaseAction.h \
  D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Player.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Item.h \
- C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
- C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/node_handle.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h \
- D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
  C:/msys64/mingw64/include/c++/14.2.0/iostream \
  C:/msys64/mingw64/include/c++/14.2.0/ostream \
  C:/msys64/mingw64/include/c++/14.2.0/ios \
@@ -180,6 +168,18 @@ CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/14.2.0/istream \
  C:/msys64/mingw64/include/c++/14.2.0/bits/istream.tcc \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/ItemInventory.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Item.h \
+ C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/AbilityInventory.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Entities/Ability.h \
+ D:/TextAdventures/textgamemanager/textGameManager/include/Interactables/Monsters/BaseMonster.h \
  C:/msys64/mingw64/include/c++/14.2.0/limits \
  D:/TextAdventures/textgamemanager/textGameManager/include/GameManager/CombatManager.h \
  C:/msys64/mingw64/include/c++/14.2.0/algorithm \

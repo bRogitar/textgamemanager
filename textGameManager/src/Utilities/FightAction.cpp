@@ -1,17 +1,17 @@
 #include "FightAction.h"
+#include "CombatManager.h"
+#include <iostream>
 
-// 생성자 정의
-FightAction::FightAction(BaseMonster* monster)
-    : monster(monster) {}
+FightAction::FightAction(BaseMonster* monster) : monster(monster) {}
 
-// execute 메서드 정의
 void FightAction::execute(Player& player) {
-
     if (monster != nullptr) {
-        // 몬스터와 전투를 시작하는 로직 추가
+        std::cout << "You chose to fight the " << monster->getName() << "!\n";
+
+        // CombatManager를 이용해 전투 시작
         CombatManager combatManager(player, monster);
         combatManager.startCombat();
     } else {
-
+        std::cout << "No monster found to fight.\n";
     }
 }

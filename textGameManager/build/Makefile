@@ -430,54 +430,6 @@ src/GameManager/GameManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.s
 .PHONY : src/GameManager/GameManager.cpp.s
 
-src/Interactables/BaseInteractable.obj: src/Interactables/BaseInteractable.cpp.obj
-.PHONY : src/Interactables/BaseInteractable.obj
-
-# target to build an object file
-src/Interactables/BaseInteractable.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj
-.PHONY : src/Interactables/BaseInteractable.cpp.obj
-
-src/Interactables/BaseInteractable.i: src/Interactables/BaseInteractable.cpp.i
-.PHONY : src/Interactables/BaseInteractable.i
-
-# target to preprocess a source file
-src/Interactables/BaseInteractable.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.i
-.PHONY : src/Interactables/BaseInteractable.cpp.i
-
-src/Interactables/BaseInteractable.s: src/Interactables/BaseInteractable.cpp.s
-.PHONY : src/Interactables/BaseInteractable.s
-
-# target to generate assembly for a file
-src/Interactables/BaseInteractable.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.s
-.PHONY : src/Interactables/BaseInteractable.cpp.s
-
-src/Interactables/InteractableFactory.obj: src/Interactables/InteractableFactory.cpp.obj
-.PHONY : src/Interactables/InteractableFactory.obj
-
-# target to build an object file
-src/Interactables/InteractableFactory.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj
-.PHONY : src/Interactables/InteractableFactory.cpp.obj
-
-src/Interactables/InteractableFactory.i: src/Interactables/InteractableFactory.cpp.i
-.PHONY : src/Interactables/InteractableFactory.i
-
-# target to preprocess a source file
-src/Interactables/InteractableFactory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.i
-.PHONY : src/Interactables/InteractableFactory.cpp.i
-
-src/Interactables/InteractableFactory.s: src/Interactables/InteractableFactory.cpp.s
-.PHONY : src/Interactables/InteractableFactory.s
-
-# target to generate assembly for a file
-src/Interactables/InteractableFactory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TextGameManager.dir\build.make CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.s
-.PHONY : src/Interactables/InteractableFactory.cpp.s
-
 src/Interactables/Monsters/BaseMonster.obj: src/Interactables/Monsters/BaseMonster.cpp.obj
 .PHONY : src/Interactables/Monsters/BaseMonster.obj
 
@@ -911,12 +863,6 @@ help:
 	@echo ... src/GameManager/GameManager.obj
 	@echo ... src/GameManager/GameManager.i
 	@echo ... src/GameManager/GameManager.s
-	@echo ... src/Interactables/BaseInteractable.obj
-	@echo ... src/Interactables/BaseInteractable.i
-	@echo ... src/Interactables/BaseInteractable.s
-	@echo ... src/Interactables/InteractableFactory.obj
-	@echo ... src/Interactables/InteractableFactory.i
-	@echo ... src/Interactables/InteractableFactory.s
 	@echo ... src/Interactables/Monsters/BaseMonster.obj
 	@echo ... src/Interactables/Monsters/BaseMonster.i
 	@echo ... src/Interactables/Monsters/BaseMonster.s

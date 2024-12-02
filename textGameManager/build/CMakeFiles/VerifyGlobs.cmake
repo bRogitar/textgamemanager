@@ -17,8 +17,6 @@ set(OLD_GLOB
   "D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/CombatManager.cpp"
   "D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/EventManager.cpp"
   "D:/TextAdventures/textgamemanager/textGameManager/src/GameManager/GameManager.cpp"
-  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/BaseInteractable.cpp"
-  "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/InteractableFactory.cpp"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/BaseMonster.cpp"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Dragon.cpp"
   "D:/TextAdventures/textgamemanager/textGameManager/src/Interactables/Monsters/Goblin.cpp"
