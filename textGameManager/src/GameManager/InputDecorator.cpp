@@ -16,7 +16,12 @@ std::string InputDecorator::getUserInput() {
         input = "run";
     } else if (input == "f") {
         input = "fight";
-    } else {
+    } else if (input == "s"){
+        input = "save";
+    } else if (input == "n"){
+        input = "no";
+    } else if (input == "y"){
+        input = "yes";
     }
 
     return input;
