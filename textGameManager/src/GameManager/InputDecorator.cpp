@@ -11,7 +11,7 @@ std::string InputDecorator::getUserInput() {
     // InputManager 객체를 통해 기본 사용자 입력을 받음
     input = inputManager->getUserInput();
 
-    // 간단한 명령어를 전체 명령어로 확장하려 시도
+    // 간단한 명령어를 전체 명령어로 확장
     if (input == "r") {
         input = "run";
     } else if (input == "f") {

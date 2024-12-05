@@ -10,7 +10,6 @@ std::string InputManager::getUserInput() {
     while (true) {
         std::getline(std::cin, input);
 
-        // 입력값에서 모든 공백 제거
         input.erase(0, input.find_first_not_of(" \t\n\r\f\v")); // 왼쪽 공백 제거
         input.erase(input.find_last_not_of(" \t\n\r\f\v") + 1); // 오른쪽 공백 제거
 

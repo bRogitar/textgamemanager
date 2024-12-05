@@ -208,34 +208,39 @@ std::vector<Room> GameManager::createWorldMap() {
 }
 
 void GameManager::gameLoop() {
-    while (true) {
-        bool allRoomsCleared = true;
+    size_t currentRoomIndex = 0;
 
-        for (auto& room : worldMap) {
-            if (!room.isCleared()) {
-                allRoomsCleared = false;
+    while (currentRoomIndex < worldMap.size()) {
+        Room& currentRoom = worldMap[currentRoomIndex];
+        
+        displayMessage("===========================");
+        displayMessage("Entering room: " + currentRoom.getRoomName() + "\n");
 
-                displayMessage("Entering room: " + room.getRoomName() + "\n");
-
-                if (room.hasEvent()) {
-                    EventManager& eventManager = EventManager::getInstance();
-                    eventManager.processEvent(room.getEventId(), player);
-                }
-
-                room.setCleared(true);
-            }
+        // 현재 방의 이벤트가 있을 경우 이벤트 처리
+        if (currentRoom.hasEvent()) {
+            EventManager& eventManager = EventManager::getInstance();
+            eventManager.processEvent(currentRoom.getEventId(), player);
         }
 
-        for (const auto& room : worldMap) {
-            std::cout << "Room: " << room.getRoomName() 
-                      << " | Cleared: " << (room.isCleared() ? "true" : "false") << "\n";
-        }
+        // 방의 이벤트를 완료하고 방을 클리어로 표시
+        currentRoom.setCleared(true);
+        displayMessage("Room: " + currentRoom.getRoomName() + " has been cleared.\n");
 
-        if (allRoomsCleared) {
-            displayMessage("Congratulations! You have completed all rooms. The game is now over.\n");
-            break;
+        // 다음 방으로 이동
+        currentRoomIndex++;
+
+        if (currentRoomIndex < worldMap.size()) {
+            displayMessage("===========================");
+            displayMessage("Moving to the next room...\n");
         } else {
-            displayMessage("There are still rooms to explore...\n");
+            displayMessage("===========================");
+            displayMessage("All rooms cleared. Congratulations! You have completed all rooms. The game is now over.\n");
+            break;
         }
     }
 }
+
+
+
+
+

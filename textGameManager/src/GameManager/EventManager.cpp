@@ -45,7 +45,6 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
         }
     }
 
-    // 이벤트 완료 상태 확인
     if (event->isCompleted()) {
         std::cout << "[DEBUG] Event " << eventId << " has already been completed.\n";
         return;
@@ -56,7 +55,6 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
     event->execute(player);
     event->markAsCompleted();
 }
-
 
 void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {
     auto& choices = currentEvent->getChoices();
@@ -70,16 +68,18 @@ void EventManager::executeChoice(const std::string& choiceId, Event* currentEven
         // 유효한 선택지를 실행
         it->execute(player);
 
-        // 다음 이벤트로 이동
+        // 다음 이벤트로 이동할지 결정
         std::string nextEventId = it->getNextEventId();
         if (nextEventId == "end") {
-            std::cout << "Congratulations! You have completed the game.\n";
-            exit(0); // 프로그램 종료
+            // "end"로 끝나는 이벤트는 종료 메시지를 표시하고 제어를 반환
+            std::cout << "Event chain ended. Proceeding to next room...\n";
+            return;
         } else if (!nextEventId.empty()) {
-            processEvent(nextEventId, player);
+            // 다음 이벤트 ID가 있으면 이를 설정하고, 다음번에 GameManager가 호출할 수 있도록 합니다.
+            currentEvent->setNextEventId(nextEventId);
         }
     } else {
-        // 잘못된 입력 처리 (여기서는 기본적인 처리만 수행합니다.)
+        // 잘못된 입력 처리
         std::cout << "Invalid choice ID.\n";
     }
 }
@@ -129,10 +129,7 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
             // Choices 정보를 읽어들임
             XMLElement* pChoices = pEventElement->FirstChildElement("Choices");
             if (pChoices != nullptr) {
-                for (XMLElement* pChoice = pChoices->FirstChildElement("Choice");
-                     pChoice != nullptr;
-                     pChoice = pChoice->NextSiblingElement("Choice")) {
-
+                for (XMLElement* pChoice = pChoices->FirstChildElement("Choice"); pChoice != nullptr; pChoice = pChoice->NextSiblingElement("Choice")) {
                     std::string choiceId = pChoice->Attribute("id");
                     std::string choiceDescription = pChoice->Attribute("description");
                     std::string nextEventId = pChoice->Attribute("nextEventId");

@@ -36,6 +36,10 @@ public:
         return *this;
     }
 
+    // 복사 생성자와 복사 할당 연산자는 삭제하여 이동만 가능하도록 함
+    Choice(const Choice& other) = delete;
+    Choice& operator=(const Choice& other) = delete;
+
     const std::string& getId() const {
         return id;
     }
