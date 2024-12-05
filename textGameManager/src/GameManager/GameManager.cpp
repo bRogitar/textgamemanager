@@ -7,6 +7,7 @@
 #include "tinyxml2.h"
 #include "MonsterFactory.h"
 #include "CombatManager.h"
+#include <filesystem>
 
 using namespace tinyxml2;
 
@@ -40,14 +41,15 @@ void GameManager::startGame() {
         displayMessage("===========================\n");
         displayMessage("1. New Game\n");
         displayMessage("2. Load Game\n");
+        displayMessage("3. Delete Save File\n");
         displayMessage("===========================\n");
-        displayMessage("Select an option (1 or 2): ");
+        displayMessage("Select an option (1, 2, or 3): ");
         std::string input = InputManager::getInstance()->getUserInput();
 
         try {
             choice = std::stoi(input);
         } catch (std::invalid_argument&) {
-            displayMessage("Invalid choice. Please enter 1 or 2.\n");
+            displayMessage("Invalid choice. Please enter 1, 2, or 3.\n");
             continue;
         }
 
@@ -62,16 +64,30 @@ void GameManager::startGame() {
             displayPlayerStatus(); // 플레이어 상태 표시
         } else if (choice == 2) {
             displayMessage("Loading saved game...\n");
-            loadGame();
+            displaySaveFiles();  // 저장된 파일 목록을 표시
+            displayMessage("Enter the save file name to load: ");
+            std::string loadFileName = InputManager::getInstance()->getUserInput();
+            loadGame(loadFileName); // 저장된 파일 이름을 사용해 게임 로드
             validInput = true;
             displayPlayerStatus(); // 게임 로드 후 플레이어 상태 표시
+        } else if (choice == 3) {
+            displayMessage("Deleting a saved file...\n");
+            displaySaveFiles();  // 저장된 파일 목록을 표시
+            displayMessage("Enter the save file name to delete: ");
+            std::string deleteFileName = InputManager::getInstance()->getUserInput();
+            if (deleteSaveFile(deleteFileName)) {
+                displayMessage("Save file deleted successfully.\n");
+            } else {
+                displayMessage("Failed to delete save file. File may not exist.\n");
+            }
         } else {
-            displayMessage("Invalid choice. Please enter 1 or 2.\n");
+            displayMessage("Invalid choice. Please enter 1, 2, or 3.\n");
         }
     }
 
     gameLoop();
 }
+
 
 void GameManager::displayPlayerStatus() {
     displayMessage("===========================\n");
@@ -103,7 +119,30 @@ void GameManager::startCombat(BaseMonster& enemy) {
     combat.startCombat();
 }
 
-void GameManager::saveGame() {
+#include <filesystem>  // std::filesystem 사용을 위한 헤더 파일 추가
+namespace fs = std::filesystem;
+
+bool GameManager::deleteSaveFile(const std::string& saveFileName) {
+    std::string savePath = "save/" + saveFileName;
+
+    try {
+        if (fs::exists(savePath)) {
+            fs::remove(savePath);
+            return true;
+        } else {
+            return false;
+        }
+    } catch (const fs::filesystem_error& e) {
+        std::cerr << "Error deleting file: " << e.what() << std::endl;
+        return false;
+    }
+}
+
+void GameManager::saveGame(const std::string& saveFileName) {
+    // "save" 디렉터리 생성
+    fs::create_directories("save");
+    std::string savePath = "save/" + saveFileName;
+
     XMLDocument doc;
     XMLNode* pRoot = doc.NewElement("GameSave");
     doc.InsertFirstChild(pRoot);
@@ -125,17 +164,19 @@ void GameManager::saveGame() {
     }
     pRoot->InsertEndChild(pRooms);
 
-    XMLError eResult = doc.SaveFile("savegame.xml");
+    XMLError eResult = doc.SaveFile(savePath.c_str());
     if (eResult != XML_SUCCESS) {
         displayMessage("Error saving game!\n");
     } else {
-        displayMessage("Game saved successfully!\n");
+        displayMessage("Game saved successfully to " + savePath + "\n");
     }
 }
 
-void GameManager::loadGame() {
+void GameManager::loadGame(const std::string& loadFileName) {
+    std::string loadPath = "save/" + loadFileName;
+
     XMLDocument doc;
-    XMLError eResult = doc.LoadFile("savegame.xml");
+    XMLError eResult = doc.LoadFile(loadPath.c_str());
     if (eResult != XML_SUCCESS) {
         displayMessage("Failed to load save file. Starting a new game instead...\n");
         return;
@@ -171,6 +212,21 @@ void GameManager::loadGame() {
     }
 
     displayMessage("Loaded player: " + player.getName() + ", Health: " + std::to_string(player.getHealth()) + ", Mental Strength: " + std::to_string(player.getMentalStrength()) + ", Attack Power: " + std::to_string(player.getAttackPower()) + ", Money: " + std::to_string(player.getMoney()));
+}
+
+void GameManager::displaySaveFiles() {
+    std::string saveDirectory = "save";
+    if (!fs::exists(saveDirectory) || fs::is_empty(saveDirectory)) {
+        displayMessage("No save files found.\n");
+        return;
+    }
+
+    displayMessage("Available save files:\n");
+    for (const auto& entry : fs::directory_iterator(saveDirectory)) {
+        if (entry.is_regular_file()) {
+            displayMessage(" - " + entry.path().filename().string() + "\n");
+        }
+    }
 }
 
 std::vector<Room> GameManager::createWorldMap() {
@@ -216,6 +272,24 @@ void GameManager::gameLoop() {
         displayMessage("===========================");
         displayMessage("Entering room: " + currentRoom.getRoomName() + "\n");
 
+        // 방에 들어간 이후 저장 여부를 물어봄
+        bool validInput = false;
+        while (!validInput) {
+            displayMessage("Would you like to save your progress? (yes/no): ");
+            std::string saveChoice = InputManager::getInstance()->getUserInput();
+            
+            if (saveChoice == "yes") {
+                displayMessage("Enter save file name: ");
+                std::string saveFileName = InputManager::getInstance()->getUserInput();
+                saveGame(saveFileName);
+                validInput = true;
+            } else if (saveChoice == "no") {
+                validInput = true;
+            } else {
+                displayMessage("Invalid choice. Please enter 'yes' or 'no'.");
+            }
+        }
+
         // 현재 방의 이벤트가 있을 경우 이벤트 처리
         if (currentRoom.hasEvent()) {
             EventManager& eventManager = EventManager::getInstance();
@@ -239,6 +313,7 @@ void GameManager::gameLoop() {
         }
     }
 }
+
 
 
 
