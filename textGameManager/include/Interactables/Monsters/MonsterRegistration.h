@@ -3,14 +3,13 @@
 
 #include "MonsterFactory.h"
 
-// 몬스터를 팩토리에 자동 등록하는 매크로
+// 몬스터를 팩토리에 자동 등록하는 매크로 (프로토타입 등록)
 #define REGISTER_MONSTER(TYPE) \
     namespace { \
         struct TYPE##Registration { \
             TYPE##Registration() { \
-                MonsterFactory::registerMonster(#TYPE, [](int health, int attackPower) { \
-                    return std::make_unique<TYPE>(health, attackPower); \
-                }); \
+                auto prototype = std::make_unique<TYPE>("Prototype " #TYPE, 100, 20); \
+                MonsterFactory::registerPrototype(#TYPE, std::move(prototype)); \
             } \
         }; \
         static TYPE##Registration global_##TYPE##Registration; \

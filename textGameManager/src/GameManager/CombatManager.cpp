@@ -1,22 +1,24 @@
+// CombatManager.cpp
 #include "CombatManager.h"
 #include <iostream>
-#include <thread> 
-#include <chrono>
 #include <windows.h>
 #include "BaseMonster.h"
+#include "Player.h"
 
-// CombatManager Constructor
 CombatManager::CombatManager(Player& player, BaseMonster* monster)
     : player(player), monster(monster) {}
 
-// Start Combat Function
 void CombatManager::startCombat() {
     if (monster != nullptr) {
         std::cout << "Combat with " << monster->getName() << " started!" << std::endl;
 
+        // 플레이어와 몬스터의 상태를 표시
+        player.displayStatus();
+        monster->displayStatus();
+
         // Set combat health to current health
         player.setCombatHealth(player.getHealth());
-        monster->setCombatHealth(monster->getHealth());
+        monster->setHealth(monster->getHealth());  // Changed from setCombatHealth
 
         combatLoop();
     } else {
@@ -24,41 +26,43 @@ void CombatManager::startCombat() {
     }
 }
 
-// Combat Loop Logic
 void CombatManager::combatLoop() {
     while (!player.isCombatDefeated() && !monster->isCombatDefeated()) {
         playerAttack();
+        displayCombatStatus();
+
         if (monster->isCombatDefeated()) {
             std::cout << "You have defeated the " << monster->getName() << "!" << std::endl;
             break;
         }
         
         monsterAttack();
+        displayCombatStatus();
+
         if (player.isCombatDefeated()) {
             std::cout << "You have been defeated by the " << monster->getName() << "!" << std::endl;
             player.applyDefeatPenalty();
             break;
         }
 
-        displayCombatStatus();
-        Sleep(1000); // Windows API의 Sleep 함수 사용 (밀리초 단위)
+        Sleep(1000);
+        std::cout << "------------------------------------" << std::endl;
     }
 }
 
-// Player Attack Function
 void CombatManager::playerAttack() {
-    monster->takeCombatDamage(player.getAttackPower());
-    std::cout << "You attack the " << monster->getName() << " for " << player.getAttackPower() << " damage." << std::endl;
+    int damage = player.getAttackPower();
+    monster->takeCombatDamage(damage);
+    std::cout << "You attack the " << monster->getName() << " for " << damage << " damage." << std::endl;
 }
 
-// Monster Attack Function
 void CombatManager::monsterAttack() {
-    player.takeCombatDamage(monster->getAttackPower());
-    std::cout << monster->getName() << " attacks you for " << monster->getAttackPower() << " damage." << std::endl;
+    int damage = monster->getAttackPower();
+    player.takeCombatDamage(damage);
+    std::cout << monster->getName() << " attacks you for " << damage << " damage." << std::endl;
 }
 
-// Display Combat Status Function
 void CombatManager::displayCombatStatus() const {
     std::cout << "Player Combat Health: " << player.getCombatHealth() 
-              << " | Monster Combat Health: " << monster->getCombatHealth() << std::endl;
+              << " | Monster Health: " << monster->getHealth() << std::endl;  // Changed from getCombatHealth
 }

@@ -3,11 +3,14 @@
 #include <iostream>
 #include <fstream>
 #include "MonsterFactory.h"
-#include "FightAction.h"
+#include "FightAction.h"  // ConcreteAction 클래스 포함
 #include "Event.h"
 #include "RunAwayAction.h"
 #include <algorithm>
+#include "GameManager.h"
+#include "InputDecorator.h"
 #include "InputManager.h"
+#include <cctype> // tolower 함수 포함
 
 using namespace tinyxml2;
 
@@ -21,58 +24,63 @@ EventManager::EventManager() {}
 Event* EventManager::getEvent(const std::string& eventId) {
     auto it = events.find(eventId);
     if (it != events.end()) {
-        return it->second.get();
+        return it->second.get(); // unique_ptr에서 원시 포인터로 변환
     }
     return nullptr;
 }
 
 void EventManager::processEvent(const std::string& eventId, Player& player) {
+    std::cout << "[DEBUG] Processing event with ID: " << eventId << std::endl;
+
     Event* event = getEvent(eventId);
     if (event == nullptr) {
         auto loadedEvent = loadEventFromXML("../resources/events.xml", eventId);
         if (loadedEvent) {
             events[eventId] = std::move(loadedEvent);
             event = events[eventId].get();
+            std::cout << "[DEBUG] Loaded new event with ID: " << eventId << std::endl;
         } else {
-            std::cout << "이벤트 ID: " << eventId << "를 처리할 수 없습니다." << std::endl;
+            std::cout << "Unable to process event with ID: " << eventId << std::endl;
             return;
         }
     }
 
+    // 이벤트 완료 상태 확인
     if (event->isCompleted()) {
-        std::cout << "이 이벤트는 이미 완료되었습니다.\n";
+        std::cout << "[DEBUG] Event " << eventId << " has already been completed.\n";
         return;
     }
 
+    // 이벤트 실행
+    std::cout << "[DEBUG] Executing event: " << eventId << std::endl;
     event->execute(player);
     event->markAsCompleted();
 }
 
+
 void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {
     auto& choices = currentEvent->getChoices();
-    std::string userChoice = choiceId;
 
-    while (true) {
-        auto it = std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
-            return choice.getId() == userChoice;
-        });
+    // 입력된 선택지에 대해 검사
+    auto it = std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
+        return choice.getId() == choiceId;
+    });
 
-        if (it != choices.end()) {
-            it->execute(player);
+    if (it != choices.end()) {
+        // 유효한 선택지를 실행
+        it->execute(player);
 
-            std::string nextEventId = it->getNextEventId();
-            if (nextEventId == "end") {
-                std::cout << "축하합니다! 게임을 완료하셨습니다.\n";
-                exit(0);
-            } else if (!nextEventId.empty()) {
-                processEvent(nextEventId, player);
-            }
-            break;
-        } else {
-            std::cout << "잘못된 선택입니다. 다시 시도해주세요." << std::endl;
-            currentEvent->displayChoices();
-            userChoice = InputManager::getInstance().getUserInput();
+        // 다음 이벤트로 이동
+        std::string nextEventId = it->getNextEventId();
+        if (nextEventId == "end") {
+            std::cout << "Congratulations! You have completed the game.\n";
+            exit(0); // 프로그램 종료
+        } else if (!nextEventId.empty()) {
+            processEvent(nextEventId, player);
         }
+    } else {
+        // 잘못된 입력 처리 (여기서는 기본적인 처리만 수행합니다.)
+        std::cout << "Invalid choice ID.\n";
     }
 }
 
@@ -80,13 +88,13 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
     XMLDocument doc;
     XMLError eResult = doc.LoadFile(filePath.c_str());
     if (eResult != XML_SUCCESS) {
-        std::cerr << "이벤트 파일을 불러오는데 실패했습니다: " << filePath << " 오류 코드: " << eResult << std::endl;
+        std::cerr << "Failed to load events from " << filePath << " Error code: " << eResult << std::endl;
         return nullptr;
     }
 
     XMLElement* pEventsRoot = doc.FirstChildElement("Events");
     if (pEventsRoot == nullptr) {
-        std::cerr << "XML 파일에서 <Events> 루트 요소를 찾을 수 없습니다." << std::endl;
+        std::cerr << "No root element <Events> found in XML file." << std::endl;
         return nullptr;
     }
 
@@ -98,18 +106,27 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
 
             auto newEvent = std::make_unique<Event>(eventId, name, description);
 
-            BaseMonster* monster = nullptr;
+            // 몬스터 정보를 읽어들임
             XMLElement* pMonsterElement = pEventElement->FirstChildElement("Monster");
+            BaseMonster* monster = nullptr;
             if (pMonsterElement != nullptr) {
-                std::string monsterName = pMonsterElement->Attribute("name") ? pMonsterElement->Attribute("name") : "알 수 없음";
+                std::string monsterType = pMonsterElement->Attribute("type") ? pMonsterElement->Attribute("type") : "Unknown";
+                std::string monsterName = pMonsterElement->Attribute("name") ? pMonsterElement->Attribute("name") : "Unknown";
                 int health = 0, attackPower = 0;
                 pMonsterElement->QueryIntAttribute("health", &health);
                 pMonsterElement->QueryIntAttribute("attackPower", &attackPower);
 
-                monster = MonsterFactory::createMonster(monsterName, health, attackPower).release();
-                newEvent->setMonster(std::unique_ptr<BaseMonster>(monster));
+                // 몬스터 객체 생성
+                auto createdMonster = MonsterFactory::createMonster(monsterType, monsterName, health, attackPower);
+                if (createdMonster) {
+                    monster = createdMonster.get(); // 포인터로 저장 후 이벤트에 추가
+                    newEvent->setMonster(std::move(createdMonster));
+                } else {
+                    std::cerr << "Failed to create monster of type: " << monsterType << std::endl;
+                }
             }
 
+            // Choices 정보를 읽어들임
             XMLElement* pChoices = pEventElement->FirstChildElement("Choices");
             if (pChoices != nullptr) {
                 for (XMLElement* pChoice = pChoices->FirstChildElement("Choice");
@@ -123,7 +140,13 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                     std::unique_ptr<BaseAction> action;
 
                     if (choiceId == "fight") {
-                        action = std::make_unique<FightAction>(monster);
+                        // 전투 액션에 생성된 몬스터 전달
+                        if (monster) {
+                            action = std::make_unique<FightAction>(monster);
+                        } else {
+                            std::cerr << "No monster found for fight action in event: " << eventId << std::endl;
+                            continue;
+                        }
                     } else if (choiceId == "run") {
                         action = std::make_unique<RunAwayAction>();
                     } else {
@@ -134,11 +157,12 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                     newEvent->addChoice(std::move(choice));
                 }
             }
+
             return newEvent;
         }
         pEventElement = pEventElement->NextSiblingElement("Event");
     }
 
-    std::cerr << "ID가 " << eventId << "인 이벤트를 찾을 수 없습니다." << std::endl;
+    std::cerr << "Event with ID " << eventId << " not found." << std::endl;
     return nullptr;
 }

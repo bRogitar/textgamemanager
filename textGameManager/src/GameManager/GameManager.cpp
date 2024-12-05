@@ -42,12 +42,19 @@ void GameManager::startGame() {
         displayMessage("2. Load Game\n");
         displayMessage("===========================\n");
         displayMessage("Select an option (1 or 2): ");
-        choice = std::stoi(InputManager::getInstance().getUserInput());
+        std::string input = InputManager::getInstance()->getUserInput();
+
+        try {
+            choice = std::stoi(input);
+        } catch (std::invalid_argument&) {
+            displayMessage("Invalid choice. Please enter 1 or 2.\n");
+            continue;
+        }
 
         if (choice == 1) {
             displayMessage("Starting a new game...\n");
             displayMessage("Enter your player's name: ");
-            std::string playerName = InputManager::getInstance().getUserInput();
+            std::string playerName = InputManager::getInstance()->getUserInput();
             player.setName(playerName); // 이름 설정
 
             initializeGame(); // 초기화 함수는 이름 설정 이후에 호출

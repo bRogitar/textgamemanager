@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <string>
+#include <iostream>  // 추가: 상태 출력에 사용
 #include "ItemInventory.h"
 #include "AbilityInventory.h"
 
@@ -53,6 +54,18 @@ public:
     void addAbility(const Ability& ability);
     void removeAbility(const Ability& ability);
     bool hasAbility(const std::string& abilityId) const;
+
+    // 상태를 출력하는 메서드
+    void displayStatus() const {
+        std::cout << "Player Status:\n"
+                  << "Name: " << name << "\n"
+                  << "Health: " << health << "\n"
+                  << "Mental Strength: " << mentalStrength << "\n"
+                  << "Attack Power: " << attackPower << "\n"
+                  << "Money: " << money << "\n"
+                  << "Combat Health: " << combatHealth << "\n"
+                  << "------------------------------------" << std::endl;
+    }
 
 private:
     std::string name;
