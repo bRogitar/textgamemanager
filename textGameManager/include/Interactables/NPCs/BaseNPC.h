@@ -5,7 +5,7 @@
 
 #include <memory>
 #include <string>
-
+//하이
 class Player;
 
 class BaseNPC {
