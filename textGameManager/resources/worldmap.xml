@@ -2,9 +2,9 @@
 <WorldMap>
     <Rooms>
         <Room id="room1" name="Entrance Hall" description="room1" eventId="event1" />
-        <Room id="room2" name="Library" description="room2" eventId="event2" />
-        <Room id="room3" name="Dining Room" description="room3" eventId="event3" />
-        <Room id="roomNPC" name="NPC Room" description="roomNPC" eventId="eventNPC" />
         <Room id="roomPosionTrap" name="PosionTrap Room" description="PosionTrap Room" eventId="eventPosionTrap" />
+        <Room id="room2" name="Library" description="room2" eventId="event2" />
+        <Room id="roomNPC" name="NPC Room" description="roomNPC" eventId="eventNPC" />
+        <Room id="room3" name="Dining Room" description="room3" eventId="event3" />
     </Rooms>
 </WorldMap>
