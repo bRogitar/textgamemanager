@@ -97,6 +97,8 @@ private:
     std::string description;          // 이벤트 설명
     std::vector<Choice> choices;      // 선택 목록
     std::unique_ptr<BaseMonster> monster; // 이벤트와 연결된 몬스터
+    std::unique_ptr<BaseTrap> trap;   // 이벤트와 연결된 트랩
+    std::unique_ptr<BaseNPC> npc;     // 이벤트와 연결된 NPC
     std::string nextEventId;          // 다음 이벤트 ID
     bool hasAbilityRewardFlag;        // 어빌리티 보상 여부 (변수 이름 변경)
     std::string abilityRewardId;      // 어빌리티 보상 ID

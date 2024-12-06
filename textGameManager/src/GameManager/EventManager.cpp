@@ -7,6 +7,7 @@
 #include "Event.h"
 #include "RunAwayAction.h"
 #include "GetPotionAction.h"
+#include "ContinueAction.h"
 #include <algorithm>
 #include "GameManager.h"
 #include "InputDecorator.h"
@@ -44,11 +45,6 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
             std::cout << "Unable to process event with ID: " << eventId << std::endl;
             return;
         }
-    }
-
-    if (event->isCompleted()) {
-        std::cout << "[DEBUG] Event " << eventId << " has already been completed.\n";
-        return;
     }
 
     // 이벤트 실행
@@ -149,7 +145,10 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
             action = std::make_unique<RunAwayAction>();
         } else if (choiceId == "get potion") {
             action = std::make_unique<GetPotionAction>(); // 포션을 획득하는 행동
+        } else if (choiceId == "continue") {
+            action = std::make_unique<ContinueAction>(); // 포션을 획득하는 행동
         } else {
+            action = nullptr;
         }
     Choice choice(choiceId, choiceDescription, std::move(action), nextEventId);
     newEvent->addChoice(std::move(choice));
