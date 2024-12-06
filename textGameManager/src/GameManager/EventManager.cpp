@@ -50,6 +50,13 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
     // 이벤트 실행
     std::cout << "[DEBUG] Executing event: " << eventId << std::endl;
     event->execute(player);
+
+    // 다음 이벤트 처리
+    std::string nextEventId = event->getNextEventId();
+    if (!nextEventId.empty() && nextEventId != "end") {
+        processEvent(nextEventId, player);  // 다음 이벤트 즉시 실행
+    }
+
     event->markAsCompleted();
 }
 
