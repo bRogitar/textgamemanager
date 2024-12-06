@@ -15,6 +15,12 @@ void Event::displayChoices() const {
 
 void Event::execute(Player& player) {
     std::cout << description << "\n";
+
+        // NPC 대화 표시
+    if (hasNPC()) {
+        std::cout << npc->getName() << ": " << npc->getDialog() << "\n\n";
+    }
+    
     displayChoices();
 
     InputManager* inputManager = InputManager::getInstance();
@@ -22,19 +28,24 @@ void Event::execute(Player& player) {
 
     while (true) {
         std::cout << "Enter your choice ID: ";
-        std::string choiceId = inputDecorator.getUserInput();  // 사용자 입력 받기
+        std::string choiceId = inputDecorator.getUserInput();
+        
+        // 입력을 소문자로 변환
+        std::transform(choiceId.begin(), choiceId.end(), choiceId.begin(), ::tolower);
 
-        // 선택을 EventManager에 전달하여 처리
-        EventManager& manager = EventManager::getInstance();
-        manager.executeChoice(choiceId, this, player);
+        auto it = std::find_if(choices.begin(), choices.end(),
+            [&](const Choice& choice) { 
+                std::string fullId = choice.getId();
+                std::transform(fullId.begin(), fullId.end(), fullId.begin(), ::tolower);
+                // 전체 ID나 첫 글자 매칭 모두 허용
+                return fullId == choiceId || (choiceId.length() == 1 && fullId[0] == choiceId[0]);
+            });
 
-        // 만약 유효한 선택이었다면 루프를 종료
-        if (std::find_if(choices.begin(), choices.end(), [&](const Choice& choice) {
-                return choice.getId() == choiceId;
-            }) != choices.end()) {
+        if (it != choices.end()) {
+            it->execute(player);
+            nextEventId = it->getNextEventId();
             break;
         } else {
-            // 잘못된 입력 처리 시 선택지를 다시 표시
             std::cout << "Invalid choice ID. Please try again." << std::endl;
             displayChoices();
         }
