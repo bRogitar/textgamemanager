@@ -28,6 +28,8 @@ public:
     void displayPlayerStatus();  // 플레이어 스테이터스 표시
     bool deleteSaveFile(const std::string& saveFileName);
     void displaySaveFiles();
+    void useAbility();
+    void managePlayerAbilityUsage();
 
 private:
     GameManager(); // private 생성자

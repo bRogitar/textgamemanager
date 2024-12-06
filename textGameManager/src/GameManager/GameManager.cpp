@@ -263,12 +263,24 @@ std::vector<Room> GameManager::createWorldMap() {
     return worldMap;
 }
 
+void GameManager::useAbility() {
+    // 현재 플레이어의 어빌리티 목록 표시
+    player.displayAbilities();
+
+    // 플레이어에게 사용하고자 하는 어빌리티의 ID 입력 요청
+    std::cout << "Enter the ability ID to use: ";
+    std::string abilityId = InputManager::getInstance()->getUserInput(); // getUserInput 사용
+
+    // Player 클래스의 useAbility 함수 호출을 통해 처리
+    player.useAbility(abilityId);
+}
+
 void GameManager::gameLoop() {
     size_t currentRoomIndex = 0;
 
     while (currentRoomIndex < worldMap.size()) {
         Room& currentRoom = worldMap[currentRoomIndex];
-        
+
         displayMessage("===========================");
         displayMessage("Entering room: " + currentRoom.getRoomName() + "\n");
 
@@ -277,13 +289,29 @@ void GameManager::gameLoop() {
         while (!validInput) {
             displayMessage("Would you like to save your progress? (yes/no): ");
             std::string saveChoice = InputManager::getInstance()->getUserInput();
-            
+
             if (saveChoice == "yes") {
                 displayMessage("Enter save file name: ");
                 std::string saveFileName = InputManager::getInstance()->getUserInput();
                 saveGame(saveFileName);
                 validInput = true;
             } else if (saveChoice == "no") {
+                validInput = true;
+            } else {
+                displayMessage("Invalid choice. Please enter 'yes' or 'no'.");
+            }
+        }
+
+        // 어빌리티 인벤토리 사용 여부 확인
+        validInput = false;
+        while (!validInput) {
+            displayMessage("Would you like to check and use an ability from your inventory? (yes/no): ");
+            std::string abilityChoice = InputManager::getInstance()->getUserInput();
+
+            if (abilityChoice == "yes") {
+                useAbility();  // 어빌리티 사용 기능 추가
+                validInput = true;
+            } else if (abilityChoice == "no") {
                 validInput = true;
             } else {
                 displayMessage("Invalid choice. Please enter 'yes' or 'no'.");

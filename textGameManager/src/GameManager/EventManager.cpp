@@ -6,6 +6,7 @@
 #include "FightAction.h"  // ConcreteAction 클래스 포함
 #include "Event.h"
 #include "RunAwayAction.h"
+#include "GetPotionAction.h"
 #include <algorithm>
 #include "GameManager.h"
 #include "InputDecorator.h"
@@ -136,25 +137,24 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
 
                     std::unique_ptr<BaseAction> action;
 
-                    if (choiceId == "fight") {
-                        // 전투 액션에 생성된 몬스터 전달
-                        if (monster) {
-                            action = std::make_unique<FightAction>(monster);
-                        } else {
-                            std::cerr << "No monster found for fight action in event: " << eventId << std::endl;
-                            continue;
-                        }
-                    } else if (choiceId == "run") {
-                        action = std::make_unique<RunAwayAction>();
-                    } else {
-                        action = std::make_unique<FightAction>();
-                    }
-
-                    Choice choice(choiceId, choiceDescription, std::move(action), nextEventId);
-                    newEvent->addChoice(std::move(choice));
+    if (choiceId == "fight") {
+        // 전투 액션에 생성된 몬스터 전달
+        if (monster) {
+            action = std::make_unique<FightAction>(monster);
+        } else {
+            // 몬스터가 없으면 전투 선택지를 건너뜁니다.
+            continue;
+            }
+        } else if (choiceId == "run") {
+            action = std::make_unique<RunAwayAction>();
+        } else if (choiceId == "get potion") {
+            action = std::make_unique<GetPotionAction>(); // 포션을 획득하는 행동
+        } else {
+        }
+    Choice choice(choiceId, choiceDescription, std::move(action), nextEventId);
+    newEvent->addChoice(std::move(choice));
                 }
             }
-
             return newEvent;
         }
         pEventElement = pEventElement->NextSiblingElement("Event");
@@ -163,3 +163,5 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
     std::cerr << "Event with ID " << eventId << " not found." << std::endl;
     return nullptr;
 }
+
+

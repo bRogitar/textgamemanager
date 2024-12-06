@@ -48,6 +48,13 @@ void CombatManager::combatLoop() {
         Sleep(1000);
         std::cout << "------------------------------------" << std::endl;
     }
+
+    player.setCombatHealth(player.getHealth());
+
+    // 몬스터의 상태를 표시합니다.
+    if (monster->isCombatDefeated()) {
+        std::cout << "The monster has been defeated." << std::endl;
+    }
 }
 
 void CombatManager::playerAttack() {

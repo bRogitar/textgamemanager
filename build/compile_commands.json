@@ -1,0 +1,200 @@
+[
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyxml2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\tinyxml2.dir\\src\\tinyxml2.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\tinyxml2.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/tinyxml2.cpp",
+  "output": "CMakeFiles/tinyxml2.dir/src/tinyxml2.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Commands\\Command.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Commands\\Command.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Commands/Command.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Commands/Command.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Commands\\CommandParser.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Commands\\CommandParser.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Commands/CommandParser.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Commands/CommandParser.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Entities\\Ability.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Entities\\Ability.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Entities/Ability.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Entities/Ability.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Entities\\AbilityFactory.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Entities\\AbilityFactory.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Entities/AbilityFactory.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Entities/AbilityFactory.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Entities\\AbilityInventory.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Entities\\AbilityInventory.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Entities/AbilityInventory.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Entities/AbilityInventory.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Entities\\HealthBoostAbility.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Entities\\HealthBoostAbility.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Entities/HealthBoostAbility.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Entities/HealthBoostAbility.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Entities\\Player.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Entities\\Player.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Entities/Player.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Entities/Player.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Events\\Choice.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Events\\Choice.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Events/Choice.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Events/Choice.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Events\\Event.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Events\\Event.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Events/Event.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Events/Event.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\GameManager\\CombatManager.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\GameManager\\CombatManager.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/GameManager/CombatManager.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/GameManager/CombatManager.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\GameManager\\EventManager.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\GameManager\\EventManager.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/GameManager/EventManager.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/GameManager/EventManager.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\GameManager\\GameManager.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\GameManager\\GameManager.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/GameManager/GameManager.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/GameManager/GameManager.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\GameManager\\InputDecorator.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\GameManager\\InputDecorator.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/GameManager/InputDecorator.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/GameManager/InputDecorator.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\GameManager\\InputManager.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\GameManager\\InputManager.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/GameManager/InputManager.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/GameManager/InputManager.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\BaseInteractable.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\BaseInteractable.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/BaseInteractable.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\InteractableFactory.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\InteractableFactory.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/InteractableFactory.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Monsters\\BaseMonster.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Monsters\\BaseMonster.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Monsters/BaseMonster.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Monsters\\Dragon.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Monsters\\Dragon.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Monsters/Dragon.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Dragon.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Monsters\\Goblin.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Monsters\\Goblin.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Monsters/Goblin.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/Goblin.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Monsters\\MonsterFactory.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Monsters\\MonsterFactory.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Monsters/MonsterFactory.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/MonsterFactory.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\NPCs\\BaseNPC.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\NPCs\\BaseNPC.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/NPCs/BaseNPC.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/BaseNPC.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\NPCs\\QuestGiver.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\NPCs\\QuestGiver.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/NPCs/QuestGiver.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\NPCs\\Shopkeeper.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\NPCs\\Shopkeeper.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/NPCs/Shopkeeper.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/Shopkeeper.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Traps\\BaseTrap.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Traps\\BaseTrap.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Traps/BaseTrap.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/BaseTrap.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Traps\\Pitfall.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Traps\\Pitfall.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Traps/Pitfall.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/Pitfall.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Traps\\PoisonGas.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Traps\\PoisonGas.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Traps/PoisonGas.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Utilities\\FightAction.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Utilities\\FightAction.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Utilities/FightAction.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Utilities/FightAction.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\World\\Room.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\World\\Room.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/World/Room.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/World/Room.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\World\\WorldMap.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\World\\WorldMap.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/World/WorldMap.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/World/WorldMap.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\main.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\main.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/main.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\test.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\test.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/test.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/test.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\tinyxml2.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\tinyxml2.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/tinyxml2.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/tinyxml2.cpp.obj"
+}
+]
