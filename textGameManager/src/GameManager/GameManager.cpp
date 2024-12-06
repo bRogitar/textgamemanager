@@ -281,10 +281,10 @@ void GameManager::gameLoop() {
     while (currentRoomIndex < worldMap.size()) {
         Room& currentRoom = worldMap[currentRoomIndex];
 
-        displayMessage("===========================");
+        displayMessage("\n===========================");
         displayMessage("Entering room: " + currentRoom.getRoomName() + "\n");
 
-        // 방에 들어간 이후 저장 여부를 물어봄
+        // 저장 기능
         bool validInput = false;
         while (!validInput) {
             displayMessage("Would you like to save your progress? (yes/no): ");
@@ -302,14 +302,14 @@ void GameManager::gameLoop() {
             }
         }
 
-        // 어빌리티 인벤토리 사용 여부 확인
+        // 어빌리티 체크
         validInput = false;
         while (!validInput) {
             displayMessage("Would you like to check and use an ability from your inventory? (yes/no): ");
             std::string abilityChoice = InputManager::getInstance()->getUserInput();
 
             if (abilityChoice == "yes") {
-                useAbility();  // 어빌리티 사용 기능 추가
+                useAbility();
                 validInput = true;
             } else if (abilityChoice == "no") {
                 validInput = true;
@@ -318,28 +318,37 @@ void GameManager::gameLoop() {
             }
         }
 
-        // 현재 방의 이벤트가 있을 경우 이벤트 처리
+        // 이벤트 처리
         if (currentRoom.hasEvent()) {
             EventManager& eventManager = EventManager::getInstance();
-            eventManager.processEvent(currentRoom.getEventId(), player);
+            std::string result = eventManager.processEvent(currentRoom.getEventId(), player);
+
+            // end 이벤트 처리
+            if (result == "end") {
+                displayMessage("\n===========================");
+                displayMessage("Congratulations! You have completed your journey!");
+                displayMessage("===========================\n");
+                return;  // 게임 즉시 종료
+            }
         }
 
-        // 방의 이벤트를 완료하고 방을 클리어로 표시
+        // 룸 클리어 처리 및 다음 룸으로 이동
         currentRoom.setCleared(true);
-        displayMessage("Room: " + currentRoom.getRoomName() + " has been cleared.\n");
+        displayMessage("\nRoom: " + currentRoom.getRoomName() + " has been cleared.");
 
-        // 다음 방으로 이동
         currentRoomIndex++;
 
         if (currentRoomIndex < worldMap.size()) {
-            displayMessage("===========================");
-            displayMessage("Moving to the next room...\n");
-        } else {
-            displayMessage("===========================");
-            displayMessage("All rooms cleared. Congratulations! You have completed all rooms. The game is now over.\n");
-            break;
+            displayMessage("\n===========================");
+            displayMessage("Moving to the next room...");
         }
     }
+
+    // 모든 룸을 클리어한 경우 메시지 출력
+    displayMessage("\n===========================");
+    displayMessage("All rooms have been explored.");
+    displayMessage("You have completed your journey!");
+    displayMessage("===========================\n");
 }
 
 

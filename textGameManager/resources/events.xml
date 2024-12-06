@@ -21,7 +21,7 @@ The room is filled with an eerie green mist... You feel your throat tightening.
     <Trap type="PoisonGasTrap" name="Poison Mist" damage="30"/>
     <Choices>
         <Choice id="continue" description="Push through to the library" nextEventId="event2"/>
-        <Choice id="retreat" description="Return to entrance" nextEventId="event1"/>
+        <Choice id="retreat" description="Return to entrance" nextEventId="event2"/>
     </Choices>
 </Event>
 

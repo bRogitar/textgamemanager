@@ -31,7 +31,7 @@ Event* EventManager::getEvent(const std::string& eventId) {
     return nullptr;
 }
 
-void EventManager::processEvent(const std::string& eventId, Player& player) {
+std::string EventManager::processEvent(const std::string& eventId, Player& player) {
     std::cout << "[DEBUG] Processing event with ID: " << eventId << std::endl;
 
     Event* event = getEvent(eventId);
@@ -43,7 +43,7 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
             std::cout << "[DEBUG] Loaded new event with ID: " << eventId << std::endl;
         } else {
             std::cout << "Unable to process event with ID: " << eventId << std::endl;
-            return;
+            return "end";
         }
     }
 
@@ -51,13 +51,27 @@ void EventManager::processEvent(const std::string& eventId, Player& player) {
     std::cout << "[DEBUG] Executing event: " << eventId << std::endl;
     event->execute(player);
 
-    // 다음 이벤트 처리
+    // 다음 이벤트 ID 확인
     std::string nextEventId = event->getNextEventId();
-    if (!nextEventId.empty() && nextEventId != "end") {
-        processEvent(nextEventId, player);  // 다음 이벤트 즉시 실행
+    event->markAsCompleted();
+
+    // NPC 대화 체인 처리
+    if (eventId.find("NPC") != std::string::npos) {
+        if (nextEventId == "event3") {
+            // NPC 대화가 event3로 넘어갈 때는 여기서 종료
+            return nextEventId;
+        } else if (!nextEventId.empty() && nextEventId != "end") {
+            // NPC 대화 체인 계속 진행
+            return processEvent(nextEventId, player);
+        }
     }
 
-    event->markAsCompleted();
+    // event3에서 end로 가는 경우
+    // if (eventId == "event3" && nextEventId == "end") {
+    //     return "end";
+    // }
+
+    return nextEventId;
 }
 
 void EventManager::executeChoice(const std::string& choiceId, Event* currentEvent, Player& player) {

@@ -19,7 +19,7 @@ public:
     Event* getEvent(const std::string& eventId);
     
     // 특정 이벤트를 처리하는 함수 (플레이어와 이벤트 처리)
-    void processEvent(const std::string& eventId, Player& player);
+    std::string processEvent(const std::string& eventId, Player& player);
     
     // 플레이어의 선택을 실행하는 함수
     void executeChoice(const std::string& choiceId, Event* currentEvent, Player& player);
