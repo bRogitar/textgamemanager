@@ -1,0 +1,10 @@
+<GameSave>
+    <PlayerStatus name="doci" health="100" mentalStrength="50" attackPower="20" money="100"/>
+    <Rooms>
+        <Room name="Entrance Hall" cleared="true"/>
+        <Room name="PosionTrap Room" cleared="true"/>
+        <Room name="Library" cleared="false"/>
+        <Room name="NPC Room" cleared="false"/>
+        <Room name="Dining Room" cleared="false"/>
+    </Rooms>
+</GameSave>
