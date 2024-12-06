@@ -46,7 +46,7 @@ void CombatManager::combatLoop() {
         }
 
         Sleep(1000);
-        std::cout << "------------------------------------" << std::endl;
+        std::cout << "------------------------------------" << std::endl;//
     }
 
     player.setCombatHealth(player.getHealth());
