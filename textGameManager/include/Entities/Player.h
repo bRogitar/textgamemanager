@@ -2,9 +2,11 @@
 #define PLAYER_H
 
 #include <string>
-#include <iostream>  // 추가: 상태 출력에 사용
-#include "ItemInventory.h"
+#include <vector>
+#include <memory>
+#include "Ability.h"
 #include "AbilityInventory.h"
+#include <iostream> // 콘솔 출력을 위해 포함
 
 class Player {
 public:
@@ -45,38 +47,26 @@ public:
     void takeDamage(int damage); // 데미지를 받아 체력 감소
     void applyDefeatPenalty(); // 패배 시 패널티 적용 함수
 
-    // Inventory methods
-    void addItem(const Item& item);
-    void removeItem(const Item& item);
-    bool hasItem(const std::string& itemId) const;
-
     // Ability methods
-    void addAbility(const Ability& ability);
-    void removeAbility(const Ability& ability);
-    bool hasAbility(const std::string& abilityId) const;
+    void addAbility(const std::string& abilityId);  // 어빌리티 추가
+    void removeAbility(const std::string& abilityId); // 어빌리티 제거
+    bool hasAbility(const std::string& abilityId) const; // 특정 어빌리티 보유 여부 확인
+    const Ability* getAbility(const std::string& abilityId) const; // 특정 어빌리티 가져오기
+    void useAbility(const std::string& abilityId); // 어빌리티 사용
+    void displayAbilities() const; // 보유 중인 어빌리티 표시
 
-    // 상태를 출력하는 메서드
-    void displayStatus() const {
-        std::cout << "Player Status:\n"
-                  << "Name: " << name << "\n"
-                  << "Health: " << health << "\n"
-                  << "Mental Strength: " << mentalStrength << "\n"
-                  << "Attack Power: " << attackPower << "\n"
-                  << "Money: " << money << "\n"
-                  << "Combat Health: " << combatHealth << "\n"
-                  << "------------------------------------" << std::endl;
-    }
+    // **Player 상태를 출력하는 메서드 추가**
+    void displayStatus() const;
 
 private:
     std::string name;
     int health;
     int mentalStrength;
     int attackPower;
-    int combatHealth; // 전투 체력 추가
     int money;
+    int combatHealth; // 전투 체력
 
-    ItemInventory itemInventory;
-    AbilityInventory abilityInventory;
+    AbilityInventory abilityInventory; // 어빌리티 인벤토리
 };
 
 #endif // PLAYER_H

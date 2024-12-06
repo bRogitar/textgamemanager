@@ -3,6 +3,7 @@
 
 int main() {
     GameManager& gameManager = GameManager::getInstance();
+    
     gameManager.initializeGame();
     gameManager.startGame();
 

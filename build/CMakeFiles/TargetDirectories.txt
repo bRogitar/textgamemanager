@@ -1,0 +1,4 @@
+D:/textgamemanager-final/build/CMakeFiles/TextGameManager.dir
+D:/textgamemanager-final/build/CMakeFiles/tinyxml2.dir
+D:/textgamemanager-final/build/CMakeFiles/edit_cache.dir
+D:/textgamemanager-final/build/CMakeFiles/rebuild_cache.dir

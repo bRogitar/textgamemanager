@@ -1,81 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Events>
-<Event id="event1">
-    <name>Entrance Hall</name>
-    <description><![CDATA[
-A group of goblins attacks you at the entrance.
-You need to overcome this situation.
-]]></description>
-    <Monster type="Goblin" name="Goblin Leader" health="50" attackPower="10"/>
-    <Choices>
-        <Choice id="run" description="Flee to the misty room" nextEventId="eventPosionTrap"/>
-        <Choice id="fight" description="Fight" nextEventId="eventPosionTrap"/>
-    </Choices>
-</Event>
+    <Event id="event1">
+        <name>Entrance Hall</name>
+        <description>A group of goblins attacks you at the entrance. You need to overcome this situation.</description>
+        <Monster type="Goblin" name="Goblin Leader" health="50" attackPower="10"/>
+        <Choices>
+            <Choice id="run" description="next" nextEventId="event2"/>
+            <Choice id="fight" description="Fight" nextEventId="event2"/>
+        </Choices>
+    </Event>
 
-<Event id="eventPosionTrap">
-    <name>Poison Mist Room</name>
-    <description><![CDATA[
-The room is filled with an eerie green mist...
-You feel your throat tightening.
-]]></description>
-    <Trap type="PoisonGasTrap" name="Poison Mist" damage="30"/>
-    <Choices>
-        <Choice id="continue" description="Push through to the library" nextEventId="event2"/>
-        <Choice id="retreat" description="Return to entrance" nextEventId="event1"/>
-    </Choices>
-</Event>
-
-<Event id="event2">
-    <name>Magic Book</name>
-    <description><![CDATA[
-You have found an ancient magic book.
-Perhaps the old sage might know something about it...
-]]></description>
-    <Choices>
-        <Choice id="seek_sage" description="Find the sage" nextEventId="eventNPC"/>
-        <Choice id="ignore" description="Continue without help" nextEventId="event3"/>
-    </Choices>
-</Event>
-
-    <!-- 다이얼로그 NPC 이벤트 -->
-<Event id="eventNPC">
-    <name>Mysterious Stranger</name>
-    <description><![CDATA[
-You encounter a mysterious stranger in the room.
-The old sage seems to have valuable information.
-]]></description>
-    <NPC type="DialogNPC" name="Old Sage" dialog="Welcome, traveler. The path ahead is treacherous, but knowledge is power."/>
-    <Choices>
-        <Choice id="talk" description="Ask about the dungeon" nextEventId="eventNPC_chat1"/>
-        <Choice id="leave" description="Leave the room" nextEventId="event1"/>
-    </Choices>
-</Event>
-
-<Event id="eventNPC_chat1">
-    <name>Old Sage's Warning</name>
-    <description><![CDATA[
-The Old Sage strokes his beard thoughtfully.
-]]></description>
-    <NPC type="DialogNPC" name="Old Sage" dialog="Beware of the green mist ahead. Many adventurers have fallen to its poison..."/>
-    <Choices>
-        <Choice id="ask_more" description="Ask about protection" nextEventId="eventNPC_chat2"/>
-        <Choice id="thank" description="Thank and leave" nextEventId="event2"/>
-    </Choices>
-</Event>
-
-<Event id="eventNPC_chat2">
-    <name>Old Sage's Advice</name>
-    <description><![CDATA[
-The Old Sage reaches into his robes.
-]]></description>
-    <NPC type="DialogNPC" name="Old Sage" dialog="Take this herb. It might help you against the poison. And remember, sometimes retreat is the wisest choice."/>
-    <Choices>
-        <Choice id="thank" description="Thank and proceed" nextEventId="event3"/>
-        <Choice id="investigate" description="Head to the misty room" nextEventId="eventPosionTrap"/>
-    </Choices>
-</Event>
+    <Event id="event2">
+        <name>Magic Book</name>
+        <description>You have found an ancient magic book. Decide what to do with it and then continue your journey.</description>
+        <Choices>
+            <Choice id="run" description="next" nextEventId="event3"/>
+            <Choice id="get potion" description="Inspect the book to get a potion" nextEventId="event3" abilityId="health_boost"/>
+        </Choices>
+    </Event>
 
     <Event id="event3">
         <name>Ghostly Banquet</name>
