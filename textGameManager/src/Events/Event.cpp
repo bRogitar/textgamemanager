@@ -47,12 +47,36 @@ void Event::setMonster(std::unique_ptr<BaseMonster> monster) {
     this->monster = std::move(monster);
 }
 
-// 몬스터가 있는지 여부를 확인하는 함수
-bool Event::hasMonster() const {
+bool Event::hasMonster() const { //// 몬스터가 있는지 여부를 확인하는 함수
     return monster != nullptr;
 }
 
-// 현재 이벤트의 몬스터를 반환하는 함수
-BaseMonster* Event::getMonster() const {
+BaseMonster* Event::getMonster() const { //// 현재 이벤트의 몬스터를 반환하는 함수
     return monster.get();
+}
+
+//NPC설정
+void Event::setNPC(std::unique_ptr<BaseNPC> npc) {
+    this->npc = std::move(npc);
+}
+
+bool Event::hasNPC() const {
+    return npc != nullptr;
+}
+
+BaseNPC* Event::getNPC() const {
+    return npc.get();
+}
+
+//트랩설정
+void Event::setTrap(std::unique_ptr<BaseTrap> trap) {
+    this->trap = std::move(trap);
+}
+
+bool Event::hasTrap() const {
+    return trap != nullptr;
+}
+
+BaseTrap* Event::getTrap() const {
+    return trap.get();
 }

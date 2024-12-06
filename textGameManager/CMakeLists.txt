@@ -22,6 +22,8 @@ include_directories(
     include/GameManager
     include/Interactables
     include/Interactables/Monsters
+    include/Interactables/NPCs
+    include/Interactables/Traps
     include/Utilities
     include/World
     include/Actions

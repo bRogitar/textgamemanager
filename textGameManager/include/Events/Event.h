@@ -6,6 +6,8 @@
 #include <memory>
 #include "Choice.h"
 #include "BaseMonster.h"
+#include "BaseTrap.h"
+#include "BaseNPC.h"
 
 class Event {
 public:
@@ -34,6 +36,7 @@ public:
         return description;
     }
 
+
     // 몬스터 설정 함수
     void setMonster(std::unique_ptr<BaseMonster> monster);
 
@@ -42,6 +45,17 @@ public:
 
     // 현재 이벤트의 몬스터 반환 함수
     BaseMonster* getMonster() const;
+
+    
+    void setNPC(std::unique_ptr<BaseNPC> npc);
+    bool hasNPC() const;
+    BaseNPC* getNPC() const;
+
+
+    void setTrap(std::unique_ptr<BaseTrap> trap);
+    bool hasTrap() const;
+    BaseTrap* getTrap() const;
+
 
     // 이벤트 완료 상태 관리
     void markAsCompleted() {
