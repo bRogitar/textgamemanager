@@ -91,18 +91,6 @@
 },
 {
   "directory": "D:/textgamemanager-final/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\BaseInteractable.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\BaseInteractable.cpp",
-  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/BaseInteractable.cpp",
-  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/BaseInteractable.cpp.obj"
-},
-{
-  "directory": "D:/textgamemanager-final/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\InteractableFactory.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\InteractableFactory.cpp",
-  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/InteractableFactory.cpp",
-  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/InteractableFactory.cpp.obj"
-},
-{
-  "directory": "D:/textgamemanager-final/build",
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Monsters\\BaseMonster.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Monsters\\BaseMonster.cpp",
   "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Monsters/BaseMonster.cpp",
   "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Monsters/BaseMonster.cpp.obj"
@@ -133,6 +121,18 @@
 },
 {
   "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\NPCs\\DialogNPC.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\NPCs\\DialogNPC.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/NPCs/DialogNPC.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/DialogNPC.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\NPCs\\NPCFactory.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\NPCs\\NPCFactory.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/NPCs/NPCFactory.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/NPCFactory.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\NPCs\\QuestGiver.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\NPCs\\QuestGiver.cpp",
   "file": "D:/textgamemanager-final/textGameManager/src/Interactables/NPCs/QuestGiver.cpp",
   "output": "CMakeFiles/TextGameManager.dir/src/Interactables/NPCs/QuestGiver.cpp.obj"
@@ -157,9 +157,15 @@
 },
 {
   "directory": "D:/textgamemanager-final/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Traps\\PoisonGas.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Traps\\PoisonGas.cpp",
-  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Traps/PoisonGas.cpp",
-  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGas.cpp.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Traps\\PoisonGasTrap.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Traps\\PoisonGasTrap.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Traps/PoisonGasTrap.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/PoisonGasTrap.cpp.obj"
+},
+{
+  "directory": "D:/textgamemanager-final/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/TextGameManager.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TextGameManager.dir\\src\\Interactables\\Traps\\TrapFactory.cpp.obj -c D:\\textgamemanager-final\\textGameManager\\src\\Interactables\\Traps\\TrapFactory.cpp",
+  "file": "D:/textgamemanager-final/textGameManager/src/Interactables/Traps/TrapFactory.cpp",
+  "output": "CMakeFiles/TextGameManager.dir/src/Interactables/Traps/TrapFactory.cpp.obj"
 },
 {
   "directory": "D:/textgamemanager-final/build",
