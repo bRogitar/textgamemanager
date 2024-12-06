@@ -41,10 +41,18 @@ You have found an ancient magic book. Decide what to do with it and then continu
 <Event id="eventNPC">
     <name>Mysterious Stranger</name>
     <description><![CDATA[
+===========================
+   A Mysterious Encounter
+===========================
+
 You encounter a mysterious stranger in the room.
 The old sage seems to have valuable information.
+
+Old Sage:
+"Welcome, traveler. The path ahead is treacherous, 
+but knowledge is power."
 ]]></description>
-    <NPC type="DialogNPC" name="Old Sage" dialog="Welcome, traveler. The path ahead is treacherous, but knowledge is power."/>
+    <NPC type="DialogNPC" name="Old Sage"/>
     <Choices>
         <Choice id="talk" description="Ask about the dungeon" nextEventId="eventNPC_chat1"/>
         <Choice id="leave" description="Leave the room" nextEventId="event3"/>
@@ -55,8 +63,10 @@ The old sage seems to have valuable information.
     <name>Old Sage's Warning</name>
     <description><![CDATA[
 The Old Sage strokes his beard thoughtfully.
+
+"Beware of the green mist ahead. Many adventurers have fallen to its poison..."
 ]]></description>
-    <NPC type="DialogNPC" name="Old Sage" dialog="Beware of the green mist ahead. Many adventurers have fallen to its poison..."/>
+    <NPC type="DialogNPC" name="Old Sage"/>
     <Choices>
         <Choice id="ask_more" description="Ask about protection" nextEventId="eventNPC_chat2"/>
         <Choice id="thank" description="Thank and leave" nextEventId="event3"/>
@@ -67,8 +77,10 @@ The Old Sage strokes his beard thoughtfully.
     <name>Old Sage's Advice</name>
     <description><![CDATA[
 The Old Sage reaches into his robes.
+
+"Take this herb. It might help you against the poison. And remember, sometimes retreat is the wisest choice."
 ]]></description>
-    <NPC type="DialogNPC" name="Old Sage" dialog="Take this herb. It might help you against the poison. And remember, sometimes retreat is the wisest choice."/>
+    <NPC type="DialogNPC" name="Old Sage"/>
     <Choices>
         <Choice id="thank" description="Thank and proceed" nextEventId="event3"/>
         <Choice id="investigate" description="Head to the misty room" nextEventId="eventPosionTrap"/>

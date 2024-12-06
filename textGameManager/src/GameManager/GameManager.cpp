@@ -215,18 +215,21 @@ void GameManager::loadGame(const std::string& loadFileName) {
 }
 
 void GameManager::displaySaveFiles() {
-    std::string saveDirectory = "save";
-    if (!fs::exists(saveDirectory) || fs::is_empty(saveDirectory)) {
+    displayMessage("\n===========================\n");
+    displayMessage("     Available Saves     \n");
+    displayMessage("===========================\n\n");
+
+    if (!fs::exists("save") || fs::is_empty("save")) {
         displayMessage("No save files found.\n");
         return;
     }
 
-    displayMessage("Available save files:\n");
-    for (const auto& entry : fs::directory_iterator(saveDirectory)) {
+    for (const auto& entry : fs::directory_iterator("save")) {
         if (entry.is_regular_file()) {
-            displayMessage(" - " + entry.path().filename().string() + "\n");
+            displayMessage("► " + entry.path().filename().string() + "\n");
         }
     }
+    displayMessage("\n===========================\n");
 }
 
 std::vector<Room> GameManager::createWorldMap() {
@@ -282,7 +285,7 @@ void GameManager::gameLoop() {
         Room& currentRoom = worldMap[currentRoomIndex];
 
         displayMessage("\n===========================");
-        displayMessage("Entering room: " + currentRoom.getRoomName() + "\n");
+        displayMessage("\nEntering room: " + currentRoom.getRoomName() + "\n");
 
         // 저장 기능
         bool validInput = false;
@@ -290,12 +293,12 @@ void GameManager::gameLoop() {
             displayMessage("Would you like to save your progress? (yes/no): ");
             std::string saveChoice = InputManager::getInstance()->getUserInput();
 
-            if (saveChoice == "yes") {
+            if (saveChoice == "yes" || saveChoice == "y") {
                 displayMessage("Enter save file name: ");
                 std::string saveFileName = InputManager::getInstance()->getUserInput();
                 saveGame(saveFileName);
                 validInput = true;
-            } else if (saveChoice == "no") {
+            } else if (saveChoice == "no" || saveChoice == "n") {
                 validInput = true;
             } else {
                 displayMessage("Invalid choice. Please enter 'yes' or 'no'.");
@@ -308,10 +311,10 @@ void GameManager::gameLoop() {
             displayMessage("Would you like to check and use an ability from your inventory? (yes/no): ");
             std::string abilityChoice = InputManager::getInstance()->getUserInput();
 
-            if (abilityChoice == "yes") {
+            if (abilityChoice == "yes" || abilityChoice == "y") {
                 useAbility();
                 validInput = true;
-            } else if (abilityChoice == "no") {
+            } else if (abilityChoice == "no" || abilityChoice == "n") {
                 validInput = true;
             } else {
                 displayMessage("Invalid choice. Please enter 'yes' or 'no'.");
@@ -340,7 +343,7 @@ void GameManager::gameLoop() {
 
         if (currentRoomIndex < worldMap.size()) {
             displayMessage("\n===========================");
-            displayMessage("Moving to the next room...");
+            displayMessage("\nMoving to the next room...");
         }
     }
 

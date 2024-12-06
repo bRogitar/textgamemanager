@@ -14,20 +14,18 @@ void Event::displayChoices() const {
 }
 
 void Event::execute(Player& player) {
-    std::cout << description << "\n";
 
-        // NPC 대화 표시
-    if (hasNPC()) {
-        std::cout << npc->getName() << ": " << npc->getDialog() << "\n\n";
-    }
-    
+    std::cout << "\n===========================\n";
+    std::cout << description << "\n";
+    std::cout << "===========================\n\n";
+
     displayChoices();
 
     InputManager* inputManager = InputManager::getInstance();
     InputDecorator inputDecorator(inputManager);
 
     while (true) {
-        std::cout << "Enter your choice ID: ";
+        std::cout << "Enter your choice ID: \n";
         std::string choiceId = inputDecorator.getUserInput();
         
         // 입력을 소문자로 변환
