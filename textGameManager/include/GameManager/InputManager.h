@@ -3,7 +3,8 @@
 
 #include <string>
 #include <iostream>
-
+#include <vector> 
+#include "Choice.h"
 class InputManager {
 public:
     static InputManager* getInstance() {

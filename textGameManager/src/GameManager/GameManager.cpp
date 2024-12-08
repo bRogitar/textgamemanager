@@ -326,6 +326,7 @@ void GameManager::gameLoop() {
         if (currentRoomIndex < worldMap.size()) {
             displayMessage("\n===========================");
             displayMessage("\nMoving to the next room...");
+            player.displayStatus();
         }
     }
 
