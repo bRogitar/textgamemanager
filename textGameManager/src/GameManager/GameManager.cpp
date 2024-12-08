@@ -288,37 +288,19 @@ void GameManager::gameLoop() {
         displayMessage("\nEntering room: " + currentRoom.getRoomName() + "\n");
 
         // 저장 기능
-        bool validInput = false;
-        while (!validInput) {
-            displayMessage("Would you like to save your progress? (yes/no): ");
-            std::string saveChoice = InputManager::getInstance()->getUserInput();
-
-            if (saveChoice == "yes" || saveChoice == "y") {
-                displayMessage("Enter save file name: ");
-                std::string saveFileName = InputManager::getInstance()->getUserInput();
-                saveGame(saveFileName);
-                validInput = true;
-            } else if (saveChoice == "no" || saveChoice == "n") {
-                validInput = true;
-            } else {
-                displayMessage("Invalid choice. Please enter 'yes' or 'no'.");
-            }
+        displayMessage("Would you like to save your progress? (yes/no): ");
+        std::string saveChoice = InputManager::getInstance()->getYesNoInput(); // getYesNoInput 사용
+        if (saveChoice == "yes") {
+            displayMessage("Enter save file name: ");
+            std::string saveFileName = InputManager::getInstance()->getUserInput();
+            saveGame(saveFileName);
         }
 
         // 어빌리티 체크
-        validInput = false;
-        while (!validInput) {
-            displayMessage("Would you like to check and use an ability from your inventory? (yes/no): ");
-            std::string abilityChoice = InputManager::getInstance()->getUserInput();
-
-            if (abilityChoice == "yes" || abilityChoice == "y") {
-                useAbility();
-                validInput = true;
-            } else if (abilityChoice == "no" || abilityChoice == "n") {
-                validInput = true;
-            } else {
-                displayMessage("Invalid choice. Please enter 'yes' or 'no'.");
-            }
+        displayMessage("Would you like to check and use an ability from your inventory? (yes/no): ");
+        std::string abilityChoice = InputManager::getInstance()->getYesNoInput(); // getYesNoInput 사용
+        if (abilityChoice == "yes") {
+            useAbility();
         }
 
         // 이벤트 처리

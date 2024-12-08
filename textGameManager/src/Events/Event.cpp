@@ -14,42 +14,21 @@ void Event::displayChoices() const {
 }
 
 void Event::execute(Player& player) {
-
     std::cout << "\n===========================\n";
     std::cout << description << "\n";
     std::cout << "===========================\n\n";
 
     displayChoices();
-
-    InputManager* inputManager = InputManager::getInstance();
-    InputDecorator inputDecorator(inputManager);
-
-    while (true) {
-        std::cout << "Enter your choice ID: \n";
-        std::string choiceId = inputDecorator.getUserInput();
+    
+    std::string choiceId = InputManager::getInstance()->getChoiceInput(choices);
+    auto it = std::find_if(choices.begin(), choices.end(),
+        [&](const Choice& choice) { 
+            return choice.getId() == choiceId;
+        });
         
-        // 입력을 소문자로 변환
-        std::transform(choiceId.begin(), choiceId.end(), choiceId.begin(), ::tolower);
-
-        auto it = std::find_if(choices.begin(), choices.end(),
-            [&](const Choice& choice) { 
-                std::string fullId = choice.getId();
-                std::transform(fullId.begin(), fullId.end(), fullId.begin(), ::tolower);
-                // 전체 ID나 첫 글자 매칭 모두 허용
-                return fullId == choiceId || (choiceId.length() == 1 && fullId[0] == choiceId[0]);
-            });
-
-        if (it != choices.end()) {
-            it->execute(player);
-            nextEventId = it->getNextEventId();
-            break;
-        } else {
-            std::cout << "Invalid choice ID. Please try again." << std::endl;
-            displayChoices();
-        }
-    }
+    it->execute(player);
+    nextEventId = it->getNextEventId();
 }
-
 
 // 몬스터를 설정하는 함수
 void Event::setMonster(std::unique_ptr<BaseMonster> monster) {

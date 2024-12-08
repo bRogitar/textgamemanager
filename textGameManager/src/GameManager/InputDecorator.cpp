@@ -12,17 +12,17 @@ std::string InputDecorator::getUserInput() {
     input = inputManager->getUserInput();
 
     // 간단한 명령어를 전체 명령어로 확장
-    if (input == "r") {
-        input = "run";
-    } else if (input == "f") {
-        input = "fight";
-    } else if (input == "s"){
-        input = "save";
-    } else if (input == "n"){
-        input = "no";
-    } else if (input == "y"){
-        input = "yes";
-    }
+    // if (input == "r") {
+    //     input = "run";
+    // } else if (input == "f") {
+    //     input = "fight";
+    // } else if (input == "s"){
+    //     input = "save";
+    // } else if (input == "n"){
+    //     input = "no";
+    // } else if (input == "y"){
+    //     input = "yes";
+    // }
 
     return input;
 }
