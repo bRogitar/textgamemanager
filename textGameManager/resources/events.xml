@@ -28,7 +28,7 @@ The room is filled with an eerie green mist... You feel your throat tightening.
     <Event id="event2">
         <name>Magic Book</name>
         <description><![CDATA[
-You have found an ancient magic book. Decide what to do with it and then continue your journey.
+You have found an ancient potion. Decide what to do with it and then continue your journey.
 ]]></description>
         <Choices>
             <Choice id="run" description="next" nextEventId="eventNPC"/>
