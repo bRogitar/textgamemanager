@@ -8,22 +8,21 @@
     ]]></description>
         <Monster type="Goblin" name="Goblin Leader" health="50" attackPower="10"/>
         <Choices>
-            <Choice id="run" description="Flee to the misty room" nextEventId="eventPosionTrap"/>
-            <Choice id="fight" description="Fight" nextEventId="eventPosionTrap"/>
+            <Choice id="run" description="Flee to the misty room" nextEventId="eventPoisonTrap"/>
+            <Choice id="fight" description="Fight" nextEventId="eventPoisonTrap"/>
         </Choices>
     </Event>
 
-    <Event id="eventPosionTrap">
-    <name>Poison Mist Room</name>
-    <description><![CDATA[
-The room is filled with an eerie green mist... You feel your throat tightening.
-]]></description>
-    <Trap type="PoisonGasTrap" name="Poison Mist" damage="30"/>
-    <Choices>
-        <Choice id="continue" description="Push through to the library" nextEventId="event2"/>
-        <Choice id="retreat" description="Return to entrance" nextEventId="event2"/>
-    </Choices>
-</Event>
+    <Event id="eventPoisonTrap">
+        <name>Poison Mist Room</name>
+        <description>The room is filled with an eerie green mist... You feel your throat tightening.</description>
+        <Choices>
+            <Choice id="continue" description="Push through to the library" nextEventId="event2">
+                <Trap type="PoisonGasTrap" damage="20"/>
+            </Choice>
+            <Choice id="retreat" description="Return to entrance" nextEventId="event1"/>
+        </Choices>
+    </Event>
 
     <Event id="event2">
         <name>Magic Book</name>
@@ -83,7 +82,7 @@ The Old Sage reaches into his robes.
     <NPC type="DialogNPC" name="Old Sage"/>
     <Choices>
         <Choice id="thank" description="Thank and proceed" nextEventId="event3"/>
-        <Choice id="investigate" description="Head to the misty room" nextEventId="eventPosionTrap"/>
+        <Choice id="investigate" description="Head to the misty room" nextEventId="eventPoisonTrap"/>
     </Choices>
 </Event>
     <!-- 다이얼로그 NPC 이벤트 -->

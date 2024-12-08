@@ -8,6 +8,8 @@
 #include "BaseMonster.h"
 #include "BaseTrap.h"
 #include "BaseNPC.h"
+#include <iostream>
+
 
 class Event {
 public:
@@ -17,7 +19,9 @@ public:
 
     // 선택을 추가하는 함수
     void addChoice(Choice&& choice) {
+        //std::cout << "[DEBUG] Adding choice to event" << std::endl;
         choices.push_back(std::move(choice));
+        //std::cout << "[DEBUG] Choice added to event" << std::endl;
     }
 
     // 선택 목록 반환
@@ -53,7 +57,6 @@ public:
 
 
     void setTrap(std::unique_ptr<BaseTrap> trap);
-    bool hasTrap() const;
     BaseTrap* getTrap() const;
 
 

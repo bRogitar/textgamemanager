@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include "BaseAction.h"
+#include "BaseTrap.h"
 #include "Player.h"
 
 class Choice {
@@ -11,38 +12,45 @@ private:
     std::string id;
     std::string description;
     std::unique_ptr<BaseAction> action;
-    std::string nextEventId;  // 후속 이벤트 ID
-    std::string abilityId;    // 어빌리티 ID (선택지로 얻을 수 있는 어빌리티)
+    std::string nextEventId;
+    std::string abilityId;
+    std::unique_ptr<BaseTrap> trap;
 
 public:
-    // 생성자에 nextEventId와 abilityId 추가
-    Choice(const std::string& id, const std::string& description, std::unique_ptr<BaseAction> action, 
-           const std::string& nextEventId = "", const std::string& abilityId = "")
-        : id(id), description(description), action(std::move(action)), nextEventId(nextEventId), abilityId(abilityId) {}
+    Choice(const std::string& id, 
+           const std::string& description, 
+           std::unique_ptr<BaseAction> action,
+           const std::string& nextEventId = "", 
+           const std::string& abilityId = "",
+           std::unique_ptr<BaseTrap> trap = nullptr)
+        : id(id), 
+          description(description), 
+          action(std::move(action)), 
+          nextEventId(nextEventId), 
+          abilityId(abilityId),
+          trap(std::move(trap)) {}
 
     // 이동 생성자 추가
     Choice(Choice&& other) noexcept
-        : id(std::move(other.id)),
-          description(std::move(other.description)),
-          action(std::move(other.action)),
-          nextEventId(std::move(other.nextEventId)),
-          abilityId(std::move(other.abilityId)) {}
-
-    // 이동 할당 연산자 추가
-    Choice& operator=(Choice&& other) noexcept {
-        if (this != &other) {
-            id = std::move(other.id);
-            description = std::move(other.description);
-            action = std::move(other.action);
-            nextEventId = std::move(other.nextEventId);
-            abilityId = std::move(other.abilityId);
-        }
-        return *this;
+        : id(std::move(other.id))
+        , description(std::move(other.description))
+        , action(std::move(other.action))
+        , nextEventId(std::move(other.nextEventId))
+        , abilityId(std::move(other.abilityId))
+        , trap(std::move(other.trap)) {
+        //std::cout << "[DEBUG] Choice move constructor - Trap exists: " 
+        //          << (trap != nullptr) << std::endl;
     }
 
-    // 복사 생성자와 복사 할당 연산자는 삭제하여 이동만 가능하도록 함
-    Choice(const Choice& other) = delete;
-    Choice& operator=(const Choice& other) = delete;
+    void execute(Player& player) const {
+        if (trap) {
+            trap->trigger(player);
+        }
+        
+        if (action) {
+            action->execute(player);
+        }
+    }
 
     // Getter 메서드들
     const std::string& getId() const {
@@ -62,12 +70,6 @@ public:
         return abilityId;
     }
 
-    // 실행 메서드
-    void execute(Player& player) const {
-        if (action) {
-            action->execute(player);
-        }
-    }
 };
 
 #endif // CHOICE_H

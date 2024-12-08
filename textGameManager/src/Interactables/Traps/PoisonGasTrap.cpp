@@ -9,11 +9,11 @@ PoisonGasTrap::PoisonGasTrap(const std::string& name, int damage)
 
 void PoisonGasTrap::trigger(Player& player) {
     if (!canAvoid()) {
-        std::cout << getName() << " 함정이 발동되었습니다! " 
-                 << getDamage() << "의 독 피해를 입었습니다." << std::endl;
+        std::cout << getName() << " trap has been triggered! " 
+                 << "Taking " << getDamage() << " poison damage." << std::endl;
         player.takeDamage(getDamage());
     } else {
-        std::cout << getName() << "을(를) 피하는 데 성공했습니다!" << std::endl;
+        std::cout << "Successfully avoided the " << getName() << "!" << std::endl;
     }
 }
 

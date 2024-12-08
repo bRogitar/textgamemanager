@@ -25,7 +25,7 @@ void Event::execute(Player& player) {
         [&](const Choice& choice) { 
             return choice.getId() == choiceId;
         });
-        
+    
     it->execute(player);
     nextEventId = it->getNextEventId();
 }
@@ -59,10 +59,6 @@ BaseNPC* Event::getNPC() const {
 //트랩설정
 void Event::setTrap(std::unique_ptr<BaseTrap> trap) {
     this->trap = std::move(trap);
-}
-
-bool Event::hasTrap() const {
-    return trap != nullptr;
 }
 
 BaseTrap* Event::getTrap() const {

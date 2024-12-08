@@ -13,6 +13,8 @@
 #include "InputDecorator.h"
 #include "InputManager.h"
 #include <cctype> // tolower 함수 포함
+#include "PoisonGasTrap.h"
+
 
 using namespace tinyxml2;
 
@@ -32,7 +34,7 @@ Event* EventManager::getEvent(const std::string& eventId) {
 }
 
 std::string EventManager::processEvent(const std::string& eventId, Player& player) {
-    std::cout << "[DEBUG] Processing event with ID: " << eventId << std::endl;
+    //std::cout << "[DEBUG] Processing event with ID: " << eventId << std::endl;
 
     Event* event = getEvent(eventId);
     if (event == nullptr) {
@@ -48,7 +50,7 @@ std::string EventManager::processEvent(const std::string& eventId, Player& playe
     }
 
     // 이벤트 실행
-    std::cout << "[DEBUG] Executing event: " << eventId << std::endl;
+   // std::cout << "[DEBUG] Executing event: " << eventId << std::endl;
     event->execute(player);
 
     // 다음 이벤트 ID 확인
@@ -145,34 +147,45 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
             }
 
             // Choices 정보를 읽어들임
-            XMLElement* pChoices = pEventElement->FirstChildElement("Choices");
-            if (pChoices != nullptr) {
-                for (XMLElement* pChoice = pChoices->FirstChildElement("Choice"); pChoice != nullptr; pChoice = pChoice->NextSiblingElement("Choice")) {
-                    std::string choiceId = pChoice->Attribute("id");
-                    std::string choiceDescription = pChoice->Attribute("description");
-                    std::string nextEventId = pChoice->Attribute("nextEventId");
+            XMLElement* pChoicesElement = pEventElement->FirstChildElement("Choices");
+            if (pChoicesElement != nullptr) {
+                XMLElement* pChoiceElement = pChoicesElement->FirstChildElement("Choice");
+                while (pChoiceElement) {
+                    std::string choiceId = pChoiceElement->Attribute("id");
+                    std::string choiceDescription = pChoiceElement->Attribute("description");
+                    std::string nextEventId = pChoiceElement->Attribute("nextEventId");
+                    
+                    std::unique_ptr<BaseAction> action = std::make_unique<ContinueAction>();
+                    std::unique_ptr<BaseTrap> trap = nullptr;
 
-                    std::unique_ptr<BaseAction> action;
+                    // 트랩 정보 읽기
+                    XMLElement* pTrapElement = pChoiceElement->FirstChildElement("Trap");
+                    if (pTrapElement) {
+                     //   std::cout << "[DEBUG] Found trap element for choice: " << choiceId << std::endl;
+                        std::string trapType = pTrapElement->Attribute("type");
+                        int damage = 0;
+                        pTrapElement->QueryIntAttribute("damage", &damage);
+                        
+                        if (trapType == "PoisonGasTrap") {
+                            trap = std::make_unique<PoisonGasTrap>("Poison Gas", damage);
+                        }
+                    }
 
-    if (choiceId == "fight") {
-        // 전투 액션에 생성된 몬스터 전달
-        if (monster) {
-            action = std::make_unique<FightAction>(monster);
-        } else {
-            // 몬스터가 없으면 전투 선택지를 건너뜁니다.
-            continue;
-            }
-        } else if (choiceId == "run") {
-            action = std::make_unique<RunAwayAction>();
-        } else if (choiceId == "get potion") {
-            action = std::make_unique<GetPotionAction>(); // 포션을 획득하는 행동
-        } else if (choiceId == "continue") {
-            action = std::make_unique<ContinueAction>(); // 포션을 획득하는 행동
-        } else {
-            action = nullptr;
-        }
-    Choice choice(choiceId, choiceDescription, std::move(action), nextEventId);
-    newEvent->addChoice(std::move(choice));
+                   // std::cout << "[DEBUG] Creating choice '" << choiceId 
+                   //           << "' with trap: " << (trap ? "yes" : "no") 
+                   //           << ", action: " << (action ? "yes" : "no") << std::endl;
+                    
+                    Choice choice(
+                        choiceId,
+                        choiceDescription,
+                        std::move(action),
+                        nextEventId,
+                        "",  // abilityId
+                        std::move(trap)
+                    );
+
+                    newEvent->addChoice(std::move(choice));
+                    pChoiceElement = pChoiceElement->NextSiblingElement("Choice");
                 }
             }
             return newEvent;
@@ -180,7 +193,7 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
         pEventElement = pEventElement->NextSiblingElement("Event");
     }
 
-    std::cerr << "Event with ID " << eventId << " not found." << std::endl;
+    //std::cerr << "Event with ID " << eventId << " not found." << std::endl;
     return nullptr;
 }
 
