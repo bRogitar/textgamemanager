@@ -14,6 +14,7 @@
 #include "InputManager.h"
 #include <cctype> // tolower 함수 포함
 #include "PoisonGasTrap.h"
+#include "PitfallTrap.h"
 
 
 using namespace tinyxml2;
@@ -168,6 +169,8 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                         
                         if (trapType == "PoisonGasTrap") {
                             trap = std::make_unique<PoisonGasTrap>("Poison Gas", damage);
+                        } else if (trapType == "PitfallTrap") {
+                            trap = std::make_unique<PitfallTrap>("Pitfall", damage);
                         }
                     }
 

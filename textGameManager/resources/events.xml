@@ -18,7 +18,8 @@
         <description>The room is filled with an eerie green mist... You feel your throat tightening.</description>
         <Choices>
             <Choice id="continue" description="Push through to the library" nextEventId="event2">
-                <Trap type="PoisonGasTrap" damage="20"/>
+                <!-- <Trap type="PoisonGasTrap" damage="20"/> -->
+                <Trap type="PitfallTrap" damage="30"/>
             </Choice>
             <Choice id="retreat" description="Return to entrance" nextEventId="event1"/>
         </Choices>
