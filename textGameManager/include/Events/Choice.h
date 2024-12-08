@@ -42,6 +42,17 @@ public:
         //          << (trap != nullptr) << std::endl;
     }
 
+//     핵심 문제는 Choice 클래스의 이동 생성자(move constructor)가 없었던 것이었습니다.
+// 문제가 발생한 과정:
+// EventManager에서 Choice 객체를 생성할 때 트랩을 포함해서 만들었고
+// 이 Choice 객체를 Event의 vector<Choice> choices에 push_back할 때
+// 이동 생성자가 없어서 unique_ptr<BaseTrap> trap이 제대로 이동되지 않았습니다
+// 해결책은 간단했습니다:
+// 이렇게 하면:
+// vector에 Choice가 추가될 때 트랩 포인터가 제대로 이동되고
+// 나중에 선택지를 실행할 때 트랩이 정상적으로 작동하게 됩니다
+// 결국 unique_ptr의 이동 생성자를 추가해주면 해결되는 문제였습니다.
+
     void execute(Player& player) const {
         if (trap) {
             trap->trigger(player);
