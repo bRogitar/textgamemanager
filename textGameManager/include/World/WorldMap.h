@@ -12,10 +12,10 @@ public:
     void addRoom(const Room& room);
     Room* getRoom(const std::string& roomId);
     std::vector<Room*> getAdjacentRooms(const std::string& roomId);
-    std::vector<Room*> getAllRooms(); // Updated to return pointers to all rooms
+    std::vector<Room*> getAllRooms(); //모든 방 포인터 반환
 
 private:
-    std::unordered_map<std::string, Room> rooms;
+    std::unordered_map<std::string, Room> rooms; 
 };
 
 #endif // WORLDMAP_H

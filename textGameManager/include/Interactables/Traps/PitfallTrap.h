@@ -1,3 +1,5 @@
+//PitfallTrap.h
+
 #ifndef PITFALLTRAP_H
 #define PITFALLTRAP_H
 
@@ -8,13 +10,13 @@
 
 /**
  * @class PitfallTrap
- * @brief 함정 구덩이에 빠져 플레이어에게 데미지를 주는 트랩
+ * @brief 구덩이에 빠져 플레이어에게 데미지를 주는 트랩
  * @inherit BaseTrap
  */
 class PitfallTrap : public BaseTrap {
 private:
     // 트랩 회피 확률 (20%)
-    static constexpr int DEFAULT_AVOID_CHANCE = 20;
+    static constexpr int DEFAULT_AVOID_CHANCE = 50;
 
     bool canAvoid() const;
 
