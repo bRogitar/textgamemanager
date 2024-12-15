@@ -124,10 +124,10 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
         if (std::string(pEventElement->Attribute("id")) == eventId) {
             std::string name = pEventElement->FirstChildElement("name")->GetText();
             std::string description = pEventElement->FirstChildElement("description")->GetText();
-
+            
             auto newEvent = std::make_unique<Event>(eventId, name, description);
 
-            // 몬스터 정보를 읽어들임
+            // 몬스터 정보 읽기
             XMLElement* pMonsterElement = pEventElement->FirstChildElement("Monster");
             BaseMonster* monster = nullptr;
             if (pMonsterElement != nullptr) {
@@ -137,17 +137,14 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                 pMonsterElement->QueryIntAttribute("health", &health);
                 pMonsterElement->QueryIntAttribute("attackPower", &attackPower);
 
-                // 몬스터 객체 생성
                 auto createdMonster = MonsterFactory::createMonster(monsterType, monsterName, health, attackPower);
                 if (createdMonster) {
-                    monster = createdMonster.get(); // 포인터로 저장 후 이벤트에 추가
+                    monster = createdMonster.get();
                     newEvent->setMonster(std::move(createdMonster));
-                } else {
-                    std::cerr << "Failed to create monster of type: " << monsterType << std::endl;
                 }
             }
 
-            // Choices 정보를 읽어들임
+            // Choice 정보 읽기
             XMLElement* pChoicesElement = pEventElement->FirstChildElement("Choices");
             if (pChoicesElement != nullptr) {
                 XMLElement* pChoiceElement = pChoicesElement->FirstChildElement("Choice");
@@ -156,13 +153,24 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                     std::string choiceDescription = pChoiceElement->Attribute("description");
                     std::string nextEventId = pChoiceElement->Attribute("nextEventId");
                     
-                    std::unique_ptr<BaseAction> action = std::make_unique<ContinueAction>();
-                    std::unique_ptr<BaseTrap> trap = nullptr;
+                    // 액션 결정
+                    std::unique_ptr<BaseAction> action;
+                    if (choiceId == "fight" && monster) {
+                        action = std::make_unique<FightAction>(monster);
+                    } else if (choiceId == "run") {
+                        action = std::make_unique<RunAwayAction>();
+                    } else if (choiceId == "get potion") {
+                        action = std::make_unique<GetPotionAction>();
+                    } else if (choiceId == "continue") {
+                        action = std::make_unique<ContinueAction>();
+                    } else {
+                        action = std::make_unique<ContinueAction>();
+                    }
 
                     // 트랩 정보 읽기
+                    std::unique_ptr<BaseTrap> trap = nullptr;
                     XMLElement* pTrapElement = pChoiceElement->FirstChildElement("Trap");
                     if (pTrapElement) {
-                     //   std::cout << "[DEBUG] Found trap element for choice: " << choiceId << std::endl;
                         std::string trapType = pTrapElement->Attribute("type");
                         int damage = 0;
                         pTrapElement->QueryIntAttribute("damage", &damage);
@@ -174,10 +182,7 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                         }
                     }
 
-                   // std::cout << "[DEBUG] Creating choice '" << choiceId 
-                   //           << "' with trap: " << (trap ? "yes" : "no") 
-                   //           << ", action: " << (action ? "yes" : "no") << std::endl;
-                    
+                    // Choice 생성 및 추가
                     Choice choice(
                         choiceId,
                         choiceDescription,
@@ -186,7 +191,7 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
                         "",  // abilityId
                         std::move(trap)
                     );
-
+                    
                     newEvent->addChoice(std::move(choice));
                     pChoiceElement = pChoiceElement->NextSiblingElement("Choice");
                 }
@@ -195,9 +200,5 @@ std::unique_ptr<Event> EventManager::loadEventFromXML(const std::string& filePat
         }
         pEventElement = pEventElement->NextSiblingElement("Event");
     }
-
-    //std::cerr << "Event with ID " << eventId << " not found." << std::endl;
     return nullptr;
 }
-
-
