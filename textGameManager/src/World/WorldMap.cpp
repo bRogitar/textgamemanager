@@ -14,8 +14,7 @@ Room* WorldMap::getRoom(const std::string& roomId) {
 }
 
 std::vector<Room*> WorldMap::getAdjacentRooms(const std::string& roomId) {
-    // Placeholder logic for returning adjacent rooms
-    // In a real implementation, you would have additional data to determine adjacency
+    // 인접한 방을 반환하는 플레이스홀더 로직
     std::vector<Room*> adjacentRooms;
     for (auto& roomPair : rooms) {
         if (roomPair.first != roomId) {
